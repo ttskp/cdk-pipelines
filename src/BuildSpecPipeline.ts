@@ -1,9 +1,13 @@
+import * as fs from 'fs';
 import * as path from 'path';
 import { BuildEnvironment, BuildSpec, LinuxBuildImage, PipelineProject } from '@aws-cdk/aws-codebuild';
 import { Repository, RepositoryProps } from '@aws-cdk/aws-codecommit';
 import { Artifact, Pipeline } from '@aws-cdk/aws-codepipeline';
 import { CodeBuildAction, CodeCommitSourceAction, CodeCommitTrigger } from '@aws-cdk/aws-codepipeline-actions';
 import { Construct, Duration, RemovalPolicy } from '@aws-cdk/core';
+import * as YAML from 'yaml';
+
+type dict = { [key: string]: any };
 
 /**
  * @summary Properties used for BuildSpecPipeline construct
@@ -13,16 +17,17 @@ export interface BuildSpecPipelineProps {
   readonly projectName?: string;
   readonly projectDescription?: string;
 
+
   readonly existingRepositoryObj?: Repository;
   readonly repositoryProps?: RepositoryProps;
   readonly retainRepository?: boolean;
 
-  readonly buildEnvironment?: BuildEnvironment;
-  readonly buildSpecObj?: BuildSpec;
-  readonly buildSpec?: { [key: string]: any };
-  readonly buildSpecFile?: string;
-
   readonly branch?: string;
+
+  readonly buildEnvironment?: BuildEnvironment;
+
+  readonly buildSpec?: dict;
+  readonly buildSpecFile?: string;
 }
 
 const buildSpecPipelinePropsDefaults: BuildSpecPipelineProps = {
@@ -45,48 +50,11 @@ export class BuildSpecPipeline extends Construct {
   constructor(scope: Construct, name: string, props?: BuildSpecPipelineProps) {
     super(scope, name);
 
-    const p = { ...buildSpecPipelinePropsDefaults, ...props };
-    console.log(p);
-
+    const p: BuildSpecPipelineProps = { ...buildSpecPipelinePropsDefaults, ...props };
     this.repository = this.createOrUseRepository(p);
-
-    const sourceOutput = new Artifact('source');
-    const sourceAction = new CodeCommitSourceAction({
-      actionName: 'SourceAction',
-      trigger: CodeCommitTrigger.EVENTS,
-      repository: this.repository,
-      branch: p.branch,
-      output: sourceOutput,
-      codeBuildCloneOutput: true,
-    });
-
-    const pipelineProject = new PipelineProject(this, 'PipelineProject', {
-      projectName: `${this.getProjectName(p)}-Build`,
-      buildSpec: this.getBuildSpec(p),
-      environment: p.buildEnvironment ?? {
-        buildImage: LinuxBuildImage.STANDARD_5_0,
-        privileged: false,
-      },
-      description: `CodePipeline for ${p.projectName}`,
-      timeout: Duration.hours(1),
-    });
-
-    const codeBuildAction = new CodeBuildAction({
-      actionName: 'BuildAction',
-      input: sourceOutput,
-      project: pipelineProject,
-    });
-
-    this.pipeline = new Pipeline(this, 'Pipeline', {
-      stages: [{
-        stageName: 'SourceCheckout',
-        actions: [sourceAction],
-      }, {
-        stageName: 'Build',
-        actions: [codeBuildAction],
-      }],
-    });
+    this.pipeline = this.createPipeline(p);
   }
+
 
   private createOrUseRepository(props: BuildSpecPipelineProps): Repository {
 
@@ -114,23 +82,76 @@ export class BuildSpecPipeline extends Construct {
     return repository;
   }
 
+  private createPipeline(p: BuildSpecPipelineProps) {
+    const sourceOutput = new Artifact('source');
+    const sourceAction = new CodeCommitSourceAction({
+      actionName: 'SourceAction',
+      trigger: CodeCommitTrigger.EVENTS,
+      repository: this.repository,
+      branch: p.branch,
+      output: sourceOutput,
+      codeBuildCloneOutput: true,
+    });
+
+    const pipelineProject = new PipelineProject(this, 'PipelineProject', {
+      projectName: `${this.getProjectName(p)}-Build`,
+      buildSpec: this.getBuildSpec(p),
+      environment: p.buildEnvironment ?? {
+        buildImage: LinuxBuildImage.STANDARD_5_0,
+        privileged: false,
+      },
+      description: `CodePipeline for ${p.projectName}`,
+      timeout: Duration.hours(1),
+    });
+
+    const codeBuildAction = new CodeBuildAction({
+      actionName: 'BuildAction',
+      input: sourceOutput,
+      project: pipelineProject,
+    });
+
+    return new Pipeline(this, 'Pipeline', {
+      stages: [{
+        stageName: 'SourceCheckout',
+        actions: [sourceAction],
+      }, {
+        stageName: 'Build',
+        actions: [codeBuildAction],
+      }],
+    });
+  }
+
+  // @ts-ignore
   private getBuildSpec(props: BuildSpecPipelineProps) {
 
-    if (props?.buildSpecObj) {
-      return props.buildSpecObj;
+    let buildSpec: dict;
 
-    } else if (props?.buildSpec) {
-      return BuildSpec.fromObject(props.buildSpec);
+    if (props?.buildSpec) {
+      buildSpec = props.buildSpec;
 
     } else if (props?.buildSpecFile) {
-      return BuildSpec.fromSourceFilename(props.buildSpecFile);
+      buildSpec = this.readBuildSpecFromFile(props.buildSpecFile);
 
     } else {
-      return BuildSpec.fromSourceFilename(path.join(process.cwd(), 'buildspec.yml'));
+      buildSpec = this.readBuildSpecFromFile('buildspec.yml');
     }
+
+    this.extendBuildSpec(buildSpec);
+
+    return BuildSpec.fromObject(buildSpec);
+  }
+
+  private readBuildSpecFromFile(file: string) {
+    const buildSpecYaml = fs.readFileSync(file).toString('UTF8');
+    return YAML.parse(buildSpecYaml);
   }
 
   private getProjectName(props: BuildSpecPipelineProps) {
     return props.projectName ?? path.basename(process.cwd());
+  }
+
+  // @ts-ignore
+  protected extendBuildSpec(buildSpec: any) {
+    // INTENTIONALLY EMPTY
   }
 }

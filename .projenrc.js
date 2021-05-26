@@ -25,6 +25,8 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/aws-s3',
   ],
 
+  bundledDeps: ['yaml'],
+
   // cdkDependencies: undefined,        /* Which AWS CDK modules (those that start with "@aws-cdk/") does this library require when consumed? */
   // cdkTestDependencies: undefined,    /* AWS CDK modules required for testing. */
   // deps: [],                          /* Runtime dependencies of this module. */
@@ -34,18 +36,21 @@ const project = new AwsCdkConstructLibrary({
   // projectType: ProjectType.UNKNOWN,  /* Which type of project this is (library/app). */
   // releaseWorkflow: undefined,        /* Define a GitHub workflow for releasing from "main" when new versions are bumped. */
 
-  /*
   publishToMaven: {
     mavenGroupId: 'com.tts.cdk',
     mavenArtifactId: 'build-pipelines',
     javaPackage: 'com.tts.cdk.buildpipelines',
+    mavenRepositoryUrl: process.env.MAVEN_REPOSITORY_URL ?? '',
+    mavenServerId: process.env.MAVEN_SERVER_ID ?? '',
   },
 
   publishToPypi: {
     distName: 'tts-cdk-build-pipelines',
     module: 'tts_cdk.build_pipelines',
+    twineRegistryUrl: process.env.TWINE_REGISTRY_URL ?? '',
+    twineUsernameSecret: process.env.TWINE_USERNAME ?? 'aws',
+    twinePasswordSecret: process.env.TWINE_PASSWORD ?? '',
   },
-   */
 });
 
 project.synth();

@@ -68,9 +68,12 @@
     "@aws-cdk/aws-codepipeline": "^1.104.0",
     "@aws-cdk/aws-codepipeline-actions": "^1.104.0",
     "@aws-cdk/aws-s3": "^1.104.0",
-    "@aws-cdk/core": "^1.104.0"
+    "@aws-cdk/core": "^1.104.0",
+    "yaml": "^1.10.2"
   },
-  "bundledDependencies": [],
+  "bundledDependencies": [
+    "yaml"
+  ],
   "keywords": [
     "cdk"
   ],
@@ -120,7 +123,19 @@
   "stability": "stable",
   "jsii": {
     "outdir": "dist",
-    "targets": {},
+    "targets": {
+      "java": {
+        "package": "com.tts.cdk.buildpipelines",
+        "maven": {
+          "groupId": "com.tts.cdk",
+          "artifactId": "build-pipelines"
+        }
+      },
+      "python": {
+        "distName": "tts-cdk-build-pipelines",
+        "module": "tts_cdk.build_pipelines"
+      }
+    },
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"

@@ -5,13 +5,13 @@ phases:
     runtime-versions:
       python: '3.8'
     commands:
-      - echo 'install'
+      - echo npm install projen cdk jsii-release
   pre_build:
     commands:
-      - echo 'pre_build'
+      - echo
   build:
     commands:
-      - echo 'build'
+      - projen build
   post_build:
     commands:
-      - echo 'post_build'
+      - jsii
