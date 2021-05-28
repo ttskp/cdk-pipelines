@@ -57,6 +57,7 @@
     "@aws-cdk/aws-codecommit": "^1.106.0",
     "@aws-cdk/aws-codepipeline": "^1.106.0",
     "@aws-cdk/aws-codepipeline-actions": "^1.106.0",
+    "@aws-cdk/aws-iam": "^1.106.0",
     "@aws-cdk/aws-s3": "^1.106.0",
     "@aws-cdk/core": "^1.106.0",
     "constructs": "^3.2.27"
@@ -67,6 +68,7 @@
     "@aws-cdk/aws-codecommit": "^1.106.0",
     "@aws-cdk/aws-codepipeline": "^1.106.0",
     "@aws-cdk/aws-codepipeline-actions": "^1.106.0",
+    "@aws-cdk/aws-iam": "^1.106.0",
     "@aws-cdk/aws-s3": "^1.106.0",
     "@aws-cdk/core": "^1.106.0",
     "yaml": "^1.10.2"
@@ -124,13 +126,6 @@
   "jsii": {
     "outdir": "dist",
     "targets": {
-      "java": {
-        "package": "com.tts.cdk.buildpipelines",
-        "maven": {
-          "groupId": "com.tts.cdk",
-          "artifactId": "build-pipelines"
-        }
-      },
       "python": {
         "distName": "tts-cdk-build-pipelines",
         "module": "tts_cdk.build_pipelines"

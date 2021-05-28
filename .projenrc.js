@@ -23,6 +23,7 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/aws-codepipeline-actions',
     '@aws-cdk/aws-codebuild',
     '@aws-cdk/aws-s3',
+    '@aws-cdk/aws-iam',
   ],
 
   bundledDeps: ['yaml'],

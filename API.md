@@ -38,6 +38,7 @@ new BuildSpecPipeline(scope: Construct, name: string, props?: BuildSpecPipelineP
   * **buildEnvironment** (<code>[BuildEnvironment](#aws-cdk-aws-codebuild-buildenvironment)</code>)  *No description* __*Optional*__
   * **buildSpec** (<code>Map<string, any></code>)  *No description* __*Optional*__
   * **buildSpecFile** (<code>string</code>)  *No description* __*Optional*__
+  * **codeArtifactDomain** (<code>string</code>)  *No description* __*Optional*__
   * **existingRepositoryObj** (<code>[Repository](#aws-cdk-aws-codecommit-repository)</code>)  *No description* __*Optional*__
   * **projectDescription** (<code>string</code>)  *No description* __*Optional*__
   * **projectName** (<code>string</code>)  *No description* __*Optional*__
@@ -85,6 +86,7 @@ Name | Type | Description
 **buildEnvironment**? | <code>[BuildEnvironment](#aws-cdk-aws-codebuild-buildenvironment)</code> | __*Optional*__
 **buildSpec**? | <code>Map<string, any></code> | __*Optional*__
 **buildSpecFile**? | <code>string</code> | __*Optional*__
+**codeArtifactDomain**? | <code>string</code> | __*Optional*__
 **existingRepositoryObj**? | <code>[Repository](#aws-cdk-aws-codecommit-repository)</code> | __*Optional*__
 **projectDescription**? | <code>string</code> | __*Optional*__
 **projectName**? | <code>string</code> | __*Optional*__

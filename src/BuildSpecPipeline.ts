@@ -4,7 +4,8 @@ import { BuildEnvironment, BuildSpec, LinuxBuildImage, PipelineProject } from '@
 import { Repository, RepositoryProps } from '@aws-cdk/aws-codecommit';
 import { Artifact, Pipeline } from '@aws-cdk/aws-codepipeline';
 import { CodeBuildAction, CodeCommitSourceAction, CodeCommitTrigger } from '@aws-cdk/aws-codepipeline-actions';
-import { Construct, Duration, RemovalPolicy } from '@aws-cdk/core';
+import { Effect, PolicyStatement } from '@aws-cdk/aws-iam';
+import { Construct, Duration, RemovalPolicy, Stack } from '@aws-cdk/core';
 import * as YAML from 'yaml';
 
 type dict = { [key: string]: any };
@@ -28,6 +29,8 @@ export interface BuildSpecPipelineProps {
 
   readonly buildSpec?: dict;
   readonly buildSpecFile?: string;
+
+  readonly codeArtifactDomain?: string;
 }
 
 const buildSpecPipelinePropsDefaults: BuildSpecPipelineProps = {
@@ -103,6 +106,26 @@ export class BuildSpecPipeline extends Construct {
       description: `CodePipeline for ${p.projectName}`,
       timeout: Duration.hours(1),
     });
+
+    if (p.codeArtifactDomain) {
+      const codeArtifactPolicy = new PolicyStatement({
+        actions: ['codeartifact:*'],
+        resources: [
+          `arn:aws:codeartifact:${Stack.of(this).region}:${Stack.of(this).account}:package/${p.codeArtifactDomain}/*`,
+          `arn:aws:codeartifact:${Stack.of(this).region}:${Stack.of(this).account}:repository/${p.codeArtifactDomain}/*`,
+          `arn:aws:codeartifact:${Stack.of(this).region}:${Stack.of(this).account}:domain/${p.codeArtifactDomain}`,
+        ],
+        effect: Effect.ALLOW,
+      });
+
+      const codeArtifactTokenPolicyStatement = new PolicyStatement({
+        actions: ['sts:GetServiceBearerToken'],
+        resources: ['*'],
+        effect: Effect.ALLOW,
+      });
+      pipelineProject.addToRolePolicy(codeArtifactPolicy);
+      pipelineProject.addToRolePolicy(codeArtifactTokenPolicyStatement);
+    }
 
     const codeBuildAction = new CodeBuildAction({
       actionName: 'BuildAction',
