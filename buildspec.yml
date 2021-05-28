@@ -9,6 +9,7 @@ phases:
   pre_build:
     commands:
       - projen
+      - projen bump
   build:
     commands:
       - projen build
