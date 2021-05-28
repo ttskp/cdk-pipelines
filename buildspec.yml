@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       python: '3.8'
     commands:
-      - echo npm install -g projen cdk jsii-release
+      - npm install -g projen cdk jsii-release
   pre_build:
     commands:
       - projen
@@ -15,5 +15,8 @@ phases:
   post_build:
     commands:
       - ls -al
-      - echo jsii-release-maven
-      - echo jsii-release-pypi
+      - export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain tts --domain-owner 672648692041 --query authorizationToken --output text`
+      - export TWINE_REPOSITORY_URL=`aws codeartifact get-repository-endpoint --domain tts --repository tts-pypi --format pypi --query repositoryEndpoint --output text`
+      - export TWINE_USERNAME=aws
+      - export TWINE_PASSWORD=$CODEARTIFACT_AUTH_TOKEN
+      - jsii-release-pypi

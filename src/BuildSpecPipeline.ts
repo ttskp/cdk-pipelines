@@ -121,7 +121,6 @@ export class BuildSpecPipeline extends Construct {
     });
   }
 
-  // @ts-ignore
   private getBuildSpec(props: BuildSpecPipelineProps) {
 
     let buildSpec: dict;
