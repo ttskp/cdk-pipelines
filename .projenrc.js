@@ -14,7 +14,7 @@ const project = new AwsCdkConstructLibrary({
 
   gitignore: ['.idea/', 'cdk.out/', '.github/', '.projen/', 'yarn.lock'],
 
-  cdkVersion: '1.104.0',
+  cdkVersion: '1.106.0',
   cdkDependencies: [
     '@aws-cdk/core',
     '@aws-cdk/aws-codeartifact',
