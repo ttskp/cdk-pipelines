@@ -1,4 +1,4 @@
-const { AwsCdkConstructLibrary } = require('projen');
+const { AwsCdkConstructLibrary, NpmAccess } = require('projen');
 
 const project = new AwsCdkConstructLibrary({
 
@@ -56,6 +56,8 @@ const project = new AwsCdkConstructLibrary({
     twinePasswordSecret: process.env.TWINE_PASSWORD ?? '',
   },
    */
+
+  npmAccess: NpmAccess.PUBLIC,
 });
 
 project.synth();
