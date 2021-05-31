@@ -37,6 +37,7 @@ const project = new AwsCdkConstructLibrary({
   // projectType: ProjectType.UNKNOWN,  /* Which type of project this is (library/app). */
   // releaseWorkflow: undefined,        /* Define a GitHub workflow for releasing from "main" when new versions are bumped. */
 
+  /*
   publishToMaven: {
     mavenGroupId: 'com.tts.cdk',
     mavenArtifactId: 'build-pipelines',
@@ -44,6 +45,7 @@ const project = new AwsCdkConstructLibrary({
     mavenRepositoryUrl: process.env.MAVEN_REPOSITORY_URL ?? '',
     mavenServerId: process.env.MAVEN_SERVER_ID ?? '',
   },
+   */
 
   /*
   publishToPypi: {
