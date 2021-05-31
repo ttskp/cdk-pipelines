@@ -127,15 +127,7 @@
   "stability": "stable",
   "jsii": {
     "outdir": "dist",
-    "targets": {
-      "java": {
-        "package": "com.tts.cdk.buildpipelines",
-        "maven": {
-          "groupId": "com.tts.cdk",
-          "artifactId": "build-pipelines"
-        }
-      }
-    },
+    "targets": {},
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"
