@@ -2,7 +2,7 @@
   "name": "@tts-cdk/build-pipelines",
   "repository": {
     "type": "git",
-    "url": "https://github.com/andre.wolf/myconstruct.git"
+    "url": "https://github.com/ttskp/cdk-pipelines.git"
   },
   "scripts": {
     "clobber": "npx projen clobber",

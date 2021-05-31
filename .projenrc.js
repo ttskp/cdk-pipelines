@@ -9,7 +9,7 @@ const project = new AwsCdkConstructLibrary({
   authorAddress: 'andre.wolf@tt-s.com',
   // authorOrganization: 'tts Knowledge Products GmbH',
 
-  repositoryUrl: 'https://github.com/andre.wolf/myconstruct.git',
+  repositoryUrl: 'https://github.com/ttskp/cdk-pipelines.git',
   defaultReleaseBranch: 'main',
 
   gitignore: ['.idea/', 'cdk.out/'],
@@ -56,8 +56,6 @@ const project = new AwsCdkConstructLibrary({
     twinePasswordSecret: process.env.TWINE_PASSWORD ?? '',
   },
    */
-
-
 });
 
 project.synth();
