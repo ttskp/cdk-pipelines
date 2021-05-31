@@ -8,11 +8,9 @@
 *.tsbuildinfo
 .cache
 .eslintcache
-.github/
 .idea/
 .jsii
 .nyc_output
-.projen/
 .yarn-integrity
 /.changelog.tmp.md
 /.version.tmp.json
@@ -35,7 +33,6 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 tsconfig.json
 yarn-debug.log*
 yarn-error.log*
-yarn.lock
 !/.eslintrc.json
 !/.gitattributes
 !/.github/pull_request_template.md

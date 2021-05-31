@@ -12,7 +12,7 @@ const project = new AwsCdkConstructLibrary({
   repositoryUrl: 'https://github.com/andre.wolf/myconstruct.git',
   defaultReleaseBranch: 'main',
 
-  gitignore: ['.idea/', 'cdk.out/', '.github/', '.projen/', 'yarn.lock'],
+  gitignore: ['.idea/', 'cdk.out/'],
 
   cdkVersion: '1.106.0',
   cdkDependencies: [
