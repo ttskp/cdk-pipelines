@@ -2,7 +2,7 @@ const { AwsCdkConstructLibrary } = require('projen');
 
 const project = new AwsCdkConstructLibrary({
 
-  name: 'pipelines',
+  name: 'build-pipelines',
   packageName: '@tts-cdk/build-pipelines',
 
   author: 'WolfAn',
@@ -56,6 +56,8 @@ const project = new AwsCdkConstructLibrary({
     twinePasswordSecret: process.env.TWINE_PASSWORD ?? '',
   },
    */
+
+
 });
 
 project.synth();
