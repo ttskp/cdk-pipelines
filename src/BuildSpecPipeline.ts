@@ -128,7 +128,7 @@ export class BuildSpecPipeline extends Construct {
     }
 
     pipelineProject.addToRolePolicy(new PolicyStatement({
-      actions:['ssm:GetParameter', 'ssm:GetParameters'],
+      actions: ['ssm:GetParameter', 'ssm:GetParameters'],
       resources: ['*'],
       effect: Effect.ALLOW,
     }));
