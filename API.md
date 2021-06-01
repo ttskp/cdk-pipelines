@@ -52,6 +52,7 @@ new BuildSpecPipeline(scope: Construct, name: string, props?: BuildSpecPipelineP
 
 Name | Type | Description 
 -----|------|-------------
+**codebuildProject** | <code>[PipelineProject](#aws-cdk-aws-codebuild-pipelineproject)</code> | <span></span>
 **pipeline** | <code>[Pipeline](#aws-cdk-aws-codepipeline-pipeline)</code> | <span></span>
 **repository** | <code>[Repository](#aws-cdk-aws-codecommit-repository)</code> | <span></span>
 

@@ -60,6 +60,10 @@ export class BuildSpecPipeline extends Construct {
     this.pipeline = this.createPipeline(p);
   }
 
+  // @ts-ignore
+  protected extendBuildSpec(buildSpec: any) {
+    // INTENTIONALLY EMPTY
+  }
 
   private createOrUseRepository(props: BuildSpecPipelineProps): Repository {
 
@@ -169,11 +173,6 @@ export class BuildSpecPipeline extends Construct {
 
   private getProjectName(props: BuildSpecPipelineProps) {
     return props.projectName ?? path.basename(process.cwd());
-  }
-
-  // @ts-ignore
-  protected extendBuildSpec(buildSpec: any) {
-    // INTENTIONALLY EMPTY
   }
 
   private createCodebuildProject(p: BuildSpecPipelineProps) {
