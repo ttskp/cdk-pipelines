@@ -127,6 +127,12 @@ export class BuildSpecPipeline extends Construct {
       pipelineProject.addToRolePolicy(codeArtifactTokenPolicyStatement);
     }
 
+    pipelineProject.addToRolePolicy(new PolicyStatement({
+      actions:['ssm:GetParameter', 'ssm:GetParameters'],
+      resources: ['*'],
+      effect: Effect.ALLOW,
+    }));
+
     const codeBuildAction = new CodeBuildAction({
       actionName: 'BuildAction',
       input: sourceOutput,
