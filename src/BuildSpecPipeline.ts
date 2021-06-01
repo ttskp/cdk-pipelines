@@ -49,15 +49,21 @@ export class BuildSpecPipeline extends Construct {
 
   public readonly repository: Repository;
   public readonly pipeline: Pipeline;
+  public readonly codebuildProject: PipelineProject;
 
   constructor(scope: Construct, name: string, props?: BuildSpecPipelineProps) {
     super(scope, name);
 
     const p: BuildSpecPipelineProps = { ...buildSpecPipelinePropsDefaults, ...props };
     this.repository = this.createOrUseRepository(p);
+    this.codebuildProject = this.createCodebuildProject(p);
     this.pipeline = this.createPipeline(p);
   }
 
+  // @ts-ignore
+  protected extendBuildSpec(buildSpec: any) {
+    // INTENTIONALLY EMPTY
+  }
 
   private createOrUseRepository(props: BuildSpecPipelineProps): Repository {
 
@@ -96,17 +102,6 @@ export class BuildSpecPipeline extends Construct {
       codeBuildCloneOutput: true,
     });
 
-    const pipelineProject = new PipelineProject(this, 'PipelineProject', {
-      projectName: `${this.getProjectName(p)}-Build`,
-      buildSpec: this.getBuildSpec(p),
-      environment: p.buildEnvironment ?? {
-        buildImage: LinuxBuildImage.STANDARD_5_0,
-        privileged: false,
-      },
-      description: `CodePipeline for ${p.projectName}`,
-      timeout: Duration.hours(1),
-    });
-
     if (p.codeArtifactDomain) {
       const codeArtifactPolicy = new PolicyStatement({
         actions: ['codeartifact:*'],
@@ -123,14 +118,20 @@ export class BuildSpecPipeline extends Construct {
         resources: ['*'],
         effect: Effect.ALLOW,
       });
-      pipelineProject.addToRolePolicy(codeArtifactPolicy);
-      pipelineProject.addToRolePolicy(codeArtifactTokenPolicyStatement);
+      this.codebuildProject.addToRolePolicy(codeArtifactPolicy);
+      this.codebuildProject.addToRolePolicy(codeArtifactTokenPolicyStatement);
     }
+
+    this.codebuildProject.addToRolePolicy(new PolicyStatement({
+      actions: ['ssm:GetParameter', 'ssm:GetParameters'],
+      resources: ['*'],
+      effect: Effect.ALLOW,
+    }));
 
     const codeBuildAction = new CodeBuildAction({
       actionName: 'BuildAction',
       input: sourceOutput,
-      project: pipelineProject,
+      project: this.codebuildProject,
     });
 
     return new Pipeline(this, 'Pipeline', {
@@ -174,8 +175,16 @@ export class BuildSpecPipeline extends Construct {
     return props.projectName ?? path.basename(process.cwd());
   }
 
-  // @ts-ignore
-  protected extendBuildSpec(buildSpec: any) {
-    // INTENTIONALLY EMPTY
+  private createCodebuildProject(p: BuildSpecPipelineProps) {
+    return new PipelineProject(this, 'PipelineProject', {
+      projectName: `${this.getProjectName(p)}-Build`,
+      buildSpec: this.getBuildSpec(p),
+      environment: p.buildEnvironment ?? {
+        buildImage: LinuxBuildImage.STANDARD_5_0,
+        privileged: false,
+      },
+      description: `CodePipeline for ${p.projectName}`,
+      timeout: Duration.hours(1),
+    });
   }
 }
