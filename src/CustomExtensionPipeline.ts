@@ -35,7 +35,7 @@ export class CustomExtensionPipeline extends Construct {
       props.codeArtifactDomain,
       props.codeArtifactDomainOwner,
     );
-    const pipeline = new BuildSpecPipeline(scope, name, { buildSpec: customExtensionBuildSpec, ...props });
+    const pipeline = new BuildSpecPipeline(scope, name + '-pipeline', { buildSpec: customExtensionBuildSpec, ...props });
 
     pipeline.codebuildProject.addToRolePolicy(new PolicyStatement({
       actions: ['s3:PutObject', 's3:ListBucket', 's3:GetObject', 's3:DeleteObject'],
