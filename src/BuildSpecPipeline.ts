@@ -159,8 +159,6 @@ export class BuildSpecPipeline extends Construct {
       buildSpec = this.readBuildSpecFromFile('buildspec.yml');
     }
 
-    console.log(buildSpec);
-
     this.extendBuildSpec(buildSpec);
 
     return BuildSpec.fromObject(buildSpec);

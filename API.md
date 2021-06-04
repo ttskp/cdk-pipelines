@@ -116,7 +116,7 @@ new CustomExtensionPipeline(scope: Construct, name: string, props: CustomExtensi
 
 
 ```ts
-protected createCustomExtensionBuildSpec(projectName: string, distBucketName: string, codeArtifactRepository: string, codeArtifactDomain: string, codeArtifactDomainOwner: string): BuildSpec
+protected createCustomExtensionBuildSpec(projectName: string, distBucketName: string, codeArtifactRepository: string, codeArtifactDomain: string, codeArtifactDomainOwner: string): Map<string, any>
 ```
 
 * **projectName** (<code>string</code>)  *No description*
@@ -126,7 +126,7 @@ protected createCustomExtensionBuildSpec(projectName: string, distBucketName: st
 * **codeArtifactDomainOwner** (<code>string</code>)  *No description*
 
 __Returns__:
-* <code>[BuildSpec](#aws-cdk-aws-codebuild-buildspec)</code>
+* <code>Map<string, any></code>
 
 
 
