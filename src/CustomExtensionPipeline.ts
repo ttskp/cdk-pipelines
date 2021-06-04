@@ -1,5 +1,6 @@
 import { BuildEnvironment, BuildSpec } from '@aws-cdk/aws-codebuild';
 import { Repository, RepositoryProps } from '@aws-cdk/aws-codecommit';
+import { Effect, PolicyStatement } from '@aws-cdk/aws-iam';
 import { Construct } from '@aws-cdk/core';
 import { BuildSpecPipeline } from './BuildSpecPipeline';
 
@@ -34,10 +35,19 @@ export class CustomExtensionPipeline extends Construct {
       props.codeArtifactDomain,
       props.codeArtifactDomainOwner,
     );
-    new BuildSpecPipeline(scope, name, { buildSpec: customExtensionBuildSpec, ...props });
+    const pipeline = new BuildSpecPipeline(scope, name, { buildSpec: customExtensionBuildSpec, ...props });
+
+    pipeline.codebuildProject.addToRolePolicy(new PolicyStatement({
+      actions: ['s3:PutObject', 's3:ListBucket', 's3:GetObject', 's3:DeleteObject'],
+      resources: [
+        `arn:aws:s3:::${props.distBucketName}/*`,
+        `arn:aws:s3:::${props.distBucketName}`,
+      ],
+      effect: Effect.ALLOW,
+    }));
   }
 
-  protected createCustomExtensionBuildSpec(projectName: String, distBucketName: String, codeArtifactRepository: String,
+    protected createCustomExtensionBuildSpec(projectName: String, distBucketName: String, codeArtifactRepository: String,
     codeArtifactDomain: String, codeArtifactDomainOwner: String): BuildSpec {
     return BuildSpec.fromObject({
       version: 0.2,

@@ -5,6 +5,7 @@
 Name|Description
 ----|-----------
 [BuildSpecPipeline](#tts-cdk-build-pipelines-buildspecpipeline)|*No description*
+[CustomExtensionPipeline](#tts-cdk-build-pipelines-customextensionpipeline)|*No description*
 
 
 **Structs**
@@ -12,6 +13,7 @@ Name|Description
 Name|Description
 ----|-----------
 [BuildSpecPipelineProps](#tts-cdk-build-pipelines-buildspecpipelineprops)|*No description*
+[CustomExtensionPipelineProps](#tts-cdk-build-pipelines-customextensionpipelineprops)|*No description*
 
 
 
@@ -74,6 +76,60 @@ protected extendBuildSpec(buildSpec: any): void
 
 
 
+## class CustomExtensionPipeline  <a id="tts-cdk-build-pipelines-customextensionpipeline"></a>
+
+
+
+__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
+__Extends__: [Construct](#aws-cdk-core-construct)
+
+### Initializer
+
+
+
+
+```ts
+new CustomExtensionPipeline(scope: Construct, name: string, props: CustomExtensionPipelineProps)
+```
+
+* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
+* **name** (<code>string</code>)  *No description*
+* **props** (<code>[CustomExtensionPipelineProps](#tts-cdk-build-pipelines-customextensionpipelineprops)</code>)  *No description*
+  * **codeArtifactDomain** (<code>string</code>)  *No description* 
+  * **codeArtifactDomainOwner** (<code>string</code>)  *No description* 
+  * **codeArtifactRepository** (<code>string</code>)  *No description* 
+  * **distBucketName** (<code>string</code>)  *No description* 
+  * **branch** (<code>string</code>)  *No description* __*Optional*__
+  * **buildEnvironment** (<code>[BuildEnvironment](#aws-cdk-aws-codebuild-buildenvironment)</code>)  *No description* __*Optional*__
+  * **existingRepositoryObj** (<code>[Repository](#aws-cdk-aws-codecommit-repository)</code>)  *No description* __*Optional*__
+  * **projectDescription** (<code>string</code>)  *No description* __*Optional*__
+  * **projectName** (<code>string</code>)  *No description* __*Optional*__
+  * **repositoryProps** (<code>[RepositoryProps](#aws-cdk-aws-codecommit-repositoryprops)</code>)  *No description* __*Optional*__
+  * **retainRepository** (<code>boolean</code>)  *No description* __*Optional*__
+
+
+### Methods
+
+
+#### protected createCustomExtensionBuildSpec(projectName, distBucketName, codeArtifactRepository, codeArtifactDomain, codeArtifactDomainOwner) <a id="tts-cdk-build-pipelines-customextensionpipeline-createcustomextensionbuildspec"></a>
+
+
+
+```ts
+protected createCustomExtensionBuildSpec(projectName: string, distBucketName: string, codeArtifactRepository: string, codeArtifactDomain: string, codeArtifactDomainOwner: string): BuildSpec
+```
+
+* **projectName** (<code>string</code>)  *No description*
+* **distBucketName** (<code>string</code>)  *No description*
+* **codeArtifactRepository** (<code>string</code>)  *No description*
+* **codeArtifactDomain** (<code>string</code>)  *No description*
+* **codeArtifactDomainOwner** (<code>string</code>)  *No description*
+
+__Returns__:
+* <code>[BuildSpec](#aws-cdk-aws-codebuild-buildspec)</code>
+
+
+
 ## struct BuildSpecPipelineProps  <a id="tts-cdk-build-pipelines-buildspecpipelineprops"></a>
 
 
@@ -88,6 +144,29 @@ Name | Type | Description
 **buildSpec**? | <code>Map<string, any></code> | __*Optional*__
 **buildSpecFile**? | <code>string</code> | __*Optional*__
 **codeArtifactDomain**? | <code>string</code> | __*Optional*__
+**existingRepositoryObj**? | <code>[Repository](#aws-cdk-aws-codecommit-repository)</code> | __*Optional*__
+**projectDescription**? | <code>string</code> | __*Optional*__
+**projectName**? | <code>string</code> | __*Optional*__
+**repositoryProps**? | <code>[RepositoryProps](#aws-cdk-aws-codecommit-repositoryprops)</code> | __*Optional*__
+**retainRepository**? | <code>boolean</code> | __*Optional*__
+
+
+
+## struct CustomExtensionPipelineProps  <a id="tts-cdk-build-pipelines-customextensionpipelineprops"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**codeArtifactDomain** | <code>string</code> | <span></span>
+**codeArtifactDomainOwner** | <code>string</code> | <span></span>
+**codeArtifactRepository** | <code>string</code> | <span></span>
+**distBucketName** | <code>string</code> | <span></span>
+**branch**? | <code>string</code> | __*Optional*__
+**buildEnvironment**? | <code>[BuildEnvironment](#aws-cdk-aws-codebuild-buildenvironment)</code> | __*Optional*__
 **existingRepositoryObj**? | <code>[Repository](#aws-cdk-aws-codecommit-repository)</code> | __*Optional*__
 **projectDescription**? | <code>string</code> | __*Optional*__
 **projectName**? | <code>string</code> | __*Optional*__
