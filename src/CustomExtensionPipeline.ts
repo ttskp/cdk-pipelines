@@ -47,7 +47,7 @@ export class CustomExtensionPipeline extends Construct {
     }));
   }
 
-    protected createCustomExtensionBuildSpec(projectName: String, distBucketName: String, codeArtifactRepository: String,
+  protected createCustomExtensionBuildSpec(projectName: String, distBucketName: String, codeArtifactRepository: String,
     codeArtifactDomain: String, codeArtifactDomainOwner: String): BuildSpec {
     return BuildSpec.fromObject({
       version: 0.2,
