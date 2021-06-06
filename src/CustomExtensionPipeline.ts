@@ -1,9 +1,10 @@
-import { BuildEnvironment, BuildSpec } from '@aws-cdk/aws-codebuild';
+import { BuildEnvironment } from '@aws-cdk/aws-codebuild';
 import { Repository, RepositoryProps } from '@aws-cdk/aws-codecommit';
 import { Effect, PolicyStatement } from '@aws-cdk/aws-iam';
 import { Construct } from '@aws-cdk/core';
 import { BuildSpecPipeline } from './BuildSpecPipeline';
 
+type dict = { [key: string]: any };
 
 export interface CustomExtensionPipelineProps {
   readonly projectName?: string;
@@ -48,8 +49,8 @@ export class CustomExtensionPipeline extends Construct {
   }
 
   protected createCustomExtensionBuildSpec(projectName: String, distBucketName: String, codeArtifactRepository: String,
-    codeArtifactDomain: String, codeArtifactDomainOwner: String): BuildSpec {
-    return BuildSpec.fromObject({
+    codeArtifactDomain: String, codeArtifactDomainOwner: String): dict {
+    return {
       version: 0.2,
       phases: {
         install: {
@@ -72,6 +73,6 @@ export class CustomExtensionPipeline extends Construct {
           ],
         },
       },
-    });
+    };
   }
 }
