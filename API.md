@@ -4,6 +4,7 @@
 
 Name|Description
 ----|-----------
+[BuildProjectFeature](#tts-cdk-build-pipelines-buildprojectfeature)|*No description*
 [BuildSpecPipeline](#tts-cdk-build-pipelines-buildspecpipeline)|*No description*
 [CustomExtensionPipeline](#tts-cdk-build-pipelines-customextensionpipeline)|*No description*
 
@@ -14,6 +15,33 @@ Name|Description
 ----|-----------
 [BuildSpecPipelineProps](#tts-cdk-build-pipelines-buildspecpipelineprops)|*No description*
 [CustomExtensionPipelineProps](#tts-cdk-build-pipelines-customextensionpipelineprops)|*No description*
+
+
+
+## class BuildProjectFeature  <a id="tts-cdk-build-pipelines-buildprojectfeature"></a>
+
+
+
+
+### Initializer
+
+
+
+
+```ts
+new BuildProjectFeature()
+```
+
+
+
+
+### Properties
+
+
+Name | Type | Description 
+-----|------|-------------
+**policyStatements** | <code>Array<[PolicyStatement](#aws-cdk-aws-iam-policystatement)></code> | <span></span>
+**preBuildCommands** | <code>Array<string></code> | <span></span>
 
 
 
@@ -40,7 +68,6 @@ new BuildSpecPipeline(scope: Construct, name: string, props?: BuildSpecPipelineP
   * **buildEnvironment** (<code>[BuildEnvironment](#aws-cdk-aws-codebuild-buildenvironment)</code>)  *No description* __*Optional*__
   * **buildSpec** (<code>Map<string, any></code>)  *No description* __*Optional*__
   * **buildSpecFile** (<code>string</code>)  *No description* __*Optional*__
-  * **codeArtifactDomain** (<code>string</code>)  *No description* __*Optional*__
   * **existingRepositoryObj** (<code>[Repository](#aws-cdk-aws-codecommit-repository)</code>)  *No description* __*Optional*__
   * **projectDescription** (<code>string</code>)  *No description* __*Optional*__
   * **projectName** (<code>string</code>)  *No description* __*Optional*__
@@ -54,25 +81,12 @@ new BuildSpecPipeline(scope: Construct, name: string, props?: BuildSpecPipelineP
 
 Name | Type | Description 
 -----|------|-------------
+**buildSpec** | <code>Map<string, any></code> | <span></span>
 **codebuildProject** | <code>[PipelineProject](#aws-cdk-aws-codebuild-pipelineproject)</code> | <span></span>
+**features** | <code>Array<[BuildProjectFeature](#tts-cdk-build-pipelines-buildprojectfeature)></code> | <span></span>
 **pipeline** | <code>[Pipeline](#aws-cdk-aws-codepipeline-pipeline)</code> | <span></span>
+**props** | <code>[BuildSpecPipelineProps](#tts-cdk-build-pipelines-buildspecpipelineprops)</code> | <span></span>
 **repository** | <code>[Repository](#aws-cdk-aws-codecommit-repository)</code> | <span></span>
-
-### Methods
-
-
-#### protected extendBuildSpec(buildSpec) <a id="tts-cdk-build-pipelines-buildspecpipeline-extendbuildspec"></a>
-
-
-
-```ts
-protected extendBuildSpec(buildSpec: any): void
-```
-
-* **buildSpec** (<code>any</code>)  *No description*
-
-
-
 
 
 
@@ -143,7 +157,6 @@ Name | Type | Description
 **buildEnvironment**? | <code>[BuildEnvironment](#aws-cdk-aws-codebuild-buildenvironment)</code> | __*Optional*__
 **buildSpec**? | <code>Map<string, any></code> | __*Optional*__
 **buildSpecFile**? | <code>string</code> | __*Optional*__
-**codeArtifactDomain**? | <code>string</code> | __*Optional*__
 **existingRepositoryObj**? | <code>[Repository](#aws-cdk-aws-codecommit-repository)</code> | __*Optional*__
 **projectDescription**? | <code>string</code> | __*Optional*__
 **projectName**? | <code>string</code> | __*Optional*__

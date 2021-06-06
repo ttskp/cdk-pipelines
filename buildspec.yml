@@ -1,13 +1,19 @@
 ---
 version: 0.2
+env:
+  code-artifact:
+    domain: tts
+    repos:
+      pip: tts-pypi
 phases:
   install:
     runtime-versions:
       python: '3.8'
     commands:
-      - npm install -g projen cdk jsii-release
+      - npm install -g yarn projen jsii-release
   pre_build:
     commands:
+      - yarn install
       - projen
       - projen bump
   build:

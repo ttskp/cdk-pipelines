@@ -8,7 +8,8 @@ import { Effect, PolicyStatement } from '@aws-cdk/aws-iam';
 import { Construct, Duration, RemovalPolicy, Stack } from '@aws-cdk/core';
 import * as YAML from 'yaml';
 
-type dict = { [key: string]: any };
+// type dict = { [key: string]: any };
+type dict = Record<string, any>;
 
 /**
  * @summary Properties used for BuildSpecPipeline construct
@@ -17,7 +18,6 @@ export interface BuildSpecPipelineProps {
 
   readonly projectName?: string;
   readonly projectDescription?: string;
-
 
   readonly existingRepositoryObj?: Repository;
   readonly repositoryProps?: RepositoryProps;
@@ -30,13 +30,79 @@ export interface BuildSpecPipelineProps {
   readonly buildSpec?: dict;
   readonly buildSpecFile?: string;
 
-  readonly codeArtifactDomain?: string;
+  // readonly codeArtifactDomain?: string;
 }
 
 const buildSpecPipelinePropsDefaults: BuildSpecPipelineProps = {
   retainRepository: true,
   branch: 'master',
 };
+
+export class BuildProjectFeature {
+  readonly policyStatements: Array<PolicyStatement> = [];
+  readonly preBuildCommands: Array<string> = [];
+}
+
+interface CodeArtifactFeatureProps {
+  readonly domain: string;
+  readonly repos: Record<string, string>;
+}
+
+class CodeArtifactFeature extends BuildProjectFeature {
+
+  constructor(pipeline: BuildSpecPipeline) {
+
+    super();
+
+    const params: CodeArtifactFeatureProps = pipeline.buildSpec.env?.['code-artifact'];
+
+    if (params?.domain && params?.repos) {
+      const region = Stack.of(pipeline).region;
+      const account = Stack.of(pipeline).account;
+
+      this.policyStatements.push(new PolicyStatement({
+        actions: ['codeartifact:*'],
+        resources: [
+          `arn:aws:codeartifact:${region}:${account}:package/${params.domain}/*`,
+          `arn:aws:codeartifact:${region}:${account}:repository/${params.domain}/*`,
+          `arn:aws:codeartifact:${region}:${account}:domain/${params.domain}`,
+        ],
+        effect: Effect.ALLOW,
+      }));
+
+      this.policyStatements.push(new PolicyStatement({
+        actions: ['sts:GetServiceBearerToken'],
+        resources: ['*'],
+        effect: Effect.ALLOW,
+      }));
+
+      Object.keys(params.repos).forEach(key => {
+        this.preBuildCommands.push(`aws codeartifact login --tool ${key} --repository ${params.repos[key]} --domain ${params.domain} --domain-owner ${account}`);
+      });
+    }
+  }
+}
+
+class SSMParametersFeature extends BuildProjectFeature {
+
+  constructor(pipeline: BuildSpecPipeline) {
+
+    super();
+
+    const region = Stack.of(pipeline).region;
+    const account = Stack.of(pipeline).account;
+
+    const parameters: Array<string> = Object.values(pipeline.buildSpec.env?.['parameter-store'] ?? []);
+
+    if (parameters.length > 0) {
+      this.policyStatements.push(new PolicyStatement({
+        effect: Effect.ALLOW,
+        actions: ['ssm:GetParameters', 'ssm:GetParameter'],
+        resources: parameters.map((param: string) => `arn:aws:ssm:${region}:${account}:parameter${param}`),
+      }));
+    }
+  }
+}
 
 /**
  * @summary Constructs a CodePipeline and reads build specs from '.buildspec' file.
@@ -51,82 +117,64 @@ export class BuildSpecPipeline extends Construct {
   public readonly pipeline: Pipeline;
   public readonly codebuildProject: PipelineProject;
 
+  public readonly props: BuildSpecPipelineProps;
+  public readonly buildSpec: dict;
+
+  public readonly features: Array<BuildProjectFeature> = [];
+
   constructor(scope: Construct, name: string, props?: BuildSpecPipelineProps) {
     super(scope, name);
 
-    const p: BuildSpecPipelineProps = { ...buildSpecPipelinePropsDefaults, ...props };
-    this.repository = this.createOrUseRepository(p);
-    this.codebuildProject = this.createCodebuildProject(p);
-    this.pipeline = this.createPipeline(p);
+    this.props = { ...buildSpecPipelinePropsDefaults, ...props };
+    this.buildSpec = this.readBuildSpec();
+
+    this.features.push(
+      new CodeArtifactFeature(this),
+      new SSMParametersFeature(this),
+    );
+
+    this.repository = this.createOrUseRepository();
+    this.codebuildProject = this.createCodebuildProject();
+    this.pipeline = this.createPipeline();
   }
 
-  // @ts-ignore
-  protected extendBuildSpec(buildSpec: any) {
-    // INTENTIONALLY EMPTY
-  }
+  private createOrUseRepository(): Repository {
 
-  private createOrUseRepository(props: BuildSpecPipelineProps): Repository {
-
-    if (props?.existingRepositoryObj && props?.repositoryProps) {
+    if (this.props?.existingRepositoryObj && this.props?.repositoryProps) {
       throw new Error('Cannot specify both repository properties and an existing repository');
     }
 
     let repository: Repository;
 
-    if (props?.existingRepositoryObj) {
-      repository = props.existingRepositoryObj;
+    if (this.props?.existingRepositoryObj) {
+      repository = this.props.existingRepositoryObj;
 
-    } else if (props?.repositoryProps) {
-      repository = new Repository(this, 'Repository', props.repositoryProps);
-      repository.applyRemovalPolicy(props?.retainRepository ? RemovalPolicy.RETAIN : RemovalPolicy.DESTROY);
+    } else if (this.props?.repositoryProps) {
+      repository = new Repository(this, 'Repository', this.props.repositoryProps);
+      repository.applyRemovalPolicy(this.props?.retainRepository ? RemovalPolicy.RETAIN : RemovalPolicy.DESTROY);
 
     } else {
 
       repository = new Repository(this, 'Repository', {
-        repositoryName: this.getProjectName(props),
+        repositoryName: this.getProjectName(this.props),
       });
-      repository.applyRemovalPolicy(props?.retainRepository ? RemovalPolicy.RETAIN : RemovalPolicy.DESTROY);
+      repository.applyRemovalPolicy(this.props?.retainRepository ? RemovalPolicy.RETAIN : RemovalPolicy.DESTROY);
     }
 
     return repository;
   }
 
-  private createPipeline(p: BuildSpecPipelineProps) {
+  private createPipeline() {
+
     const sourceOutput = new Artifact('source');
     const sourceAction = new CodeCommitSourceAction({
       actionName: 'SourceAction',
       trigger: CodeCommitTrigger.EVENTS,
       repository: this.repository,
-      branch: p.branch,
+      branch: this.props.branch,
       output: sourceOutput,
       codeBuildCloneOutput: true,
     });
-
-    if (p.codeArtifactDomain) {
-      const codeArtifactPolicy = new PolicyStatement({
-        actions: ['codeartifact:*'],
-        resources: [
-          `arn:aws:codeartifact:${Stack.of(this).region}:${Stack.of(this).account}:package/${p.codeArtifactDomain}/*`,
-          `arn:aws:codeartifact:${Stack.of(this).region}:${Stack.of(this).account}:repository/${p.codeArtifactDomain}/*`,
-          `arn:aws:codeartifact:${Stack.of(this).region}:${Stack.of(this).account}:domain/${p.codeArtifactDomain}`,
-        ],
-        effect: Effect.ALLOW,
-      });
-
-      const codeArtifactTokenPolicyStatement = new PolicyStatement({
-        actions: ['sts:GetServiceBearerToken'],
-        resources: ['*'],
-        effect: Effect.ALLOW,
-      });
-      this.codebuildProject.addToRolePolicy(codeArtifactPolicy);
-      this.codebuildProject.addToRolePolicy(codeArtifactTokenPolicyStatement);
-    }
-
-    this.codebuildProject.addToRolePolicy(new PolicyStatement({
-      actions: ['ssm:GetParameter', 'ssm:GetParameters'],
-      resources: ['*'],
-      effect: Effect.ALLOW,
-    }));
 
     const codeBuildAction = new CodeBuildAction({
       actionName: 'BuildAction',
@@ -145,25 +193,21 @@ export class BuildSpecPipeline extends Construct {
     });
   }
 
-  private getBuildSpec(props: BuildSpecPipelineProps) {
+  private readBuildSpec(): dict {
 
-    let buildSpec: dict;
+    let buildSpec: dict = {};
 
-    if (props?.buildSpec) {
-      buildSpec = props.buildSpec;
+    if (this.props?.buildSpec) {
+      buildSpec = this.props.buildSpec;
 
-    } else if (props?.buildSpecFile) {
-      buildSpec = this.readBuildSpecFromFile(props.buildSpecFile);
+    } else if (this.props?.buildSpecFile ) { // TODO file does not exist
+      buildSpec = this.readBuildSpecFromFile(this.props.buildSpecFile);
 
-    } else {
+    } else { // TODO file does not exist
       buildSpec = this.readBuildSpecFromFile('buildspec.yml');
     }
 
-    console.log(buildSpec);
-
-    this.extendBuildSpec(buildSpec);
-
-    return BuildSpec.fromObject(buildSpec);
+    return buildSpec;
   }
 
   private readBuildSpecFromFile(file: string) {
@@ -175,16 +219,38 @@ export class BuildSpecPipeline extends Construct {
     return props.projectName ?? path.basename(process.cwd());
   }
 
-  private createCodebuildProject(p: BuildSpecPipelineProps) {
-    return new PipelineProject(this, 'PipelineProject', {
-      projectName: `${this.getProjectName(p)}-Build`,
-      buildSpec: this.getBuildSpec(p),
-      environment: p.buildEnvironment ?? {
+  private createCodebuildProject() {
+
+    if (!this.buildSpec.phases.pre_build) {
+      Object.defineProperty(this.buildSpec.phases, 'pre_build', { value: {} });
+    }
+
+    if (!this.buildSpec.phases.pre_build.commands) {
+      Object.defineProperty(this.buildSpec.phases.pre_build, 'commands', { value: [] });
+    }
+
+    this.features.forEach(feature => {
+      this.buildSpec.phases.pre_build.commands = [
+        ...feature.preBuildCommands,
+        ...this.buildSpec.phases.pre_build.commands,
+      ];
+    });
+
+    const buildProject = new PipelineProject(this, 'PipelineProject', {
+      projectName: `${this.getProjectName(this.props)}-Build`,
+      buildSpec: BuildSpec.fromObject(this.buildSpec),
+      environment: this.props.buildEnvironment ?? {
         buildImage: LinuxBuildImage.STANDARD_5_0,
         privileged: false,
       },
-      description: `CodePipeline for ${p.projectName}`,
+      description: `CodePipeline for ${this.props.projectName}`,
       timeout: Duration.hours(1),
     });
+
+    this.features.forEach(feature => {
+      feature.policyStatements.forEach(statement => buildProject.addToRolePolicy(statement));
+    });
+
+    return buildProject;
   }
 }

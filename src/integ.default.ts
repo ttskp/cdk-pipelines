@@ -6,5 +6,5 @@ const stack = new Stack(app, 'tts-cdk-pipelines-integration-test');
 
 new BuildSpecPipeline(stack, 'BuildPipelineWithProjectName', {
   projectName: 'tts-cdk-pipelines',
-  codeArtifactDomain: 'tts',
+  // codeArtifactDomain: 'tts',
 });
