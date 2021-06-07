@@ -7,6 +7,8 @@ import { CodeBuildAction, CodeCommitSourceAction, CodeCommitTrigger } from '@aws
 import { Effect, PolicyStatement } from '@aws-cdk/aws-iam';
 import { Construct, Duration, RemovalPolicy, Stack } from '@aws-cdk/core';
 import * as YAML from 'yaml';
+import { CodeArtifactFeature } from './features/codeArtifact';
+import { BuildProjectFeature } from './features/core';
 
 // type dict = { [key: string]: any };
 type dict = Record<string, any>;
@@ -29,59 +31,12 @@ export interface BuildSpecPipelineProps {
 
   readonly buildSpec?: dict;
   readonly buildSpecFile?: string;
-
-  // readonly codeArtifactDomain?: string;
 }
 
 const buildSpecPipelinePropsDefaults: BuildSpecPipelineProps = {
   retainRepository: true,
   branch: 'master',
 };
-
-export class BuildProjectFeature {
-  readonly policyStatements: Array<PolicyStatement> = [];
-  readonly preBuildCommands: Array<string> = [];
-}
-
-interface CodeArtifactFeatureProps {
-  readonly domain: string;
-  readonly repos: Record<string, string>;
-}
-
-class CodeArtifactFeature extends BuildProjectFeature {
-
-  constructor(pipeline: BuildSpecPipeline) {
-
-    super();
-
-    const params: CodeArtifactFeatureProps = pipeline.buildSpec.env?.['code-artifact'];
-
-    if (params?.domain && params?.repos) {
-      const region = Stack.of(pipeline).region;
-      const account = Stack.of(pipeline).account;
-
-      this.policyStatements.push(new PolicyStatement({
-        actions: ['codeartifact:*'],
-        resources: [
-          `arn:aws:codeartifact:${region}:${account}:package/${params.domain}/*`,
-          `arn:aws:codeartifact:${region}:${account}:repository/${params.domain}/*`,
-          `arn:aws:codeartifact:${region}:${account}:domain/${params.domain}`,
-        ],
-        effect: Effect.ALLOW,
-      }));
-
-      this.policyStatements.push(new PolicyStatement({
-        actions: ['sts:GetServiceBearerToken'],
-        resources: ['*'],
-        effect: Effect.ALLOW,
-      }));
-
-      Object.keys(params.repos).forEach(key => {
-        this.preBuildCommands.push(`aws codeartifact login --tool ${key} --repository ${params.repos[key]} --domain ${params.domain} --domain-owner ${account}`);
-      });
-    }
-  }
-}
 
 class SSMParametersFeature extends BuildProjectFeature {
 
@@ -229,10 +184,22 @@ export class BuildSpecPipeline extends Construct {
       Object.defineProperty(this.buildSpec.phases.pre_build, 'commands', { value: [] });
     }
 
+    if (!this.buildSpec.phases.post_build) {
+      Object.defineProperty(this.buildSpec.phases, 'post_build', { value: {} });
+    }
+
+    if (!this.buildSpec.phases.post_build.commands) {
+      Object.defineProperty(this.buildSpec.phases.post_build, 'commands', { value: [] });
+    }
+
     this.features.forEach(feature => {
       this.buildSpec.phases.pre_build.commands = [
         ...feature.preBuildCommands,
         ...this.buildSpec.phases.pre_build.commands,
+      ];
+      this.buildSpec.phases.post_build.commands = [
+        ...feature.postBuildCommands,
+        ...this.buildSpec.phases.post_build.commands,
       ];
     });
 

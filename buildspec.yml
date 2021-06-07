@@ -4,7 +4,8 @@ env:
   code-artifact:
     domain: tts
     repos:
-      pip: tts-pypi
+      tts-npm: [npm, jsii-npm]
+      # tts-pypi: [pip, jsii-twine]
 phases:
   install:
     runtime-versions:
@@ -14,16 +15,11 @@ phases:
   pre_build:
     commands:
       - yarn install
-      - projen
-      - projen bump
   build:
     commands:
       - projen build
   post_build:
     commands:
-      - ls -al
-      - export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain tts --domain-owner 672648692041 --query authorizationToken --output text`
-      - export TWINE_REPOSITORY_URL=`aws codeartifact get-repository-endpoint --domain tts --repository tts-pypi --format pypi --query repositoryEndpoint --output text`
-      - export TWINE_USERNAME=aws
-      - export TWINE_PASSWORD=$CODEARTIFACT_AUTH_TOKEN
-      - jsii-release-pypi
+      - projen bump
+      - echo $NPM_REGISTRY
+      - jsii-release-npm
