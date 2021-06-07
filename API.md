@@ -8,6 +8,7 @@ Name|Description
 [BuildSpecPipeline](#tts-cdk-build-pipelines-buildspecpipeline)|*No description*
 [CodeArtifactFeature](#tts-cdk-build-pipelines-codeartifactfeature)|*No description*
 [CustomExtensionPipeline](#tts-cdk-build-pipelines-customextensionpipeline)|*No description*
+[SSMParametersFeature](#tts-cdk-build-pipelines-ssmparametersfeature)|*No description*
 
 
 **Structs**
@@ -164,6 +165,26 @@ protected createCustomExtensionBuildSpec(projectName: string, distBucketName: st
 
 __Returns__:
 * <code>Map<string, any></code>
+
+
+
+## class SSMParametersFeature  <a id="tts-cdk-build-pipelines-ssmparametersfeature"></a>
+
+
+
+__Extends__: [BuildProjectFeature](#tts-cdk-build-pipelines-buildprojectfeature)
+
+### Initializer
+
+
+
+
+```ts
+new SSMParametersFeature(pipeline: BuildSpecPipeline)
+```
+
+* **pipeline** (<code>[BuildSpecPipeline](#tts-cdk-build-pipelines-buildspecpipeline)</code>)  *No description*
+
 
 
 

@@ -4,13 +4,12 @@ import { BuildEnvironment, BuildSpec, LinuxBuildImage, PipelineProject } from '@
 import { Repository, RepositoryProps } from '@aws-cdk/aws-codecommit';
 import { Artifact, Pipeline } from '@aws-cdk/aws-codepipeline';
 import { CodeBuildAction, CodeCommitSourceAction, CodeCommitTrigger } from '@aws-cdk/aws-codepipeline-actions';
-import { Effect, PolicyStatement } from '@aws-cdk/aws-iam';
-import { Construct, Duration, RemovalPolicy, Stack } from '@aws-cdk/core';
+import { Construct, Duration, RemovalPolicy } from '@aws-cdk/core';
 import * as YAML from 'yaml';
 import { CodeArtifactFeature } from './features/codeArtifact';
 import { BuildProjectFeature } from './features/core';
+import { SSMParametersFeature } from './features/ssm';
 
-// type dict = { [key: string]: any };
 type dict = Record<string, any>;
 
 /**
@@ -37,27 +36,6 @@ const buildSpecPipelinePropsDefaults: BuildSpecPipelineProps = {
   retainRepository: true,
   branch: 'master',
 };
-
-class SSMParametersFeature extends BuildProjectFeature {
-
-  constructor(pipeline: BuildSpecPipeline) {
-
-    super();
-
-    const region = Stack.of(pipeline).region;
-    const account = Stack.of(pipeline).account;
-
-    const parameters: Array<string> = Object.values(pipeline.buildSpec.env?.['parameter-store'] ?? []);
-
-    if (parameters.length > 0) {
-      this.policyStatements.push(new PolicyStatement({
-        effect: Effect.ALLOW,
-        actions: ['ssm:GetParameters', 'ssm:GetParameter'],
-        resources: parameters.map((param: string) => `arn:aws:ssm:${region}:${account}:parameter${param}`),
-      }));
-    }
-  }
-}
 
 /**
  * @summary Constructs a CodePipeline and reads build specs from '.buildspec' file.
