@@ -6,6 +6,7 @@ Name|Description
 ----|-----------
 [BuildProjectFeature](#tts-cdk-build-pipelines-buildprojectfeature)|*No description*
 [BuildSpecPipeline](#tts-cdk-build-pipelines-buildspecpipeline)|*No description*
+[CodeArtifactFeature](#tts-cdk-build-pipelines-codeartifactfeature)|*No description*
 [CustomExtensionPipeline](#tts-cdk-build-pipelines-customextensionpipeline)|*No description*
 
 
@@ -14,6 +15,7 @@ Name|Description
 Name|Description
 ----|-----------
 [BuildSpecPipelineProps](#tts-cdk-build-pipelines-buildspecpipelineprops)|*No description*
+[CodeArtifactFeatureProps](#tts-cdk-build-pipelines-codeartifactfeatureprops)|*No description*
 [CustomExtensionPipelineProps](#tts-cdk-build-pipelines-customextensionpipelineprops)|*No description*
 
 
@@ -41,6 +43,7 @@ new BuildProjectFeature()
 Name | Type | Description 
 -----|------|-------------
 **policyStatements** | <code>Array<[PolicyStatement](#aws-cdk-aws-iam-policystatement)></code> | <span></span>
+**postBuildCommands** | <code>Array<string></code> | <span></span>
 **preBuildCommands** | <code>Array<string></code> | <span></span>
 
 
@@ -87,6 +90,26 @@ Name | Type | Description
 **pipeline** | <code>[Pipeline](#aws-cdk-aws-codepipeline-pipeline)</code> | <span></span>
 **props** | <code>[BuildSpecPipelineProps](#tts-cdk-build-pipelines-buildspecpipelineprops)</code> | <span></span>
 **repository** | <code>[Repository](#aws-cdk-aws-codecommit-repository)</code> | <span></span>
+
+
+
+## class CodeArtifactFeature  <a id="tts-cdk-build-pipelines-codeartifactfeature"></a>
+
+
+
+__Extends__: [BuildProjectFeature](#tts-cdk-build-pipelines-buildprojectfeature)
+
+### Initializer
+
+
+
+
+```ts
+new CodeArtifactFeature(pipeline: BuildSpecPipeline)
+```
+
+* **pipeline** (<code>[BuildSpecPipeline](#tts-cdk-build-pipelines-buildspecpipeline)</code>)  *No description*
+
 
 
 
@@ -162,6 +185,20 @@ Name | Type | Description
 **projectName**? | <code>string</code> | __*Optional*__
 **repositoryProps**? | <code>[RepositoryProps](#aws-cdk-aws-codecommit-repositoryprops)</code> | __*Optional*__
 **retainRepository**? | <code>boolean</code> | __*Optional*__
+
+
+
+## struct CodeArtifactFeatureProps  <a id="tts-cdk-build-pipelines-codeartifactfeatureprops"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**domain** | <code>string</code> | <span></span>
+**repos** | <code>Map<string, string></code> | <span></span>
 
 
 
