@@ -1,10 +1,10 @@
 /*
-import { App, Stack } from '@aws-cdk/core';
+import { App, Stack } from 'aws-cdk-lib/core';
 import { BuildSpecPipeline } from '../src';
  */
-import '@aws-cdk/assert/jest';
-import { Repository } from '@aws-cdk/aws-codecommit';
-import { Stack } from '@aws-cdk/core';
+import 'aws-cdk-lib/assert/jest';
+import { Repository } from 'aws-cdk-lib/aws-codecommit';
+import { Stack } from 'aws-cdk-lib/core';
 
 test('create app', () => {
   /* const stack = new Stack();

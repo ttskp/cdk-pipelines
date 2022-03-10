@@ -1,6 +1,6 @@
-const { AwsCdkConstructLibrary, NpmAccess } = require('projen');
+const { awscdk } = require('projen');
 
-const project = new AwsCdkConstructLibrary({
+const project = new awscdk.AwsCdkConstructLibrary({
 
   name: 'build-pipelines',
   packageName: '@tts-cdk/build-pipelines',
@@ -14,21 +14,12 @@ const project = new AwsCdkConstructLibrary({
 
   gitignore: ['.idea/', 'cdk.out/'],
 
-  cdkVersion: '1.106.0',
-  cdkDependencies: [
-    '@aws-cdk/core',
-    '@aws-cdk/aws-codeartifact',
-    '@aws-cdk/aws-codecommit',
-    '@aws-cdk/aws-codepipeline',
-    '@aws-cdk/aws-codepipeline-actions',
-    '@aws-cdk/aws-codebuild',
-    '@aws-cdk/aws-s3',
-    '@aws-cdk/aws-iam',
-  ],
+  cdkVersion: '2.15.0',
+  cdkVersionPinning: true,
 
   bundledDeps: ['yaml'],
 
-  // cdkDependencies: undefined,        /* Which AWS CDK modules (those that start with "@aws-cdk/") does this library require when consumed? */
+  // cdkDependencies: undefined,        /* Which AWS CDK modules (those that start with "aws-cdk-lib/") does this library require when consumed? */
   // cdkTestDependencies: undefined,    /* AWS CDK modules required for testing. */
   // deps: [],                          /* Runtime dependencies of this module. */
   // description: undefined,            /* The description is just a string that helps people understand the purpose of the package. */
@@ -57,7 +48,7 @@ const project = new AwsCdkConstructLibrary({
   },
    */
 
-  npmAccess: NpmAccess.PUBLIC,
+  // npmAccess: NpmAccess.PUBLIC,
 });
 
 project.synth();

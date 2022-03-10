@@ -1,4 +1,4 @@
-import { PolicyStatement } from '@aws-cdk/aws-iam';
+import { PolicyStatement } from 'aws-cdk-lib/aws-iam';
 
 export class BuildProjectFeature {
   readonly policyStatements: Array<PolicyStatement> = [];

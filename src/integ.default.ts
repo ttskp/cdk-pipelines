@@ -1,4 +1,4 @@
-import { App, Stack } from '@aws-cdk/core';
+import { App, Stack } from 'aws-cdk-lib/core';
 import { BuildSpecPipeline } from './BuildSpecPipeline';
 
 const app = new App();

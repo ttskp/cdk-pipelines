@@ -1,5 +1,5 @@
-import { Effect, PolicyStatement } from '@aws-cdk/aws-iam';
-import { Stack } from '@aws-cdk/core';
+import { Effect, PolicyStatement } from 'aws-cdk-lib/aws-iam';
+import { Stack } from 'aws-cdk-lib/core';
 import { BuildSpecPipeline } from '../BuildSpecPipeline';
 import { BuildProjectFeature } from './core';
 
