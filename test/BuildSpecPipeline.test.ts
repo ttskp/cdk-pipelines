@@ -1,12 +1,7 @@
-/*
-import { App, Stack } from 'aws-cdk-lib/core';
-import { BuildSpecPipeline } from '../src';
- */
-import 'aws-cdk-lib/assert/jest';
 import { Repository } from 'aws-cdk-lib/aws-codecommit';
 import { Stack } from 'aws-cdk-lib/core';
 
-test('create app', () => {
+test.skip('create app', () => {
   /* const stack = new Stack();
   new BuildSpecPipeline(stack, 'TestPipeline', {});
   expect(stack).toHaveResource('AWS::CodeCommit::Repository'); */

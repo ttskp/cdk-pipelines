@@ -43,7 +43,7 @@ new BuildProjectFeature()
 
 Name | Type | Description 
 -----|------|-------------
-**policyStatements** | <code>Array<[PolicyStatement](#aws-cdk-aws-iam-policystatement)></code> | <span></span>
+**policyStatements** | <code>Array<[aws_iam.PolicyStatement](#aws-cdk-lib-aws-iam-policystatement)></code> | <span></span>
 **postBuildCommands** | <code>Array<string></code> | <span></span>
 **preBuildCommands** | <code>Array<string></code> | <span></span>
 
@@ -53,8 +53,8 @@ Name | Type | Description
 
 
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
-__Extends__: [Construct](#aws-cdk-core-construct)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
+__Extends__: [Construct](#constructs-construct)
 
 ### Initializer
 
@@ -65,17 +65,17 @@ __Extends__: [Construct](#aws-cdk-core-construct)
 new BuildSpecPipeline(scope: Construct, name: string, props?: BuildSpecPipelineProps)
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
 * **name** (<code>string</code>)  *No description*
 * **props** (<code>[BuildSpecPipelineProps](#tts-cdk-build-pipelines-buildspecpipelineprops)</code>)  *No description*
   * **branch** (<code>string</code>)  *No description* __*Optional*__
-  * **buildEnvironment** (<code>[BuildEnvironment](#aws-cdk-aws-codebuild-buildenvironment)</code>)  *No description* __*Optional*__
+  * **buildEnvironment** (<code>[aws_codebuild.BuildEnvironment](#aws-cdk-lib-aws-codebuild-buildenvironment)</code>)  *No description* __*Optional*__
   * **buildSpec** (<code>Map<string, any></code>)  *No description* __*Optional*__
   * **buildSpecFile** (<code>string</code>)  *No description* __*Optional*__
-  * **existingRepositoryObj** (<code>[Repository](#aws-cdk-aws-codecommit-repository)</code>)  *No description* __*Optional*__
+  * **existingRepositoryObj** (<code>[aws_codecommit.Repository](#aws-cdk-lib-aws-codecommit-repository)</code>)  *No description* __*Optional*__
   * **projectDescription** (<code>string</code>)  *No description* __*Optional*__
   * **projectName** (<code>string</code>)  *No description* __*Optional*__
-  * **repositoryProps** (<code>[RepositoryProps](#aws-cdk-aws-codecommit-repositoryprops)</code>)  *No description* __*Optional*__
+  * **repositoryProps** (<code>[aws_codecommit.RepositoryProps](#aws-cdk-lib-aws-codecommit-repositoryprops)</code>)  *No description* __*Optional*__
   * **retainRepository** (<code>boolean</code>)  *No description* __*Optional*__
 
 
@@ -86,11 +86,11 @@ new BuildSpecPipeline(scope: Construct, name: string, props?: BuildSpecPipelineP
 Name | Type | Description 
 -----|------|-------------
 **buildSpec** | <code>Map<string, any></code> | <span></span>
-**codebuildProject** | <code>[PipelineProject](#aws-cdk-aws-codebuild-pipelineproject)</code> | <span></span>
+**codebuildProject** | <code>[aws_codebuild.PipelineProject](#aws-cdk-lib-aws-codebuild-pipelineproject)</code> | <span></span>
 **features** | <code>Array<[BuildProjectFeature](#tts-cdk-build-pipelines-buildprojectfeature)></code> | <span></span>
-**pipeline** | <code>[Pipeline](#aws-cdk-aws-codepipeline-pipeline)</code> | <span></span>
+**pipeline** | <code>[aws_codepipeline.Pipeline](#aws-cdk-lib-aws-codepipeline-pipeline)</code> | <span></span>
 **props** | <code>[BuildSpecPipelineProps](#tts-cdk-build-pipelines-buildspecpipelineprops)</code> | <span></span>
-**repository** | <code>[Repository](#aws-cdk-aws-codecommit-repository)</code> | <span></span>
+**repository** | <code>[aws_codecommit.Repository](#aws-cdk-lib-aws-codecommit-repository)</code> | <span></span>
 
 
 
@@ -118,8 +118,8 @@ new CodeArtifactFeature(pipeline: BuildSpecPipeline)
 
 
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
-__Extends__: [Construct](#aws-cdk-core-construct)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
+__Extends__: [Construct](#constructs-construct)
 
 ### Initializer
 
@@ -130,7 +130,7 @@ __Extends__: [Construct](#aws-cdk-core-construct)
 new CustomExtensionPipeline(scope: Construct, name: string, props: CustomExtensionPipelineProps)
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
 * **name** (<code>string</code>)  *No description*
 * **props** (<code>[CustomExtensionPipelineProps](#tts-cdk-build-pipelines-customextensionpipelineprops)</code>)  *No description*
   * **codeArtifactDomain** (<code>string</code>)  *No description* 
@@ -138,11 +138,11 @@ new CustomExtensionPipeline(scope: Construct, name: string, props: CustomExtensi
   * **codeArtifactRepository** (<code>string</code>)  *No description* 
   * **distBucketName** (<code>string</code>)  *No description* 
   * **branch** (<code>string</code>)  *No description* __*Optional*__
-  * **buildEnvironment** (<code>[BuildEnvironment](#aws-cdk-aws-codebuild-buildenvironment)</code>)  *No description* __*Optional*__
-  * **existingRepositoryObj** (<code>[Repository](#aws-cdk-aws-codecommit-repository)</code>)  *No description* __*Optional*__
+  * **buildEnvironment** (<code>[aws_codebuild.BuildEnvironment](#aws-cdk-lib-aws-codebuild-buildenvironment)</code>)  *No description* __*Optional*__
+  * **existingRepositoryObj** (<code>[aws_codecommit.Repository](#aws-cdk-lib-aws-codecommit-repository)</code>)  *No description* __*Optional*__
   * **projectDescription** (<code>string</code>)  *No description* __*Optional*__
   * **projectName** (<code>string</code>)  *No description* __*Optional*__
-  * **repositoryProps** (<code>[RepositoryProps](#aws-cdk-aws-codecommit-repositoryprops)</code>)  *No description* __*Optional*__
+  * **repositoryProps** (<code>[aws_codecommit.RepositoryProps](#aws-cdk-lib-aws-codecommit-repositoryprops)</code>)  *No description* __*Optional*__
   * **retainRepository** (<code>boolean</code>)  *No description* __*Optional*__
 
 
@@ -198,13 +198,13 @@ new SSMParametersFeature(pipeline: BuildSpecPipeline)
 Name | Type | Description 
 -----|------|-------------
 **branch**? | <code>string</code> | __*Optional*__
-**buildEnvironment**? | <code>[BuildEnvironment](#aws-cdk-aws-codebuild-buildenvironment)</code> | __*Optional*__
+**buildEnvironment**? | <code>[aws_codebuild.BuildEnvironment](#aws-cdk-lib-aws-codebuild-buildenvironment)</code> | __*Optional*__
 **buildSpec**? | <code>Map<string, any></code> | __*Optional*__
 **buildSpecFile**? | <code>string</code> | __*Optional*__
-**existingRepositoryObj**? | <code>[Repository](#aws-cdk-aws-codecommit-repository)</code> | __*Optional*__
+**existingRepositoryObj**? | <code>[aws_codecommit.Repository](#aws-cdk-lib-aws-codecommit-repository)</code> | __*Optional*__
 **projectDescription**? | <code>string</code> | __*Optional*__
 **projectName**? | <code>string</code> | __*Optional*__
-**repositoryProps**? | <code>[RepositoryProps](#aws-cdk-aws-codecommit-repositoryprops)</code> | __*Optional*__
+**repositoryProps**? | <code>[aws_codecommit.RepositoryProps](#aws-cdk-lib-aws-codecommit-repositoryprops)</code> | __*Optional*__
 **retainRepository**? | <code>boolean</code> | __*Optional*__
 
 
@@ -237,11 +237,11 @@ Name | Type | Description
 **codeArtifactRepository** | <code>string</code> | <span></span>
 **distBucketName** | <code>string</code> | <span></span>
 **branch**? | <code>string</code> | __*Optional*__
-**buildEnvironment**? | <code>[BuildEnvironment](#aws-cdk-aws-codebuild-buildenvironment)</code> | __*Optional*__
-**existingRepositoryObj**? | <code>[Repository](#aws-cdk-aws-codecommit-repository)</code> | __*Optional*__
+**buildEnvironment**? | <code>[aws_codebuild.BuildEnvironment](#aws-cdk-lib-aws-codebuild-buildenvironment)</code> | __*Optional*__
+**existingRepositoryObj**? | <code>[aws_codecommit.Repository](#aws-cdk-lib-aws-codecommit-repository)</code> | __*Optional*__
 **projectDescription**? | <code>string</code> | __*Optional*__
 **projectName**? | <code>string</code> | __*Optional*__
-**repositoryProps**? | <code>[RepositoryProps](#aws-cdk-aws-codecommit-repositoryprops)</code> | __*Optional*__
+**repositoryProps**? | <code>[aws_codecommit.RepositoryProps](#aws-cdk-lib-aws-codecommit-repositoryprops)</code> | __*Optional*__
 **retainRepository**? | <code>boolean</code> | __*Optional*__
 
 
