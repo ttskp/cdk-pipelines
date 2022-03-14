@@ -12,10 +12,10 @@
 A [`CodePipeline`](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.pipelines.CodePipeline.html) for conveniently deploy across multiple stages, multiple accounts and multiple regions.
 
 Support for:
-* Deployment Stages and Targets from different sources (SSM parameters, AWS Organization)
-* Additional Trigger
-* Idempotent Stack deployment (similar to StackSets)
-* Auto Approve/Reject of manual approval actions based on git-tags or conventional commits
+* [![Status badge](https://img.shields.io/badge/Status-InProgress-yellow.svg)](https://shields.io/) Deployment Stages and Targets from different sources (SSM parameters, AWS Organization)
+* [![Status badge](https://img.shields.io/badge/Status-Idea-yellow.svg)](https://shields.io/) Additional Trigger
+* [![Status badge](https://img.shields.io/badge/Status-Idea-yellow.svg)](https://shields.io/) Idempotent Stack deployment (similar to StackSets)
+* [![Status badge](https://img.shields.io/badge/Status-Idea-yellow.svg)](https://shields.io/) Auto Approve/Reject of manual approval actions based on git-tags or conventional commits
 
 ### `PackerBuildPipeline`
 [![Status badge](https://img.shields.io/badge/Status-Idea-yellow.svg)](https://shields.io/)
