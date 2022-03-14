@@ -7,7 +7,7 @@
 ## Pipeline Constructs
 
 ### `MultiDeployCodePipeline`
-[![Status badge](https://img.shields.io/badge/Status-Idea-yellow.svg)](https://shields.io/)
+[![Status badge](https://img.shields.io/badge/Status-InProgress-yellow.svg)](https://shields.io/)
 
 A [`CodePipeline`](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.pipelines.CodePipeline.html) for conveniently deploy across multiple stages, multiple accounts and multiple regions.
 

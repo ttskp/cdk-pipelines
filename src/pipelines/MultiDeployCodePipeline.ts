@@ -47,5 +47,7 @@ export class MultiDeployCodePipeline extends CodePipeline {
         }, stage.stackFactory));
       });
     });
+
+    super.doBuildPipeline();
   }
 }
