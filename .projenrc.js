@@ -7,14 +7,14 @@ const project = new awscdk.AwsCdkConstructLibrary({
 
   author: 'WolfAn',
   authorAddress: 'andre.wolf@tt-s.com',
-  // authorOrganization: 'tts Knowledge Products GmbH',
+  authorOrganization: 'tts Knowledge Products GmbH',
 
   repositoryUrl: 'https://github.com/ttskp/cdk-pipelines.git',
   defaultReleaseBranch: 'main',
 
   gitignore: ['.idea/', 'cdk.out/'],
 
-  cdkVersion: '2.15.0',
+  cdkVersion: '2.16.0',
   cdkVersionPinning: true,
 
   bundledDeps: ['yaml'],

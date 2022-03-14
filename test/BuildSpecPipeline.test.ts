@@ -1,5 +1,5 @@
 import { Repository } from 'aws-cdk-lib/aws-codecommit';
-import { Stack } from 'aws-cdk-lib/core';
+import { Stack } from 'aws-cdk-lib';
 
 test.skip('create app', () => {
   /* const stack = new Stack();
