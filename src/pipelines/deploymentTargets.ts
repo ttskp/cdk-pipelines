@@ -13,7 +13,7 @@ export interface DeploymentTarget {
 export interface DeploymentStage {
   readonly name: string;
   readonly targets: DeploymentTargetsProvider;
-  readonly stackFactory: StackFactory,
+  readonly stackFactory: StackFactory;
   readonly requireManualApproval?: boolean;
 }
 

@@ -21,6 +21,3 @@ dist
 tsconfig.tsbuildinfo
 /.eslintrc.json
 !.jsii
-test/integration/buildSpec.integ.snapshot
-test/integration/.tmp
-test/integration/multiDeploy.integ.snapshot

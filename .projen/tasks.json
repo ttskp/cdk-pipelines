@@ -129,144 +129,6 @@
         }
       ]
     },
-    "integ:buildSpec:assert": {
-      "name": "integ:buildSpec:assert",
-      "description": "assert the snapshot of integration test 'buildSpec'",
-      "steps": [
-        {
-          "exec": "[ -d \"test/integration/buildSpec.integ.snapshot\" ] || (echo \"No snapshot available for integration test 'buildSpec'. Run 'projen integ:buildSpec:deploy' to capture.\" && exit 1)"
-        },
-        {
-          "exec": "cdk synth --app \"ts-node -P tsconfig.dev.json test/integration/buildSpec.integ.ts\" --no-version-reporting --no-asset-metadata --no-path-metadata -o test/integration/.tmp/buildSpec.integ/assert.cdk.out > /dev/null"
-        },
-        {
-          "exec": "diff -r -x asset.* -x cdk.out -x manifest.json -x tree.json test/integration/buildSpec.integ.snapshot/ test/integration/.tmp/buildSpec.integ/assert.cdk.out/"
-        }
-      ]
-    },
-    "integ:buildSpec:deploy": {
-      "name": "integ:buildSpec:deploy",
-      "description": "deploy integration test 'buildSpec' and capture snapshot",
-      "steps": [
-        {
-          "exec": "rm -fr test/integration/.tmp/buildSpec.integ/deploy.cdk.out"
-        },
-        {
-          "exec": "cdk deploy --app \"ts-node -P tsconfig.dev.json test/integration/buildSpec.integ.ts\" --no-version-reporting --no-asset-metadata --no-path-metadata '**' --require-approval=never -o test/integration/.tmp/buildSpec.integ/deploy.cdk.out"
-        },
-        {
-          "exec": "rm -fr test/integration/buildSpec.integ.snapshot"
-        },
-        {
-          "exec": "mv test/integration/.tmp/buildSpec.integ/deploy.cdk.out test/integration/buildSpec.integ.snapshot"
-        },
-        {
-          "spawn": "integ:buildSpec:destroy"
-        }
-      ]
-    },
-    "integ:buildSpec:destroy": {
-      "name": "integ:buildSpec:destroy",
-      "description": "destroy integration test 'buildSpec'",
-      "steps": [
-        {
-          "exec": "cdk destroy --app test/integration/buildSpec.integ.snapshot '**' --no-version-reporting"
-        }
-      ]
-    },
-    "integ:buildSpec:snapshot": {
-      "name": "integ:buildSpec:snapshot",
-      "description": "update snapshot for integration test \"buildSpec\"",
-      "steps": [
-        {
-          "exec": "cdk synth --app \"ts-node -P tsconfig.dev.json test/integration/buildSpec.integ.ts\" --no-version-reporting --no-asset-metadata --no-path-metadata -o test/integration/buildSpec.integ.snapshot > /dev/null"
-        }
-      ]
-    },
-    "integ:buildSpec:watch": {
-      "name": "integ:buildSpec:watch",
-      "description": "watch integration test 'buildSpec' (without updating snapshots)",
-      "steps": [
-        {
-          "exec": "cdk watch --app \"ts-node -P tsconfig.dev.json test/integration/buildSpec.integ.ts\" --no-version-reporting --no-asset-metadata --no-path-metadata '**' -o test/integration/.tmp/buildSpec.integ/deploy.cdk.out"
-        }
-      ]
-    },
-    "integ:multiDeploy:assert": {
-      "name": "integ:multiDeploy:assert",
-      "description": "assert the snapshot of integration test 'multiDeploy'",
-      "steps": [
-        {
-          "exec": "[ -d \"test/integration/multiDeploy.integ.snapshot\" ] || (echo \"No snapshot available for integration test 'multiDeploy'. Run 'projen integ:multiDeploy:deploy' to capture.\" && exit 1)"
-        },
-        {
-          "exec": "cdk synth --app \"ts-node -P tsconfig.dev.json test/integration/multiDeploy.integ.ts\" --no-version-reporting --no-asset-metadata --no-path-metadata -o test/integration/.tmp/multiDeploy.integ/assert.cdk.out > /dev/null"
-        },
-        {
-          "exec": "diff -r -x asset.* -x cdk.out -x manifest.json -x tree.json test/integration/multiDeploy.integ.snapshot/ test/integration/.tmp/multiDeploy.integ/assert.cdk.out/"
-        }
-      ]
-    },
-    "integ:multiDeploy:deploy": {
-      "name": "integ:multiDeploy:deploy",
-      "description": "deploy integration test 'multiDeploy' and capture snapshot",
-      "steps": [
-        {
-          "exec": "rm -fr test/integration/.tmp/multiDeploy.integ/deploy.cdk.out"
-        },
-        {
-          "exec": "cdk deploy --app \"ts-node -P tsconfig.dev.json test/integration/multiDeploy.integ.ts\" --no-version-reporting --no-asset-metadata --no-path-metadata '**' --require-approval=never -o test/integration/.tmp/multiDeploy.integ/deploy.cdk.out"
-        },
-        {
-          "exec": "rm -fr test/integration/multiDeploy.integ.snapshot"
-        },
-        {
-          "exec": "mv test/integration/.tmp/multiDeploy.integ/deploy.cdk.out test/integration/multiDeploy.integ.snapshot"
-        },
-        {
-          "spawn": "integ:multiDeploy:destroy"
-        }
-      ]
-    },
-    "integ:multiDeploy:destroy": {
-      "name": "integ:multiDeploy:destroy",
-      "description": "destroy integration test 'multiDeploy'",
-      "steps": [
-        {
-          "exec": "cdk destroy --app test/integration/multiDeploy.integ.snapshot '**' --no-version-reporting"
-        }
-      ]
-    },
-    "integ:multiDeploy:snapshot": {
-      "name": "integ:multiDeploy:snapshot",
-      "description": "update snapshot for integration test \"multiDeploy\"",
-      "steps": [
-        {
-          "exec": "cdk synth --app \"ts-node -P tsconfig.dev.json test/integration/multiDeploy.integ.ts\" --no-version-reporting --no-asset-metadata --no-path-metadata -o test/integration/multiDeploy.integ.snapshot > /dev/null"
-        }
-      ]
-    },
-    "integ:multiDeploy:watch": {
-      "name": "integ:multiDeploy:watch",
-      "description": "watch integration test 'multiDeploy' (without updating snapshots)",
-      "steps": [
-        {
-          "exec": "cdk watch --app \"ts-node -P tsconfig.dev.json test/integration/multiDeploy.integ.ts\" --no-version-reporting --no-asset-metadata --no-path-metadata '**' -o test/integration/.tmp/multiDeploy.integ/deploy.cdk.out"
-        }
-      ]
-    },
-    "integ:snapshot-all": {
-      "name": "integ:snapshot-all",
-      "description": "update snapshot for all integration tests",
-      "steps": [
-        {
-          "spawn": "integ:buildSpec:snapshot"
-        },
-        {
-          "spawn": "integ:multiDeploy:snapshot"
-        }
-      ]
-    },
     "package": {
       "name": "package",
       "description": "Creates the distribution package",
@@ -347,12 +209,6 @@
         },
         {
           "spawn": "eslint"
-        },
-        {
-          "spawn": "integ:buildSpec:assert"
-        },
-        {
-          "spawn": "integ:multiDeploy:assert"
         }
       ]
     },
@@ -415,7 +271,7 @@
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk-lib aws-cdk constructs eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii jsii-diff jsii-docgen json-schema npm-check-updates standard-version ts-jest ts-node typescript yaml aws-cdk-lib constructs"
+          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk-lib constructs eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii jsii-diff jsii-docgen json-schema npm-check-updates standard-version ts-jest typescript yaml aws-cdk-lib constructs"
         },
         {
           "exec": "npx projen"

@@ -1,11 +1,11 @@
 import { App, Stack, StackProps } from "aws-cdk-lib";
 import { Topic } from "aws-cdk-lib/aws-sns";
 import { Construct } from "constructs";
-import { MultiDeployCodePipeline } from "../../src/pipelines/MultiDeployCodePipeline"
-import { SynthProfiles } from "../../src/pipelines/synthProfiles"
-import { DeploymentTargetsSource } from "../../src/pipelines/deploymentTargets"
+import { MultiDeployCodePipeline } from "../src/pipelines/MultiDeployCodePipeline"
+import { SynthProfiles } from "../src/pipelines/synthProfiles"
+import { DeploymentTargetsSource } from "../src/pipelines/deploymentTargets"
 
-// cdk --app "npx ts-node test/integration/multiDeploy.integ.ts" synth
+// cdk --app "npx ts-node examples/multiDeploy.integ.ts" synth
 
 const app = new App();
 
