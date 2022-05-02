@@ -1,7 +1,7 @@
 import { Stack } from 'aws-cdk-lib';
 import { Effect, PolicyStatement } from 'aws-cdk-lib/aws-iam';
+import { BuildProjectFeature } from '.';
 import { BuildSpecPipeline } from '../BuildSpecPipeline';
-import { BuildProjectFeature } from './core';
 
 function stamp(template: string, params: Record<string, string>) {
   // @ts-ignore
@@ -86,4 +86,3 @@ export class CodeArtifactFeature extends BuildProjectFeature {
     }
   }
 }
-

@@ -1,7 +1,7 @@
 import { Stack } from 'aws-cdk-lib';
 import { Effect, PolicyStatement } from 'aws-cdk-lib/aws-iam';
+import { BuildProjectFeature } from './model';
 import { BuildSpecPipeline } from '../BuildSpecPipeline';
-import { BuildProjectFeature } from './core';
 
 export class SSMParametersFeature extends BuildProjectFeature {
 

@@ -2,7 +2,7 @@ import { BuildEnvironment } from 'aws-cdk-lib/aws-codebuild';
 import { Repository, RepositoryProps } from 'aws-cdk-lib/aws-codecommit';
 import { Effect, PolicyStatement } from 'aws-cdk-lib/aws-iam';
 import { Construct } from 'constructs';
-import { BuildSpecPipeline } from './BuildSpecPipeline';
+import { BuildSpecPipeline } from './pipelines';
 
 type dict = { [key: string]: any };
 

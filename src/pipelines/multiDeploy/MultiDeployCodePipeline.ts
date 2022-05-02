@@ -1,10 +1,12 @@
 import { Stage, StageProps } from 'aws-cdk-lib';
 import { CodePipeline, CodePipelineProps, ManualApprovalStep } from 'aws-cdk-lib/pipelines';
 import { Construct } from 'constructs';
+import { CodePipelineMixin } from '../../mixins';
 import { DeploymentStage, StackFactory } from './deploymentTargets';
 
 export interface MultiDeployCodePipelineProps extends CodePipelineProps {
   readonly deploymentStages: DeploymentStage[];
+  readonly mixins?: CodePipelineMixin[];
 }
 
 export class StackFactoryApplicationStage extends Stage {
@@ -48,6 +50,8 @@ export class MultiDeployCodePipeline extends CodePipeline {
       });
     });
 
+    this.mdcProps.mixins?.forEach(mixin => { mixin.preDoBuildPipeline(this)})
     super.doBuildPipeline();
+    this.mdcProps.mixins?.forEach(mixin => { mixin.postDoBuildPipeline(this)})
   }
 }

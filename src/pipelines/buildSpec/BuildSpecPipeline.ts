@@ -1,14 +1,14 @@
-import * as fs from 'fs';
-import * as path from 'path';
 import { Duration, RemovalPolicy } from 'aws-cdk-lib';
 import { BuildEnvironment, BuildSpec, LinuxBuildImage, PipelineProject } from 'aws-cdk-lib/aws-codebuild';
 import { Repository, RepositoryProps } from 'aws-cdk-lib/aws-codecommit';
 import { Artifact, Pipeline } from 'aws-cdk-lib/aws-codepipeline';
 import { CodeBuildAction, CodeCommitSourceAction, CodeCommitTrigger } from 'aws-cdk-lib/aws-codepipeline-actions';
 import { Construct } from 'constructs';
+import * as fs from 'fs';
+import * as path from 'path';
 import * as YAML from 'yaml';
+import { BuildProjectFeature } from './features';
 import { CodeArtifactFeature } from './features/codeArtifact';
-import { BuildProjectFeature } from './features/core';
 import { SSMParametersFeature } from './features/ssm';
 
 type dict = Record<string, any>;
