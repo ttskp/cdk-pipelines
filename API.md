@@ -521,23 +521,18 @@ __Returns__:
 ### Methods
 
 
-#### create(scope, props) <a id="tts-cdk-build-pipelines-istackfactory-create"></a>
+#### create(scope, env) <a id="tts-cdk-build-pipelines-istackfactory-create"></a>
 
 
 
 ```ts
-create(scope: Construct, props: StackProps): void
+create(scope: Construct, env: Environment): void
 ```
 
 * **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **props** (<code>[StackProps](#aws-cdk-lib-stackprops)</code>)  *No description*
-  * **analyticsReporting** (<code>boolean</code>)  Include runtime versioning information in this Stack. __*Default*__: `analyticsReporting` setting of containing `App`, or value of 'aws:cdk:version-reporting' context key
-  * **description** (<code>string</code>)  A description of the stack. __*Default*__: No description.
-  * **env** (<code>[Environment](#aws-cdk-lib-environment)</code>)  The AWS environment (account/region) where this stack will be deployed. __*Default*__: The environment of the containing `Stage` if available, otherwise create the stack will be environment-agnostic.
-  * **stackName** (<code>string</code>)  Name to deploy the stack with. __*Default*__: Derived from construct path.
-  * **synthesizer** (<code>[IStackSynthesizer](#aws-cdk-lib-istacksynthesizer)</code>)  Synthesis method to use while deploying this stack. __*Default*__: `DefaultStackSynthesizer` if the `@aws-cdk/core:newStyleStackSynthesis` feature flag is set, `LegacyStackSynthesizer` otherwise.
-  * **tags** (<code>Map<string, string></code>)  Stack tags that will be applied to all the taggable resources and the stack itself. __*Default*__: {}
-  * **terminationProtection** (<code>boolean</code>)  Whether to enable termination protection for this stack. __*Default*__: false
+* **env** (<code>[Environment](#aws-cdk-lib-environment)</code>)  *No description*
+  * **account** (<code>string</code>)  The AWS account ID for this environment. __*Default*__: Aws.accountId which means that the stack will be account-agnostic.
+  * **region** (<code>string</code>)  The AWS region for this environment. __*Default*__: Aws.region which means that the stack will be region-agnostic.
 
 
 

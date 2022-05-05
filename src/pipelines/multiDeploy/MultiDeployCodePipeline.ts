@@ -12,7 +12,7 @@ export interface MultiDeployCodePipelineProps extends CodePipelineProps {
 export class StackFactoryApplicationStage extends Stage {
   constructor(scope: Construct, id: string, props: StageProps, stackFactory: IStackFactory) {
     super(scope, id, props);
-    stackFactory.create(this, { env: props.env! });
+    stackFactory.create(this, props.env!);
   }
 }
 

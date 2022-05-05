@@ -1,4 +1,4 @@
-import { App, Stack, StackProps } from 'aws-cdk-lib';
+import { App, Environment, Stack, StackProps } from 'aws-cdk-lib';
 import { Topic } from 'aws-cdk-lib/aws-sns';
 import { CodePipelineSource } from 'aws-cdk-lib/pipelines';
 import { Construct } from 'constructs';
@@ -37,16 +37,16 @@ new MultiDeployCodePipeline(stack, 'MultiDeployCodePipeline', {
     name: 'dev',
     targets: DeploymentTargetsSource.ssmParameter(DEV),
     stackFactory: new (class implements IStackFactory {
-      create(scope: Construct, props: StackProps): void {
-        new AppStack(scope, 'test-multi-deploy', props);
+      create(scope: Construct, env: Environment): void {
+        new AppStack(scope, 'test-multi-deploy', { env });
       }
     })(),
   }, {
     name: 'prod',
     targets: DeploymentTargetsSource.ssmParameter(PROD),
     stackFactory: new (class implements IStackFactory {
-      create(scope: Construct, props: StackProps): void {
-        new AppStack(scope, 'test-multi-deploy', props);
+      create(scope: Construct, env: Environment): void {
+        new AppStack(scope, 'test-multi-deploy', { env });
       }
     })(),
   }],
