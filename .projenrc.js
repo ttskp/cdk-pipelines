@@ -14,11 +14,13 @@ const project = new awscdk.AwsCdkConstructLibrary({
 
   gitignore: ['.idea/', 'cdk.out/', 'cdk.context.json'],
 
-  cdkVersion: '2.22.0',
+  cdkVersion: '2.23.0',
   cdkVersionPinning: true,
 
   bundledDeps: ['yaml'],
   devDeps: ['ts-node'],
+
+  dependabot: true,
 
   // cdkDependencies: undefined,        /* Which AWS CDK modules (those that start with "aws-cdk-lib/") does this library require when consumed? */
   // cdkTestDependencies: undefined,    /* AWS CDK modules required for testing. */

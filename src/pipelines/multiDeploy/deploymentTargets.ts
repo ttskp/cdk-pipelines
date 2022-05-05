@@ -1,33 +1,44 @@
-import { ContextProvider, Environment } from 'aws-cdk-lib';
+import { ContextProvider, StackProps } from 'aws-cdk-lib';
 import { ContextProvider as CXSchema } from 'aws-cdk-lib/cloud-assembly-schema';
 import { Construct } from 'constructs';
 
-type DeploymentTargetsProvider = (scope: Construct) => DeploymentTarget[];
-export type StackFactory = (scope: Construct, env: Environment) => void;
-
 export interface DeploymentTarget {
-  account: string;
-  region: string;
+  readonly account: string;
+  readonly region: string;
+}
+
+export interface IDeploymentTargetsProvider {
+  provide(scope: Construct): DeploymentTarget[];
+}
+
+export interface IStackFactory {
+  create(scope: Construct, props: StackProps): void;
 }
 
 export interface DeploymentStage {
   readonly name: string;
-  readonly targets: DeploymentTargetsProvider;
-  readonly stackFactory: StackFactory;
+  readonly targets: IDeploymentTargetsProvider;
+  readonly stackFactory: IStackFactory;
   readonly requireManualApproval?: boolean;
 }
 
-export class DeploymentTargetsSource {
+export abstract class DeploymentTargetsSource {
 
-  public static staticValue(targets: DeploymentTarget[]): DeploymentTargetsProvider {
-    return () => targets;
+  public static staticValue(targets: DeploymentTarget[]): IDeploymentTargetsProvider {
+    return new (class DeploymentTargetsProvider {
+      provide(): DeploymentTarget[] {
+        return targets;
+      }
+    })();
   }
 
-  public static ssmParameter(name: string): DeploymentTargetsProvider {
-    return (scope: Construct) => {
-      let parameterValue = DeploymentTargetsSource.ssmStringParameterLookupWithDefaultValue(scope, name, '[]');
-      return JSON.parse(parameterValue) as DeploymentTarget[];
-    };
+  public static ssmParameter(name: string): IDeploymentTargetsProvider {
+    return new (class DeploymentTargetsProvider {
+      provide(scope: Construct) {
+        let parameterValue = DeploymentTargetsSource.ssmStringParameterLookupWithDefaultValue(scope, name, '[]');
+        return JSON.parse(parameterValue) as DeploymentTarget[];
+      }
+    })();
   }
 
   private static ssmStringParameterLookupWithDefaultValue(scope: Construct, name: string, defaultValue: string): string {

@@ -4,11 +4,17 @@
 
 Name|Description
 ----|-----------
+[AdditionalTrigger](#tts-cdk-build-pipelines-additionaltrigger)|*No description*
 [BuildProjectFeature](#tts-cdk-build-pipelines-buildprojectfeature)|*No description*
 [BuildSpecPipeline](#tts-cdk-build-pipelines-buildspecpipeline)|*No description*
 [CodeArtifactFeature](#tts-cdk-build-pipelines-codeartifactfeature)|*No description*
-[CustomExtensionPipeline](#tts-cdk-build-pipelines-customextensionpipeline)|*No description*
+[CodePipelineMixin](#tts-cdk-build-pipelines-codepipelinemixin)|*No description*
+[DeploymentTargetsSource](#tts-cdk-build-pipelines-deploymenttargetssource)|*No description*
+[MultiDeployCodePipeline](#tts-cdk-build-pipelines-multideploycodepipeline)|*No description*
 [SSMParametersFeature](#tts-cdk-build-pipelines-ssmparametersfeature)|*No description*
+[StackFactoryApplicationStage](#tts-cdk-build-pipelines-stackfactoryapplicationstage)|*No description*
+[SynthCommands](#tts-cdk-build-pipelines-synthcommands)|*No description*
+[SynthProfiles](#tts-cdk-build-pipelines-synthprofiles)|*No description*
 
 
 **Structs**
@@ -17,7 +23,51 @@ Name|Description
 ----|-----------
 [BuildSpecPipelineProps](#tts-cdk-build-pipelines-buildspecpipelineprops)|*No description*
 [CodeArtifactFeatureProps](#tts-cdk-build-pipelines-codeartifactfeatureprops)|*No description*
-[CustomExtensionPipelineProps](#tts-cdk-build-pipelines-customextensionpipelineprops)|*No description*
+[DeploymentStage](#tts-cdk-build-pipelines-deploymentstage)|*No description*
+[DeploymentTarget](#tts-cdk-build-pipelines-deploymenttarget)|*No description*
+[MultiDeployCodePipelineProps](#tts-cdk-build-pipelines-multideploycodepipelineprops)|*No description*
+
+
+**Interfaces**
+
+Name|Description
+----|-----------
+[IDeploymentTargetsProvider](#tts-cdk-build-pipelines-ideploymenttargetsprovider)|*No description*
+[IStackFactory](#tts-cdk-build-pipelines-istackfactory)|*No description*
+
+
+
+## class AdditionalTrigger  <a id="tts-cdk-build-pipelines-additionaltrigger"></a>
+
+
+
+
+### Initializer
+
+
+
+
+```ts
+new AdditionalTrigger()
+```
+
+
+
+### Methods
+
+
+#### *static* ssmParameterChange(...parameterNames) <a id="tts-cdk-build-pipelines-additionaltrigger-ssmparameterchange"></a>
+
+
+
+```ts
+static ssmParameterChange(...parameterNames: string[]): CodePipelineMixin
+```
+
+* **parameterNames** (<code>string</code>)  *No description*
+
+__Returns__:
+* <code>[CodePipelineMixin](#tts-cdk-build-pipelines-codepipelinemixin)</code>
 
 
 
@@ -114,12 +164,11 @@ new CodeArtifactFeature(pipeline: BuildSpecPipeline)
 
 
 
-## class CustomExtensionPipeline  <a id="tts-cdk-build-pipelines-customextensionpipeline"></a>
+## class CodePipelineMixin  <a id="tts-cdk-build-pipelines-codepipelinemixin"></a>
 
 
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
-__Extends__: [Construct](#constructs-construct)
+__Obtainable from__: [AdditionalTrigger](#tts-cdk-build-pipelines-additionaltrigger).[ssmParameterChange](#tts-cdk-build-pipelines-additionaltrigger#tts-cdk-build-pipelines-additionaltrigger-ssmparameterchange)()
 
 ### Initializer
 
@@ -127,44 +176,149 @@ __Extends__: [Construct](#constructs-construct)
 
 
 ```ts
-new CustomExtensionPipeline(scope: Construct, name: string, props: CustomExtensionPipelineProps)
+new CodePipelineMixin()
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **name** (<code>string</code>)  *No description*
-* **props** (<code>[CustomExtensionPipelineProps](#tts-cdk-build-pipelines-customextensionpipelineprops)</code>)  *No description*
-  * **codeArtifactDomain** (<code>string</code>)  *No description* 
-  * **codeArtifactDomainOwner** (<code>string</code>)  *No description* 
-  * **codeArtifactRepository** (<code>string</code>)  *No description* 
-  * **distBucketName** (<code>string</code>)  *No description* 
-  * **branch** (<code>string</code>)  *No description* __*Optional*__
-  * **buildEnvironment** (<code>[aws_codebuild.BuildEnvironment](#aws-cdk-lib-aws-codebuild-buildenvironment)</code>)  *No description* __*Optional*__
-  * **existingRepositoryObj** (<code>[aws_codecommit.Repository](#aws-cdk-lib-aws-codecommit-repository)</code>)  *No description* __*Optional*__
-  * **projectDescription** (<code>string</code>)  *No description* __*Optional*__
-  * **projectName** (<code>string</code>)  *No description* __*Optional*__
-  * **repositoryProps** (<code>[aws_codecommit.RepositoryProps](#aws-cdk-lib-aws-codecommit-repositoryprops)</code>)  *No description* __*Optional*__
-  * **retainRepository** (<code>boolean</code>)  *No description* __*Optional*__
 
 
 ### Methods
 
 
-#### protected createCustomExtensionBuildSpec(projectName, distBucketName, codeArtifactRepository, codeArtifactDomain, codeArtifactDomainOwner) <a id="tts-cdk-build-pipelines-customextensionpipeline-createcustomextensionbuildspec"></a>
+#### postDoBuildPipeline(_codePipeline) <a id="tts-cdk-build-pipelines-codepipelinemixin-postdobuildpipeline"></a>
 
 
 
 ```ts
-protected createCustomExtensionBuildSpec(projectName: string, distBucketName: string, codeArtifactRepository: string, codeArtifactDomain: string, codeArtifactDomainOwner: string): Map<string, any>
+postDoBuildPipeline(_codePipeline: CodePipeline): void
 ```
 
-* **projectName** (<code>string</code>)  *No description*
-* **distBucketName** (<code>string</code>)  *No description*
-* **codeArtifactRepository** (<code>string</code>)  *No description*
-* **codeArtifactDomain** (<code>string</code>)  *No description*
-* **codeArtifactDomainOwner** (<code>string</code>)  *No description*
+* **_codePipeline** (<code>[pipelines.CodePipeline](#aws-cdk-lib-pipelines-codepipeline)</code>)  *No description*
+
+
+
+
+#### preDoBuildPipeline(_codePipeline) <a id="tts-cdk-build-pipelines-codepipelinemixin-predobuildpipeline"></a>
+
+
+
+```ts
+preDoBuildPipeline(_codePipeline: CodePipeline): void
+```
+
+* **_codePipeline** (<code>[pipelines.CodePipeline](#aws-cdk-lib-pipelines-codepipeline)</code>)  *No description*
+
+
+
+
+
+
+## class DeploymentTargetsSource  <a id="tts-cdk-build-pipelines-deploymenttargetssource"></a>
+
+
+
+
+### Initializer
+
+
+
+
+```ts
+new DeploymentTargetsSource()
+```
+
+
+
+### Methods
+
+
+#### *static* ssmParameter(name) <a id="tts-cdk-build-pipelines-deploymenttargetssource-ssmparameter"></a>
+
+
+
+```ts
+static ssmParameter(name: string): IDeploymentTargetsProvider
+```
+
+* **name** (<code>string</code>)  *No description*
 
 __Returns__:
-* <code>Map<string, any></code>
+* <code>[IDeploymentTargetsProvider](#tts-cdk-build-pipelines-ideploymenttargetsprovider)</code>
+
+#### *static* staticValue(targets) <a id="tts-cdk-build-pipelines-deploymenttargetssource-staticvalue"></a>
+
+
+
+```ts
+static staticValue(targets: Array<DeploymentTarget>): IDeploymentTargetsProvider
+```
+
+* **targets** (<code>Array<[DeploymentTarget](#tts-cdk-build-pipelines-deploymenttarget)></code>)  *No description*
+
+__Returns__:
+* <code>[IDeploymentTargetsProvider](#tts-cdk-build-pipelines-ideploymenttargetsprovider)</code>
+
+
+
+## class MultiDeployCodePipeline  <a id="tts-cdk-build-pipelines-multideploycodepipeline"></a>
+
+
+
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
+__Extends__: [pipelines.CodePipeline](#aws-cdk-lib-pipelines-codepipeline)
+
+### Initializer
+
+
+
+
+```ts
+new MultiDeployCodePipeline(scope: Construct, id: string, props: MultiDeployCodePipelineProps)
+```
+
+* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
+* **id** (<code>string</code>)  *No description*
+* **props** (<code>[MultiDeployCodePipelineProps](#tts-cdk-build-pipelines-multideploycodepipelineprops)</code>)  *No description*
+  * **synth** (<code>[pipelines.IFileSetProducer](#aws-cdk-lib-pipelines-ifilesetproducer)</code>)  The build step that produces the CDK Cloud Assembly. 
+  * **assetPublishingCodeBuildDefaults** (<code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code>)  Additional customizations to apply to the asset publishing CodeBuild projects. __*Default*__: Only `codeBuildDefaults` are applied
+  * **cliVersion** (<code>string</code>)  CDK CLI version to use in self-mutation and asset publishing steps. __*Default*__: Latest version
+  * **codeBuildDefaults** (<code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code>)  Customize the CodeBuild projects created for this pipeline. __*Default*__: All projects run non-privileged build, SMALL instance, LinuxBuildImage.STANDARD_5_0
+  * **codePipeline** (<code>[aws_codepipeline.Pipeline](#aws-cdk-lib-aws-codepipeline-pipeline)</code>)  An existing Pipeline to be reused and built upon. __*Default*__: a new underlying pipeline is created.
+  * **crossAccountKeys** (<code>boolean</code>)  Create KMS keys for the artifact buckets, allowing cross-account deployments. __*Default*__: false
+  * **dockerCredentials** (<code>Array<[pipelines.DockerCredential](#aws-cdk-lib-pipelines-dockercredential)></code>)  A list of credentials used to authenticate to Docker registries. __*Default*__: []
+  * **dockerEnabledForSelfMutation** (<code>boolean</code>)  Enable Docker for the self-mutate step. __*Default*__: false
+  * **dockerEnabledForSynth** (<code>boolean</code>)  Enable Docker for the 'synth' step. __*Default*__: false
+  * **pipelineName** (<code>string</code>)  The name of the CodePipeline pipeline. __*Default*__: Automatically generated
+  * **publishAssetsInParallel** (<code>boolean</code>)  Publish assets in multiple CodeBuild projects. __*Default*__: true
+  * **reuseCrossRegionSupportStacks** (<code>boolean</code>)  Reuse the same cross region support stack for all pipelines in the App. __*Default*__: true (Use the same support stack for all pipelines in App)
+  * **selfMutation** (<code>boolean</code>)  Whether the pipeline will update itself. __*Default*__: true
+  * **selfMutationCodeBuildDefaults** (<code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code>)  Additional customizations to apply to the self mutation CodeBuild projects. __*Default*__: Only `codeBuildDefaults` are applied
+  * **synthCodeBuildDefaults** (<code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code>)  Additional customizations to apply to the synthesize CodeBuild projects. __*Default*__: Only `codeBuildDefaults` are applied
+  * **deploymentStages** (<code>Array<[DeploymentStage](#tts-cdk-build-pipelines-deploymentstage)></code>)  *No description* 
+  * **mixins** (<code>Array<[CodePipelineMixin](#tts-cdk-build-pipelines-codepipelinemixin)></code>)  *No description* __*Optional*__
+
+
+
+### Properties
+
+
+Name | Type | Description 
+-----|------|-------------
+**mdcProps** | <code>[MultiDeployCodePipelineProps](#tts-cdk-build-pipelines-multideploycodepipelineprops)</code> | <span></span>
+
+### Methods
+
+
+#### protected doBuildPipeline() <a id="tts-cdk-build-pipelines-multideploycodepipeline-dobuildpipeline"></a>
+
+Implemented by subclasses to do the actual pipeline construction.
+
+```ts
+protected doBuildPipeline(): void
+```
+
+
+
+
 
 
 
@@ -185,6 +339,90 @@ new SSMParametersFeature(pipeline: BuildSpecPipeline)
 
 * **pipeline** (<code>[BuildSpecPipeline](#tts-cdk-build-pipelines-buildspecpipeline)</code>)  *No description*
 
+
+
+
+## class StackFactoryApplicationStage  <a id="tts-cdk-build-pipelines-stackfactoryapplicationstage"></a>
+
+
+
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
+__Extends__: [Stage](#aws-cdk-lib-stage)
+
+### Initializer
+
+
+
+
+```ts
+new StackFactoryApplicationStage(scope: Construct, id: string, props: StageProps, stackFactory: IStackFactory)
+```
+
+* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
+* **id** (<code>string</code>)  *No description*
+* **props** (<code>[StageProps](#aws-cdk-lib-stageprops)</code>)  *No description*
+* **stackFactory** (<code>[IStackFactory](#tts-cdk-build-pipelines-istackfactory)</code>)  *No description*
+
+
+
+
+## class SynthCommands  <a id="tts-cdk-build-pipelines-synthcommands"></a>
+
+
+
+
+### Initializer
+
+
+
+
+```ts
+new SynthCommands()
+```
+
+
+
+
+### Properties
+
+
+Name | Type | Description 
+-----|------|-------------
+*static* **projenCdkApp** | <code>Array<string></code> | <span></span>
+
+
+
+## class SynthProfiles  <a id="tts-cdk-build-pipelines-synthprofiles"></a>
+
+
+
+
+### Initializer
+
+
+
+
+```ts
+new SynthProfiles()
+```
+
+
+
+### Methods
+
+
+#### *static* projenCdkApp(input?) <a id="tts-cdk-build-pipelines-synthprofiles-projencdkapp"></a>
+
+
+
+```ts
+static projenCdkApp(input?: IFileSetProducer): IFileSetProducer
+```
+
+* **input** (<code>[pipelines.IFileSetProducer](#aws-cdk-lib-pipelines-ifilesetproducer)</code>)  *No description*
+
+__Returns__:
+* <code>[pipelines.IFileSetProducer](#aws-cdk-lib-pipelines-ifilesetproducer)</code>
 
 
 
@@ -223,7 +461,7 @@ Name | Type | Description
 
 
 
-## struct CustomExtensionPipelineProps  <a id="tts-cdk-build-pipelines-customextensionpipelineprops"></a>
+## struct DeploymentStage  <a id="tts-cdk-build-pipelines-deploymentstage"></a>
 
 
 
@@ -232,17 +470,106 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**codeArtifactDomain** | <code>string</code> | <span></span>
-**codeArtifactDomainOwner** | <code>string</code> | <span></span>
-**codeArtifactRepository** | <code>string</code> | <span></span>
-**distBucketName** | <code>string</code> | <span></span>
-**branch**? | <code>string</code> | __*Optional*__
-**buildEnvironment**? | <code>[aws_codebuild.BuildEnvironment](#aws-cdk-lib-aws-codebuild-buildenvironment)</code> | __*Optional*__
-**existingRepositoryObj**? | <code>[aws_codecommit.Repository](#aws-cdk-lib-aws-codecommit-repository)</code> | __*Optional*__
-**projectDescription**? | <code>string</code> | __*Optional*__
-**projectName**? | <code>string</code> | __*Optional*__
-**repositoryProps**? | <code>[aws_codecommit.RepositoryProps](#aws-cdk-lib-aws-codecommit-repositoryprops)</code> | __*Optional*__
-**retainRepository**? | <code>boolean</code> | __*Optional*__
+**name** | <code>string</code> | <span></span>
+**stackFactory** | <code>[IStackFactory](#tts-cdk-build-pipelines-istackfactory)</code> | <span></span>
+**targets** | <code>[IDeploymentTargetsProvider](#tts-cdk-build-pipelines-ideploymenttargetsprovider)</code> | <span></span>
+**requireManualApproval**? | <code>boolean</code> | __*Optional*__
+
+
+
+## struct DeploymentTarget  <a id="tts-cdk-build-pipelines-deploymenttarget"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**account** | <code>string</code> | <span></span>
+**region** | <code>string</code> | <span></span>
+
+
+
+## interface IDeploymentTargetsProvider  <a id="tts-cdk-build-pipelines-ideploymenttargetsprovider"></a>
+
+__Obtainable from__: [DeploymentTargetsSource](#tts-cdk-build-pipelines-deploymenttargetssource).[ssmParameter](#tts-cdk-build-pipelines-deploymenttargetssource#tts-cdk-build-pipelines-deploymenttargetssource-ssmparameter)(), [DeploymentTargetsSource](#tts-cdk-build-pipelines-deploymenttargetssource).[staticValue](#tts-cdk-build-pipelines-deploymenttargetssource#tts-cdk-build-pipelines-deploymenttargetssource-staticvalue)()
+
+
+### Methods
+
+
+#### provide(scope) <a id="tts-cdk-build-pipelines-ideploymenttargetsprovider-provide"></a>
+
+
+
+```ts
+provide(scope: Construct): Array<DeploymentTarget>
+```
+
+* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
+
+__Returns__:
+* <code>Array<[DeploymentTarget](#tts-cdk-build-pipelines-deploymenttarget)></code>
+
+
+
+## interface IStackFactory  <a id="tts-cdk-build-pipelines-istackfactory"></a>
+
+
+
+### Methods
+
+
+#### create(scope, props) <a id="tts-cdk-build-pipelines-istackfactory-create"></a>
+
+
+
+```ts
+create(scope: Construct, props: StackProps): void
+```
+
+* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
+* **props** (<code>[StackProps](#aws-cdk-lib-stackprops)</code>)  *No description*
+  * **analyticsReporting** (<code>boolean</code>)  Include runtime versioning information in this Stack. __*Default*__: `analyticsReporting` setting of containing `App`, or value of 'aws:cdk:version-reporting' context key
+  * **description** (<code>string</code>)  A description of the stack. __*Default*__: No description.
+  * **env** (<code>[Environment](#aws-cdk-lib-environment)</code>)  The AWS environment (account/region) where this stack will be deployed. __*Default*__: The environment of the containing `Stage` if available, otherwise create the stack will be environment-agnostic.
+  * **stackName** (<code>string</code>)  Name to deploy the stack with. __*Default*__: Derived from construct path.
+  * **synthesizer** (<code>[IStackSynthesizer](#aws-cdk-lib-istacksynthesizer)</code>)  Synthesis method to use while deploying this stack. __*Default*__: `DefaultStackSynthesizer` if the `@aws-cdk/core:newStyleStackSynthesis` feature flag is set, `LegacyStackSynthesizer` otherwise.
+  * **tags** (<code>Map<string, string></code>)  Stack tags that will be applied to all the taggable resources and the stack itself. __*Default*__: {}
+  * **terminationProtection** (<code>boolean</code>)  Whether to enable termination protection for this stack. __*Default*__: false
+
+
+
+
+
+
+## struct MultiDeployCodePipelineProps  <a id="tts-cdk-build-pipelines-multideploycodepipelineprops"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**deploymentStages** | <code>Array<[DeploymentStage](#tts-cdk-build-pipelines-deploymentstage)></code> | <span></span>
+**synth** | <code>[pipelines.IFileSetProducer](#aws-cdk-lib-pipelines-ifilesetproducer)</code> | The build step that produces the CDK Cloud Assembly.
+**assetPublishingCodeBuildDefaults**? | <code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code> | Additional customizations to apply to the asset publishing CodeBuild projects.<br/>__*Default*__: Only `codeBuildDefaults` are applied
+**cliVersion**? | <code>string</code> | CDK CLI version to use in self-mutation and asset publishing steps.<br/>__*Default*__: Latest version
+**codeBuildDefaults**? | <code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code> | Customize the CodeBuild projects created for this pipeline.<br/>__*Default*__: All projects run non-privileged build, SMALL instance, LinuxBuildImage.STANDARD_5_0
+**codePipeline**? | <code>[aws_codepipeline.Pipeline](#aws-cdk-lib-aws-codepipeline-pipeline)</code> | An existing Pipeline to be reused and built upon.<br/>__*Default*__: a new underlying pipeline is created.
+**crossAccountKeys**? | <code>boolean</code> | Create KMS keys for the artifact buckets, allowing cross-account deployments.<br/>__*Default*__: false
+**dockerCredentials**? | <code>Array<[pipelines.DockerCredential](#aws-cdk-lib-pipelines-dockercredential)></code> | A list of credentials used to authenticate to Docker registries.<br/>__*Default*__: []
+**dockerEnabledForSelfMutation**? | <code>boolean</code> | Enable Docker for the self-mutate step.<br/>__*Default*__: false
+**dockerEnabledForSynth**? | <code>boolean</code> | Enable Docker for the 'synth' step.<br/>__*Default*__: false
+**mixins**? | <code>Array<[CodePipelineMixin](#tts-cdk-build-pipelines-codepipelinemixin)></code> | __*Optional*__
+**pipelineName**? | <code>string</code> | The name of the CodePipeline pipeline.<br/>__*Default*__: Automatically generated
+**publishAssetsInParallel**? | <code>boolean</code> | Publish assets in multiple CodeBuild projects.<br/>__*Default*__: true
+**reuseCrossRegionSupportStacks**? | <code>boolean</code> | Reuse the same cross region support stack for all pipelines in the App.<br/>__*Default*__: true (Use the same support stack for all pipelines in App)
+**selfMutation**? | <code>boolean</code> | Whether the pipeline will update itself.<br/>__*Default*__: true
+**selfMutationCodeBuildDefaults**? | <code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code> | Additional customizations to apply to the self mutation CodeBuild projects.<br/>__*Default*__: Only `codeBuildDefaults` are applied
+**synthCodeBuildDefaults**? | <code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code> | Additional customizations to apply to the synthesize CodeBuild projects.<br/>__*Default*__: Only `codeBuildDefaults` are applied
 
 
 

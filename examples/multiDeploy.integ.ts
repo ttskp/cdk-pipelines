@@ -3,7 +3,7 @@ import { Topic } from 'aws-cdk-lib/aws-sns';
 import { CodePipelineSource } from 'aws-cdk-lib/pipelines';
 import { Construct } from 'constructs';
 import { AdditionalTrigger } from '../src/mixins';
-import { DeploymentTargetsSource, MultiDeployCodePipeline } from '../src/pipelines';
+import { DeploymentTargetsSource, IStackFactory, MultiDeployCodePipeline } from '../src/pipelines';
 import { SynthProfiles } from '../src/util';
 
 // cdk --app "npx ts-node examples/multiDeploy.integ.ts" synth
@@ -17,15 +17,15 @@ const stack = new Stack(app, 'tts-cdk-pipelines-multiDeploy-integ-test', {
   }
 });
 
+const DEV = '/pipelines/stages/dev';
+const PROD = '/pipelines/stages/prod';
+
 class AppStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps) {
     super(scope, id, props);
     new Topic(this, 'Topic');
   }
 }
-
-const DEV = '/pipelines/stages/dev';
-const PROD = '/pipelines/stages/prod';
 
 new MultiDeployCodePipeline(stack, 'MultiDeployCodePipeline', {
 
@@ -36,11 +36,19 @@ new MultiDeployCodePipeline(stack, 'MultiDeployCodePipeline', {
   deploymentStages: [{
     name: 'dev',
     targets: DeploymentTargetsSource.ssmParameter(DEV),
-    stackFactory: ((scope, env) => new AppStack(scope, 'test-multi-deploy', { env }))
+    stackFactory: new (class implements IStackFactory {
+      create(scope: Construct, props: StackProps): void {
+        new AppStack(scope, 'test-multi-deploy', props);
+      }
+    })(),
   }, {
     name: 'prod',
     targets: DeploymentTargetsSource.ssmParameter(PROD),
-    stackFactory: ((scope, env) => new AppStack(scope, 'test-multi-deploy', { env }))
+    stackFactory: new (class implements IStackFactory {
+      create(scope: Construct, props: StackProps): void {
+        new AppStack(scope, 'test-multi-deploy', props);
+      }
+    })(),
   }],
 
   mixins: [
