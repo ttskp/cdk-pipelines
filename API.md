@@ -304,6 +304,7 @@ new MultiDeployCodePipeline(scope: Construct, id: string, props: MultiDeployCode
 Name | Type | Description 
 -----|------|-------------
 **mdcProps** | <code>[MultiDeployCodePipelineProps](#tts-cdk-build-pipelines-multideploycodepipelineprops)</code> | <span></span>
+**stacks** | <code>Array<[Stack](#aws-cdk-lib-stack)></code> | <span></span>
 
 ### Methods
 
@@ -363,6 +364,14 @@ new StackFactoryApplicationStage(scope: Construct, id: string, props: StageProps
 * **props** (<code>[StageProps](#aws-cdk-lib-stageprops)</code>)  *No description*
 * **stackFactory** (<code>[IStackFactory](#tts-cdk-build-pipelines-istackfactory)</code>)  *No description*
 
+
+
+### Properties
+
+
+Name | Type | Description 
+-----|------|-------------
+**stack** | <code>[Stack](#aws-cdk-lib-stack)</code> | <span></span>
 
 
 
@@ -526,7 +535,7 @@ __Returns__:
 
 
 ```ts
-create(scope: Construct, env: Environment): void
+create(scope: Construct, env: Environment): Stack
 ```
 
 * **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
@@ -534,8 +543,8 @@ create(scope: Construct, env: Environment): void
   * **account** (<code>string</code>)  The AWS account ID for this environment. __*Default*__: Aws.accountId which means that the stack will be account-agnostic.
   * **region** (<code>string</code>)  The AWS region for this environment. __*Default*__: Aws.region which means that the stack will be region-agnostic.
 
-
-
+__Returns__:
+* <code>[Stack](#aws-cdk-lib-stack)</code>
 
 
 

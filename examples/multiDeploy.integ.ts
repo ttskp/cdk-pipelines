@@ -37,16 +37,16 @@ new MultiDeployCodePipeline(stack, 'MultiDeployCodePipeline', {
     name: 'dev',
     targets: DeploymentTargetsSource.ssmParameter(DEV),
     stackFactory: new (class implements IStackFactory {
-      create(scope: Construct, env: Environment): void {
-        new AppStack(scope, 'test-multi-deploy', { env });
+      create(scope: Construct, env: Environment): Stack {
+        return new AppStack(scope, 'test-multi-deploy', { env });
       }
     })(),
   }, {
     name: 'prod',
     targets: DeploymentTargetsSource.ssmParameter(PROD),
     stackFactory: new (class implements IStackFactory {
-      create(scope: Construct, env: Environment): void {
-        new AppStack(scope, 'test-multi-deploy', { env });
+      create(scope: Construct, env: Environment): Stack {
+        return new AppStack(scope, 'test-multi-deploy', { env });
       }
     })(),
   }],

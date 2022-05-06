@@ -1,4 +1,4 @@
-import { ContextProvider, Environment } from 'aws-cdk-lib';
+import { ContextProvider, Environment, Stack } from 'aws-cdk-lib';
 import { ContextProvider as CXSchema } from 'aws-cdk-lib/cloud-assembly-schema';
 import { Construct } from 'constructs';
 
@@ -12,7 +12,7 @@ export interface IDeploymentTargetsProvider {
 }
 
 export interface IStackFactory {
-  create(scope: Construct, env: Environment): void;
+  create(scope: Construct, env: Environment): Stack;
 }
 
 export interface DeploymentStage {

@@ -1,4 +1,4 @@
-import { Stage, StageProps } from 'aws-cdk-lib';
+import { Stack, Stage, StageProps } from 'aws-cdk-lib';
 import { CodePipeline, CodePipelineProps, ManualApprovalStep } from 'aws-cdk-lib/pipelines';
 import { Construct } from 'constructs';
 import { CodePipelineMixin } from '../../mixins';
@@ -10,13 +10,18 @@ export interface MultiDeployCodePipelineProps extends CodePipelineProps {
 }
 
 export class StackFactoryApplicationStage extends Stage {
+
+  public readonly stack: Stack;
+
   constructor(scope: Construct, id: string, props: StageProps, stackFactory: IStackFactory) {
     super(scope, id, props);
-    stackFactory.create(this, props.env!);
+    this.stack = stackFactory.create(this, props.env!);
   }
 }
 
 export class MultiDeployCodePipeline extends CodePipeline {
+
+  public readonly stacks: Stack[];
 
   protected readonly mdcProps: MultiDeployCodePipelineProps;
 
@@ -30,6 +35,8 @@ export class MultiDeployCodePipeline extends CodePipeline {
 
     super(scope, id, mdcProps);
     this.mdcProps = mdcProps;
+
+    this.stacks = [];
   }
 
   protected doBuildPipeline(): void {
@@ -41,12 +48,16 @@ export class MultiDeployCodePipeline extends CodePipeline {
       });
 
       stage.targets.provide(this).forEach(target => {
-        wave.addStage(new StackFactoryApplicationStage(this, `a${target.account}-${target.region}`, {
+
+        const appStage = new StackFactoryApplicationStage(this, `a${target.account}-${target.region}`, {
           env: {
             account: target.account,
             region: target.region,
           },
-        }, stage.stackFactory));
+        }, stage.stackFactory);
+
+        wave.addStage(appStage);
+        this.stacks.push(appStage.stack);
       });
     });
 
