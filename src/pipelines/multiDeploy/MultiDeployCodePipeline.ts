@@ -43,11 +43,17 @@ export class MultiDeployCodePipeline extends CodePipeline {
 
     this.mdcProps.deploymentStages.forEach(stage => {
 
+      const targets = stage.targets.provide(this);
+
+      if (!targets || targets.length == 0) {
+        return;
+      }
+
       const wave = this.addWave(`Deploy-${stage.name}`, {
         pre: stage.requireManualApproval ? [new ManualApprovalStep('Approve')] : [],
       });
 
-      stage.targets.provide(this).forEach(target => {
+      targets.forEach(target => {
 
         const appStage = new StackFactoryApplicationStage(this, `a${target.account}-${target.region}`, {
           env: {
