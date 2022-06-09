@@ -2,10 +2,10 @@ import { App, DefaultStackSynthesizer, Environment, Stack, StackProps } from 'aw
 import { Topic } from 'aws-cdk-lib/aws-sns';
 import { CodePipelineSource } from 'aws-cdk-lib/pipelines';
 import { Construct } from 'constructs';
-import { AdditionalTrigger } from '../src/mixins';
-import { DeploymentTargetsSource, IStackFactory, MultiDeployCodePipeline } from '../src/pipelines';
-import { SynthProfiles } from '../src/util';
-import { CleanupStacksMixin } from '../src/mixins/CleanupStacks';
+import { AdditionalTrigger } from '../src';
+import { DeploymentTargetsSource, IStackFactory, MultiDeployCodePipeline } from '../src';
+import { SynthProfiles } from '../src';
+import { CleanupStacksMixin } from '../src';
 
 // cdk --app "npx ts-node examples/multiDeploy.integ.ts" synth
 

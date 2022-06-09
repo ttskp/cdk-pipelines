@@ -42,7 +42,7 @@ export class CleanupStacksMixin extends CodePipelineMixin {
       resources: [`arn:aws:iam::*:role/cdk-${this.qualifier}-deploy-role-*`],
     }));
 
-    const provider = new Provider(stack, 'CleanupPreviousStacksProvider', {
+    const provider = new Provider(stack, 'CleanupStacksProvider', {
       onEventHandler: cleanupFunction,
       logRetention: RetentionDays.ONE_MONTH,
     });

@@ -7,6 +7,7 @@ Name|Description
 [AdditionalTrigger](#tts-cdk-build-pipelines-additionaltrigger)|*No description*
 [BuildProjectFeature](#tts-cdk-build-pipelines-buildprojectfeature)|*No description*
 [BuildSpecPipeline](#tts-cdk-build-pipelines-buildspecpipeline)|*No description*
+[CleanupStacksMixin](#tts-cdk-build-pipelines-cleanupstacksmixin)|*No description*
 [CodeArtifactFeature](#tts-cdk-build-pipelines-codeartifactfeature)|*No description*
 [CodePipelineMixin](#tts-cdk-build-pipelines-codepipelinemixin)|*No description*
 [DeploymentTargetsSource](#tts-cdk-build-pipelines-deploymenttargetssource)|*No description*
@@ -144,6 +145,42 @@ Name | Type | Description
 
 
 
+## class CleanupStacksMixin  <a id="tts-cdk-build-pipelines-cleanupstacksmixin"></a>
+
+
+
+__Extends__: [CodePipelineMixin](#tts-cdk-build-pipelines-codepipelinemixin)
+
+### Initializer
+
+
+
+
+```ts
+new CleanupStacksMixin(cdkQualifier?: string)
+```
+
+* **cdkQualifier** (<code>string</code>)  *No description*
+
+
+### Methods
+
+
+#### preDoBuildPipeline(_codePipeline) <a id="tts-cdk-build-pipelines-cleanupstacksmixin-predobuildpipeline"></a>
+
+
+
+```ts
+preDoBuildPipeline(_codePipeline: CodePipeline): void
+```
+
+* **_codePipeline** (<code>[pipelines.CodePipeline](#aws-cdk-lib-pipelines-codepipeline)</code>)  *No description*
+
+
+
+
+
+
 ## class CodeArtifactFeature  <a id="tts-cdk-build-pipelines-codeartifactfeature"></a>
 
 
@@ -168,6 +205,7 @@ new CodeArtifactFeature(pipeline: BuildSpecPipeline)
 
 
 
+__Implemented by__: [CleanupStacksMixin](#tts-cdk-build-pipelines-cleanupstacksmixin)
 __Obtainable from__: [AdditionalTrigger](#tts-cdk-build-pipelines-additionaltrigger).[ssmParameterChange](#tts-cdk-build-pipelines-additionaltrigger#tts-cdk-build-pipelines-additionaltrigger-ssmparameterchange)()
 
 ### Initializer
