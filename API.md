@@ -57,6 +57,19 @@ new AdditionalTrigger()
 ### Methods
 
 
+#### *static* schedule(schedule) <a id="tts-cdk-build-pipelines-additionaltrigger-schedule"></a>
+
+
+
+```ts
+static schedule(schedule: Schedule): CodePipelineMixin
+```
+
+* **schedule** (<code>[aws_events.Schedule](#aws-cdk-lib-aws-events-schedule)</code>)  *No description*
+
+__Returns__:
+* <code>[CodePipelineMixin](#tts-cdk-build-pipelines-codepipelinemixin)</code>
+
 #### *static* ssmParameterChange(...parameterNames) <a id="tts-cdk-build-pipelines-additionaltrigger-ssmparameterchange"></a>
 
 
@@ -206,7 +219,7 @@ new CodeArtifactFeature(pipeline: BuildSpecPipeline)
 
 
 __Implemented by__: [CleanupStacksMixin](#tts-cdk-build-pipelines-cleanupstacksmixin)
-__Obtainable from__: [AdditionalTrigger](#tts-cdk-build-pipelines-additionaltrigger).[ssmParameterChange](#tts-cdk-build-pipelines-additionaltrigger#tts-cdk-build-pipelines-additionaltrigger-ssmparameterchange)()
+__Obtainable from__: [AdditionalTrigger](#tts-cdk-build-pipelines-additionaltrigger).[schedule](#tts-cdk-build-pipelines-additionaltrigger#tts-cdk-build-pipelines-additionaltrigger-schedule)(), [AdditionalTrigger](#tts-cdk-build-pipelines-additionaltrigger).[ssmParameterChange](#tts-cdk-build-pipelines-additionaltrigger#tts-cdk-build-pipelines-additionaltrigger-ssmparameterchange)()
 
 ### Initializer
 
