@@ -145,7 +145,8 @@
       {
         "devDependencies": [
           "**/test/**",
-          "**/build-tools/**"
+          "**/build-tools/**",
+          "src/mixins/functions/CleanupStacks.lambda.ts"
         ],
         "optionalDependencies": false,
         "peerDependencies": true

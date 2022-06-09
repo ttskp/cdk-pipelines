@@ -18,7 +18,14 @@ const project = new awscdk.AwsCdkConstructLibrary({
   cdkVersionPinning: true,
 
   bundledDeps: ['yaml'],
-  devDeps: ['ts-node'],
+  devDeps: [
+    'ts-node',
+    '@aws-sdk/client-cloudformation',
+    '@aws-sdk/client-sts',
+  ],
+
+  deps: [
+  ],
 
   dependabot: true,
 

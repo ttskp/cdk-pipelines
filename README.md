@@ -2,6 +2,7 @@
 
 ## Changes:
 
+* *2022-06-09*: Added new mixin CleanupStacksMixin which deletes stacks when they are removed as deployment target 
 * *2022-03-10*: Moved to CDK v2 (sorry, no support for v1 anymore)
 
 ## Pipeline Constructs
@@ -13,8 +14,8 @@ A [`CodePipeline`](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.pipel
 
 Support for:
 * [![Status badge](https://img.shields.io/badge/Status-InProgress-yellow.svg)](https://shields.io/) Deployment Stages and Targets from different sources (SSM parameters, AWS Organization)
-* [![Status badge](https://img.shields.io/badge/Status-Idea-yellow.svg)](https://shields.io/) Additional Trigger
-* [![Status badge](https://img.shields.io/badge/Status-Idea-yellow.svg)](https://shields.io/) Idempotent Stack deployment (similar to StackSets)
+* [![Status badge](https://img.shields.io/badge/Status-InProgress-yellow.svg)](https://shields.io/) Additional Trigger
+* [![Status badge](https://img.shields.io/badge/Status-InProgress-yellow.svg)](https://shields.io/) Idempotent Stack deployment (similar to StackSets)
 * [![Status badge](https://img.shields.io/badge/Status-Idea-yellow.svg)](https://shields.io/) Auto Approve/Reject of manual approval actions based on git-tags or conventional commits
 
 ### `PackerBuildPipeline`

@@ -1,6 +1,14 @@
 {
   "dependencies": [
     {
+      "name": "@aws-sdk/client-cloudformation",
+      "type": "build"
+    },
+    {
+      "name": "@aws-sdk/client-sts",
+      "type": "build"
+    },
+    {
       "name": "@types/jest",
       "type": "build"
     },
@@ -27,6 +35,10 @@
     {
       "name": "constructs",
       "version": "10.0.5",
+      "type": "build"
+    },
+    {
+      "name": "esbuild",
       "type": "build"
     },
     {

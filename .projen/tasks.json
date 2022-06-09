@@ -41,6 +41,33 @@
       ],
       "condition": "! git log --oneline -1 | grep -q \"chore(release):\""
     },
+    "bundle": {
+      "name": "bundle",
+      "description": "Prepare assets",
+      "steps": [
+        {
+          "spawn": "bundle:mixins/functions/CleanupStacks.lambda"
+        }
+      ]
+    },
+    "bundle:mixins/functions/CleanupStacks.lambda": {
+      "name": "bundle:mixins/functions/CleanupStacks.lambda",
+      "description": "Create a JavaScript bundle from src/mixins/functions/CleanupStacks.lambda.ts",
+      "steps": [
+        {
+          "exec": "esbuild --bundle src/mixins/functions/CleanupStacks.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets/mixins/functions/CleanupStacks.lambda/index.js\" --external:aws-sdk"
+        }
+      ]
+    },
+    "bundle:mixins/functions/CleanupStacks.lambda:watch": {
+      "name": "bundle:mixins/functions/CleanupStacks.lambda:watch",
+      "description": "Continuously update the JavaScript bundle from src/mixins/functions/CleanupStacks.lambda.ts",
+      "steps": [
+        {
+          "exec": "esbuild --bundle src/mixins/functions/CleanupStacks.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets/mixins/functions/CleanupStacks.lambda/index.js\" --external:aws-sdk --watch"
+        }
+      ]
+    },
     "clobber": {
       "name": "clobber",
       "description": "hard resets to HEAD of origin and cleans the local repo",
@@ -168,7 +195,12 @@
     },
     "pre-compile": {
       "name": "pre-compile",
-      "description": "Prepare the project for compilation"
+      "description": "Prepare the project for compilation",
+      "steps": [
+        {
+          "spawn": "bundle"
+        }
+      ]
     },
     "release": {
       "name": "release",

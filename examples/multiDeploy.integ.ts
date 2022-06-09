@@ -1,10 +1,11 @@
-import { App, Environment, Stack, StackProps } from 'aws-cdk-lib';
+import { App, DefaultStackSynthesizer, Environment, Stack, StackProps } from 'aws-cdk-lib';
 import { Topic } from 'aws-cdk-lib/aws-sns';
 import { CodePipelineSource } from 'aws-cdk-lib/pipelines';
 import { Construct } from 'constructs';
 import { AdditionalTrigger } from '../src/mixins';
 import { DeploymentTargetsSource, IStackFactory, MultiDeployCodePipeline } from '../src/pipelines';
 import { SynthProfiles } from '../src/util';
+import { CleanupStacksMixin } from '../src/mixins/CleanupStacks';
 
 // cdk --app "npx ts-node examples/multiDeploy.integ.ts" synth
 
@@ -14,7 +15,10 @@ const stack = new Stack(app, 'tts-cdk-pipelines-multiDeploy-integ-test', {
   env: {
     account: '1234',
     region: 'eu-west-1',
-  }
+  },
+  synthesizer: new DefaultStackSynthesizer({
+    qualifier: 'abcdef',
+  })
 });
 
 const DEV = '/pipelines/stages/dev';
@@ -53,6 +57,7 @@ new MultiDeployCodePipeline(stack, 'MultiDeployCodePipeline', {
 
   mixins: [
     AdditionalTrigger.ssmParameterChange(DEV, PROD),
+    new CleanupStacksMixin(),
   ],
 
 });
