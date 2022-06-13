@@ -4,7 +4,7 @@
 
 Name|Description
 ----|-----------
-[AdditionalTrigger](#tts-cdk-build-pipelines-additionaltrigger)|*No description*
+[AdditionalTrigger](#tts-cdk-build-pipelines-additionaltrigger)|Convenience class to create additional trigger {CodePipelineMixin}s for executing a CodePipeline if certain events occur other than a code change.
 [BuildProjectFeature](#tts-cdk-build-pipelines-buildprojectfeature)|*No description*
 [BuildSpecPipeline](#tts-cdk-build-pipelines-buildspecpipeline)|*No description*
 [CleanupStacksMixin](#tts-cdk-build-pipelines-cleanupstacksmixin)|*No description*
@@ -12,6 +12,7 @@ Name|Description
 [CodePipelineMixin](#tts-cdk-build-pipelines-codepipelinemixin)|*No description*
 [DeploymentTargetsSource](#tts-cdk-build-pipelines-deploymenttargetssource)|*No description*
 [MultiDeployCodePipeline](#tts-cdk-build-pipelines-multideploycodepipeline)|*No description*
+[NoopStackFactory](#tts-cdk-build-pipelines-noopstackfactory)|*No description*
 [SSMParametersFeature](#tts-cdk-build-pipelines-ssmparametersfeature)|*No description*
 [StackFactoryApplicationStage](#tts-cdk-build-pipelines-stackfactoryapplicationstage)|*No description*
 [SynthCommands](#tts-cdk-build-pipelines-synthcommands)|*No description*
@@ -40,7 +41,7 @@ Name|Description
 
 ## class AdditionalTrigger  <a id="tts-cdk-build-pipelines-additionaltrigger"></a>
 
-
+Convenience class to create additional trigger {CodePipelineMixin}s for executing a CodePipeline if certain events occur other than a code change.
 
 
 ### Initializer
@@ -59,7 +60,7 @@ new AdditionalTrigger()
 
 #### *static* schedule(schedule) <a id="tts-cdk-build-pipelines-additionaltrigger-schedule"></a>
 
-
+Create an additional trigger {CodePipelineMixin} based on a schedule.
 
 ```ts
 static schedule(schedule: Schedule): CodePipelineMixin
@@ -72,7 +73,7 @@ __Returns__:
 
 #### *static* ssmParameterChange(...parameterNames) <a id="tts-cdk-build-pipelines-additionaltrigger-ssmparameterchange"></a>
 
-
+Create an additional trigger {CodePipelineMixin} for a SSM parameter value change.
 
 ```ts
 static ssmParameterChange(...parameterNames: string[]): CodePipelineMixin
@@ -346,6 +347,7 @@ new MultiDeployCodePipeline(scope: Construct, id: string, props: MultiDeployCode
   * **synthCodeBuildDefaults** (<code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code>)  Additional customizations to apply to the synthesize CodeBuild projects. __*Default*__: Only `codeBuildDefaults` are applied
   * **deploymentStages** (<code>Array<[DeploymentStage](#tts-cdk-build-pipelines-deploymentstage)></code>)  *No description* 
   * **mixins** (<code>Array<[CodePipelineMixin](#tts-cdk-build-pipelines-codepipelinemixin)></code>)  *No description* __*Optional*__
+  * **stackFactory** (<code>[IStackFactory](#tts-cdk-build-pipelines-istackfactory)</code>)  *No description* __*Optional*__
 
 
 
@@ -371,6 +373,44 @@ protected doBuildPipeline(): void
 
 
 
+
+
+
+## class NoopStackFactory  <a id="tts-cdk-build-pipelines-noopstackfactory"></a>
+
+
+
+__Implements__: [IStackFactory](#tts-cdk-build-pipelines-istackfactory)
+
+### Initializer
+
+
+
+
+```ts
+new NoopStackFactory()
+```
+
+
+
+### Methods
+
+
+#### create(scope, env) <a id="tts-cdk-build-pipelines-noopstackfactory-create"></a>
+
+
+
+```ts
+create(scope: Construct, env: Environment): Stack
+```
+
+* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
+* **env** (<code>[Environment](#aws-cdk-lib-environment)</code>)  *No description*
+  * **account** (<code>string</code>)  The AWS account ID for this environment. __*Default*__: Aws.accountId which means that the stack will be account-agnostic.
+  * **region** (<code>string</code>)  The AWS region for this environment. __*Default*__: Aws.region which means that the stack will be region-agnostic.
+
+__Returns__:
+* <code>[Stack](#aws-cdk-lib-stack)</code>
 
 
 
@@ -531,9 +571,9 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | <span></span>
-**stackFactory** | <code>[IStackFactory](#tts-cdk-build-pipelines-istackfactory)</code> | <span></span>
 **targets** | <code>[IDeploymentTargetsProvider](#tts-cdk-build-pipelines-ideploymenttargetsprovider)</code> | <span></span>
 **requireManualApproval**? | <code>boolean</code> | __*Optional*__
+**stackFactory**? | <code>[IStackFactory](#tts-cdk-build-pipelines-istackfactory)</code> | __*Optional*__
 
 
 
@@ -576,6 +616,7 @@ __Returns__:
 
 ## interface IStackFactory  <a id="tts-cdk-build-pipelines-istackfactory"></a>
 
+__Implemented by__: [NoopStackFactory](#tts-cdk-build-pipelines-noopstackfactory)
 
 
 ### Methods
@@ -624,6 +665,7 @@ Name | Type | Description
 **reuseCrossRegionSupportStacks**? | <code>boolean</code> | Reuse the same cross region support stack for all pipelines in the App.<br/>__*Default*__: true (Use the same support stack for all pipelines in App)
 **selfMutation**? | <code>boolean</code> | Whether the pipeline will update itself.<br/>__*Default*__: true
 **selfMutationCodeBuildDefaults**? | <code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code> | Additional customizations to apply to the self mutation CodeBuild projects.<br/>__*Default*__: Only `codeBuildDefaults` are applied
+**stackFactory**? | <code>[IStackFactory](#tts-cdk-build-pipelines-istackfactory)</code> | __*Optional*__
 **synthCodeBuildDefaults**? | <code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code> | Additional customizations to apply to the synthesize CodeBuild projects.<br/>__*Default*__: Only `codeBuildDefaults` are applied
 
 

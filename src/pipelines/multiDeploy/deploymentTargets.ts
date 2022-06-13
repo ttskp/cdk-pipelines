@@ -15,10 +15,16 @@ export interface IStackFactory {
   create(scope: Construct, env: Environment): Stack;
 }
 
+export class NoopStackFactory implements IStackFactory {
+  create(scope: Construct, env: Environment): Stack {
+    return new Stack(scope, 'noop-stack', { env });
+  }
+}
+
 export interface DeploymentStage {
   readonly name: string;
   readonly targets: IDeploymentTargetsProvider;
-  readonly stackFactory: IStackFactory;
+  readonly stackFactory?: IStackFactory;
   readonly requireManualApproval?: boolean;
 }
 

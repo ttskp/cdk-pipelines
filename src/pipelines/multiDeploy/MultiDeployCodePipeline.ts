@@ -2,10 +2,11 @@ import { Stack, Stage, StageProps } from 'aws-cdk-lib';
 import { CodePipeline, CodePipelineProps, ManualApprovalStep } from 'aws-cdk-lib/pipelines';
 import { Construct } from 'constructs';
 import { CodePipelineMixin } from '../../mixins';
-import { DeploymentStage, IStackFactory } from './deploymentTargets';
+import { DeploymentStage, IStackFactory, NoopStackFactory } from './deploymentTargets';
 
 export interface MultiDeployCodePipelineProps extends CodePipelineProps {
   readonly deploymentStages: DeploymentStage[];
+  readonly stackFactory?: IStackFactory;
   readonly mixins?: CodePipelineMixin[];
 }
 
@@ -53,6 +54,9 @@ export class MultiDeployCodePipeline extends CodePipeline {
         pre: stage.requireManualApproval ? [new ManualApprovalStep('Approve')] : [],
       });
 
+      const factory = stage.stackFactory ? stage.stackFactory :
+        (this.mdcProps.stackFactory ? this.mdcProps.stackFactory : new NoopStackFactory());
+
       targets.forEach(target => {
 
         const appStage = new StackFactoryApplicationStage(this, `a${target.account}-${target.region}`, {
@@ -60,7 +64,7 @@ export class MultiDeployCodePipeline extends CodePipeline {
             account: target.account,
             region: target.region,
           },
-        }, stage.stackFactory);
+        }, factory);
 
         wave.addStage(appStage);
         this.stacks.push(appStage.stack);
