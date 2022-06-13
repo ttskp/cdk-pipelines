@@ -4,12 +4,24 @@ import { CodePipeline as CodePipelineTarget } from 'aws-cdk-lib/aws-events-targe
 import { CodePipeline } from 'aws-cdk-lib/pipelines';
 import { CodePipelineMixin } from './Mixin';
 
+/**
+ * Convenience class to create additional trigger {CodePipelineMixin}s for
+ * executing a CodePipeline if certain events occur other than a code change.
+ */
 export abstract class AdditionalTrigger {
 
+  /**
+   * Create an additional trigger {CodePipelineMixin} for a SSM parameter value change.
+   * @param parameterNames
+   */
   public static ssmParameterChange(...parameterNames: string[]): CodePipelineMixin {
     return new SsmParameterChangeTrigger(parameterNames);
   }
 
+  /**
+   * Create an additional trigger {CodePipelineMixin} based on a schedule.
+   * @param schedule
+   */
   public static schedule(schedule: Schedule): CodePipelineMixin {
     return new ScheduledTrigger(schedule);
   }
