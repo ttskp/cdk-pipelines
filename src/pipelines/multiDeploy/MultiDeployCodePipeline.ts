@@ -50,8 +50,14 @@ export class MultiDeployCodePipeline extends CodePipeline {
         return;
       }
 
+      const pre = [
+        ...(stage.pre ?? []),
+        ...(stage.requireManualApproval ? [new ManualApprovalStep('Approve')] : []),
+      ];
+
       const wave = this.addWave(`Deploy-${stage.name}`, {
-        pre: stage.requireManualApproval ? [new ManualApprovalStep('Approve')] : [],
+        pre,
+        post: stage.post ?? [],
       });
 
       const factory = stage.stackFactory ? stage.stackFactory :

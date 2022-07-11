@@ -1,5 +1,6 @@
 import { ContextProvider, Environment, Stack } from 'aws-cdk-lib';
 import { ContextProvider as CXSchema } from 'aws-cdk-lib/cloud-assembly-schema';
+import { Step } from 'aws-cdk-lib/pipelines';
 import { Construct } from 'constructs';
 
 export interface DeploymentTarget {
@@ -26,6 +27,8 @@ export interface DeploymentStage {
   readonly targets: IDeploymentTargetsProvider;
   readonly stackFactory?: IStackFactory;
   readonly requireManualApproval?: boolean;
+  readonly pre?: Step[];
+  readonly post?: Step[];
 }
 
 export abstract class DeploymentTargetsSource {
