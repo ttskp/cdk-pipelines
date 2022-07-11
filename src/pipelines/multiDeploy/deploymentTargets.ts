@@ -6,6 +6,7 @@ import { Construct } from 'constructs';
 export interface DeploymentTarget {
   readonly account: string;
   readonly region: string;
+  readonly name?: string;
 }
 
 export interface IDeploymentTargetsProvider {

@@ -65,7 +65,7 @@ export class MultiDeployCodePipeline extends CodePipeline {
 
       targets.forEach(target => {
 
-        const appStage = new StackFactoryApplicationStage(this, `a${target.account}-${target.region}`, {
+        const appStage = new StackFactoryApplicationStage(this, target.name ?? `a${target.account}-${target.region}`, {
           env: {
             account: target.account,
             region: target.region,
