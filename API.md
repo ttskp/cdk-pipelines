@@ -572,6 +572,8 @@ Name | Type | Description
 -----|------|-------------
 **name** | <code>string</code> | <span></span>
 **targets** | <code>[IDeploymentTargetsProvider](#tts-cdk-build-pipelines-ideploymenttargetsprovider)</code> | <span></span>
+**post**? | <code>Array<[pipelines.Step](#aws-cdk-lib-pipelines-step)></code> | __*Optional*__
+**pre**? | <code>Array<[pipelines.Step](#aws-cdk-lib-pipelines-step)></code> | __*Optional*__
 **requireManualApproval**? | <code>boolean</code> | __*Optional*__
 **stackFactory**? | <code>[IStackFactory](#tts-cdk-build-pipelines-istackfactory)</code> | __*Optional*__
 
