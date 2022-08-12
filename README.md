@@ -1,30 +1,22 @@
 # CDK (Code) Pipeline Constructs
 
-## Changes:
-
-* *2022-06-09*: Added new mixin CleanupStacksMixin which deletes stacks when they are removed as deployment target 
-* *2022-03-10*: Moved to CDK v2 (sorry, no support for v1 anymore)
-
 ## Pipeline Constructs
 
-### `MultiDeployCodePipeline`
-[![Status badge](https://img.shields.io/badge/Status-InProgress-yellow.svg)](https://shields.io/)
+### `MultiDeployCodePipeline` [![Status badge](https://img.shields.io/badge/Status-Working-green.svg)](https://shields.io/)
 
 A [`CodePipeline`](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.pipelines.CodePipeline.html) for conveniently deploy across multiple stages, multiple accounts and multiple regions.
 
 Support for:
-* [![Status badge](https://img.shields.io/badge/Status-InProgress-yellow.svg)](https://shields.io/) Deployment Stages and Targets from different sources (SSM parameters, AWS Organization)
-* [![Status badge](https://img.shields.io/badge/Status-InProgress-yellow.svg)](https://shields.io/) Additional Trigger
+* [![Status badge](https://img.shields.io/badge/Status-Working-green.svg)](https://shields.io/) Deployment Stages and Targets from different sources (SSM parameters, AWS Organization)
+* [![Status badge](https://img.shields.io/badge/Status-Working-green.svg)](https://shields.io/) Additional Triggers, e.g. if an SSM parameter changes
 * [![Status badge](https://img.shields.io/badge/Status-InProgress-yellow.svg)](https://shields.io/) Idempotent Stack deployment (similar to StackSets)
-* [![Status badge](https://img.shields.io/badge/Status-Idea-yellow.svg)](https://shields.io/) Auto Approve/Reject of manual approval actions based on git-tags or conventional commits
+* [![Status badge](https://img.shields.io/badge/Status-InProgress-yellow.svg)](https://shields.io/) Auto Approve/Reject of manual approval actions based on git-tags or conventional commits
 
-### `PackerBuildPipeline`
-[![Status badge](https://img.shields.io/badge/Status-Idea-yellow.svg)](https://shields.io/)
+### `PackerBuildPipeline` [![Status badge](https://img.shields.io/badge/Status-Idea-yellow.svg)](https://shields.io/)
 
 A [`MultiDeployCdkPipeline`]() for creating and distributing EC2 Machine Images (AMIs) across multiple accounts and regions. AMI Ids are stored in SSM parameters, similar to AWS's public parameters for Amazon Linux.
 
-### `BuildSpecPipeline`
-[![Status badge](https://img.shields.io/badge/Status-Working-green.svg)](https://shields.io/)
+### `BuildSpecPipeline` [![Status badge](https://img.shields.io/badge/Status-Working-green.svg)](https://shields.io/)
 
 A convenience [`Pipeline`](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_codepipeline.Pipeline.html) intented to perform an arbitrary build tasks described in an [AWS CodeBuild Buildspec](https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html) file. 
 
@@ -43,4 +35,3 @@ The Buildspec file can either be provided as an object using the property `build
 * Only AWS CodeCommit repositories are supported.
 * Deployments have to be scripted as part of the BuildSpec
 * No Self-Mutate
-
