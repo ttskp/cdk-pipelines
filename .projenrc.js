@@ -5,9 +5,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
   name: 'build-pipelines',
   packageName: '@tts-cdk/build-pipelines',
 
-  author: 'WolfAn',
-  authorAddress: 'andre.wolf@tt-s.com',
-  // authorOrganization: 'tts Knowledge Products GmbH',
+  author: 'tts Knowledge Products GmbH',
+  authorAddress: 'info@tt-s.com',
+  authorOrganization: true,
 
   repositoryUrl: 'https://github.com/ttskp/cdk-pipelines.git',
   defaultReleaseBranch: 'main',

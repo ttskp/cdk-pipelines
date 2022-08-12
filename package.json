@@ -31,9 +31,9 @@
     "projen": "npx projen"
   },
   "author": {
-    "name": "WolfAn",
-    "email": "andre.wolf@tt-s.com",
-    "organization": false
+    "name": "tts Knowledge Products GmbH",
+    "email": "info@tt-s.com",
+    "organization": true
   },
   "devDependencies": {
     "@aws-sdk/client-cloudformation": "^3.107.0",
