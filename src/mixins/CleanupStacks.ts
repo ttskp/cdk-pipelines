@@ -27,8 +27,6 @@ export class CleanupStacksMixin extends CodePipelineMixin {
     const multiDeployPipeline = _codePipeline as MultiDeployCodePipeline;
     const stack = Stack.of(multiDeployPipeline);
 
-    console.log(stack.node);
-
     // TODO determine qualifier programmatically somehow
     //const qualifier = stack.node.tryGetContext(BOOTSTRAP_QUALIFIER_CONTEXT) ?? DefaultStackSynthesizer.DEFAULT_QUALIFIER;
 
