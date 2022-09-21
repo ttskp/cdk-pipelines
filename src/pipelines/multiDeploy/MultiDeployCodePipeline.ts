@@ -29,9 +29,9 @@ export class MultiDeployCodePipeline extends CodePipeline {
   constructor(scope: Construct, id: string, props: MultiDeployCodePipelineProps) {
 
     const mdcProps = {
-      ...props,
       crossAccountKeys: true,
       reuseCrossRegionSupportStacks: true,
+      ...props,
     };
 
     super(scope, id, mdcProps);

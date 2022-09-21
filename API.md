@@ -4,7 +4,7 @@
 
 Name|Description
 ----|-----------
-[AdditionalTrigger](#tts-cdk-build-pipelines-additionaltrigger)|Convenience class to create additional trigger {CodePipelineMixin}s for executing a CodePipeline if certain events occur other than a code change.
+[AdditionalTrigger](#tts-cdk-build-pipelines-additionaltrigger)|Convenience class to create additional trigger {CodePipelineMixin}s for executing a CodePipeline if certain events occur other than a code change.
 [BuildProjectFeature](#tts-cdk-build-pipelines-buildprojectfeature)|*No description*
 [BuildSpecPipeline](#tts-cdk-build-pipelines-buildspecpipeline)|*No description*
 [CleanupStacksMixin](#tts-cdk-build-pipelines-cleanupstacksmixin)|*No description*
@@ -41,7 +41,7 @@ Name|Description
 
 ## class AdditionalTrigger  <a id="tts-cdk-build-pipelines-additionaltrigger"></a>
 
-Convenience class to create additional trigger {CodePipelineMixin}s for executing a CodePipeline if certain events occur other than a code change.
+Convenience class to create additional trigger {CodePipelineMixin}s for executing a CodePipeline if certain events occur other than a code change.
 
 
 ### Initializer
