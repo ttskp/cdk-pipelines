@@ -1,4 +1,6 @@
 import { Stack, Stage, StageProps } from 'aws-cdk-lib';
+import { Pipeline } from 'aws-cdk-lib/aws-codepipeline';
+import { IBucket } from 'aws-cdk-lib/aws-s3';
 import { CodePipeline, CodePipelineProps, ManualApprovalStep } from 'aws-cdk-lib/pipelines';
 import { Construct } from 'constructs';
 import { CodePipelineMixin } from '../../mixins';
@@ -8,6 +10,7 @@ export interface MultiDeployCodePipelineProps extends CodePipelineProps {
   readonly deploymentStages: DeploymentStage[];
   readonly stackFactory?: IStackFactory;
   readonly mixins?: CodePipelineMixin[];
+  readonly crossRegionReplicationBuckets?: { [region: string]: IBucket };
 }
 
 export class StackFactoryApplicationStage extends Stage {
@@ -28,7 +31,13 @@ export class MultiDeployCodePipeline extends CodePipeline {
 
   constructor(scope: Construct, id: string, props: MultiDeployCodePipelineProps) {
 
-    const mdcProps = { ...props };
+    const pipeline = new Pipeline(scope, 'Pipeline', {
+      crossRegionReplicationBuckets: props.crossRegionReplicationBuckets,
+      crossAccountKeys: true,
+      reuseCrossRegionSupportStacks: true,
+    });
+
+    const mdcProps = { codePipeline: pipeline, ...props };
 
     super(scope, id, mdcProps);
     this.mdcProps = mdcProps;
@@ -73,8 +82,12 @@ export class MultiDeployCodePipeline extends CodePipeline {
       });
     });
 
-    this.mdcProps.mixins?.forEach(mixin => { mixin.preDoBuildPipeline(this);});
+    this.mdcProps.mixins?.forEach(mixin => {
+      mixin.preDoBuildPipeline(this);
+    });
     super.doBuildPipeline();
-    this.mdcProps.mixins?.forEach(mixin => { mixin.postDoBuildPipeline(this);});
+    this.mdcProps.mixins?.forEach(mixin => {
+      mixin.postDoBuildPipeline(this);
+    });
   }
 }

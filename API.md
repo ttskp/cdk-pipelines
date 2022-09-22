@@ -346,6 +346,7 @@ new MultiDeployCodePipeline(scope: Construct, id: string, props: MultiDeployCode
   * **selfMutationCodeBuildDefaults** (<code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code>)  Additional customizations to apply to the self mutation CodeBuild projects. __*Default*__: Only `codeBuildDefaults` are applied
   * **synthCodeBuildDefaults** (<code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code>)  Additional customizations to apply to the synthesize CodeBuild projects. __*Default*__: Only `codeBuildDefaults` are applied
   * **deploymentStages** (<code>Array<[DeploymentStage](#tts-cdk-build-pipelines-deploymentstage)></code>)  *No description* 
+  * **crossRegionReplicationBuckets** (<code>Map<string, [aws_s3.IBucket](#aws-cdk-lib-aws-s3-ibucket)></code>)  *No description* __*Optional*__
   * **mixins** (<code>Array<[CodePipelineMixin](#tts-cdk-build-pipelines-codepipelinemixin)></code>)  *No description* __*Optional*__
   * **stackFactory** (<code>[IStackFactory](#tts-cdk-build-pipelines-istackfactory)</code>)  *No description* __*Optional*__
 
@@ -659,6 +660,7 @@ Name | Type | Description
 **codeBuildDefaults**? | <code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code> | Customize the CodeBuild projects created for this pipeline.<br/>__*Default*__: All projects run non-privileged build, SMALL instance, LinuxBuildImage.STANDARD_5_0
 **codePipeline**? | <code>[aws_codepipeline.Pipeline](#aws-cdk-lib-aws-codepipeline-pipeline)</code> | An existing Pipeline to be reused and built upon.<br/>__*Default*__: a new underlying pipeline is created.
 **crossAccountKeys**? | <code>boolean</code> | Create KMS keys for the artifact buckets, allowing cross-account deployments.<br/>__*Default*__: false
+**crossRegionReplicationBuckets**? | <code>Map<string, [aws_s3.IBucket](#aws-cdk-lib-aws-s3-ibucket)></code> | __*Optional*__
 **dockerCredentials**? | <code>Array<[pipelines.DockerCredential](#aws-cdk-lib-pipelines-dockercredential)></code> | A list of credentials used to authenticate to Docker registries.<br/>__*Default*__: []
 **dockerEnabledForSelfMutation**? | <code>boolean</code> | Enable Docker for the self-mutate step.<br/>__*Default*__: false
 **dockerEnabledForSynth**? | <code>boolean</code> | Enable Docker for the 'synth' step.<br/>__*Default*__: false
