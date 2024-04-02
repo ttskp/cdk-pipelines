@@ -4,19 +4,17 @@ import { RetentionDays } from 'aws-cdk-lib/aws-logs';
 import { Provider } from 'aws-cdk-lib/custom-resources';
 import { CodePipeline } from 'aws-cdk-lib/pipelines';
 import { MultiDeployCodePipeline } from '../pipelines';
-import { CleanupStacksFunction } from './functions/CleanupStacks-function';
 import { CodePipelineMixin } from './Mixin';
+import { CleanupStacksFunction } from './functions/CleanupStacks-function';
 
 
 export class CleanupStacksMixin extends CodePipelineMixin {
 
-  private readonly qualifier: string;
-  private readonly skipDeletion: string;
-
-  constructor(props?: { cdkQualifier?: string; skipDeletion?: 'true'|'false' }) {
+  constructor(
+    private readonly skipDeletion: boolean = false,
+    private readonly qualifier: string = DefaultStackSynthesizer.DEFAULT_QUALIFIER,
+  ) {
     super();
-    this.qualifier = props?.cdkQualifier ?? DefaultStackSynthesizer.DEFAULT_QUALIFIER;
-    this.skipDeletion = props?.skipDeletion ?? 'false';
   }
 
   preDoBuildPipeline(_codePipeline: CodePipeline) {
@@ -35,7 +33,7 @@ export class CleanupStacksMixin extends CodePipelineMixin {
     const cleanupFunction = new CleanupStacksFunction(stack, 'CleanupStacks', {
       environment: {
         CDK_QUALIFIER: this.qualifier,
-        SKIP_DELETION: this.skipDeletion,
+        SKIP_DELETION: this.skipDeletion.toString(),
       },
     });
     cleanupFunction.addToRolePolicy(new PolicyStatement({

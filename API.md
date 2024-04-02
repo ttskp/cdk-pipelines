@@ -171,10 +171,11 @@ __Extends__: [CodePipelineMixin](#tts-cdk-build-pipelines-codepipelinemixin)
 
 
 ```ts
-new CleanupStacksMixin(cdkQualifier?: string)
+new CleanupStacksMixin(skipDeletion?: boolean, qualifier?: string)
 ```
 
-* **cdkQualifier** (<code>string</code>)  *No description*
+* **skipDeletion** (<code>boolean</code>)  *No description*
+* **qualifier** (<code>string</code>)  *No description*
 
 
 ### Methods
@@ -331,23 +332,28 @@ new MultiDeployCodePipeline(scope: Construct, id: string, props: MultiDeployCode
 * **id** (<code>string</code>)  *No description*
 * **props** (<code>[MultiDeployCodePipelineProps](#tts-cdk-build-pipelines-multideploycodepipelineprops)</code>)  *No description*
   * **synth** (<code>[pipelines.IFileSetProducer](#aws-cdk-lib-pipelines-ifilesetproducer)</code>)  The build step that produces the CDK Cloud Assembly. 
+  * **artifactBucket** (<code>[aws_s3.IBucket](#aws-cdk-lib-aws-s3-ibucket)</code>)  An existing S3 Bucket to use for storing the pipeline's artifact. __*Default*__: A new S3 bucket will be created.
   * **assetPublishingCodeBuildDefaults** (<code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code>)  Additional customizations to apply to the asset publishing CodeBuild projects. __*Default*__: Only `codeBuildDefaults` are applied
   * **cliVersion** (<code>string</code>)  CDK CLI version to use in self-mutation and asset publishing steps. __*Default*__: Latest version
-  * **codeBuildDefaults** (<code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code>)  Customize the CodeBuild projects created for this pipeline. __*Default*__: All projects run non-privileged build, SMALL instance, LinuxBuildImage.STANDARD_5_0
+  * **codeBuildDefaults** (<code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code>)  Customize the CodeBuild projects created for this pipeline. __*Default*__: All projects run non-privileged build, SMALL instance, LinuxBuildImage.STANDARD_7_0
   * **codePipeline** (<code>[aws_codepipeline.Pipeline](#aws-cdk-lib-aws-codepipeline-pipeline)</code>)  An existing Pipeline to be reused and built upon. __*Default*__: a new underlying pipeline is created.
   * **crossAccountKeys** (<code>boolean</code>)  Create KMS keys for the artifact buckets, allowing cross-account deployments. __*Default*__: false
   * **dockerCredentials** (<code>Array<[pipelines.DockerCredential](#aws-cdk-lib-pipelines-dockercredential)></code>)  A list of credentials used to authenticate to Docker registries. __*Default*__: []
   * **dockerEnabledForSelfMutation** (<code>boolean</code>)  Enable Docker for the self-mutate step. __*Default*__: false
   * **dockerEnabledForSynth** (<code>boolean</code>)  Enable Docker for the 'synth' step. __*Default*__: false
+  * **enableKeyRotation** (<code>boolean</code>)  Enable KMS key rotation for the generated KMS keys. __*Default*__: false (key rotation is disabled)
   * **pipelineName** (<code>string</code>)  The name of the CodePipeline pipeline. __*Default*__: Automatically generated
   * **publishAssetsInParallel** (<code>boolean</code>)  Publish assets in multiple CodeBuild projects. __*Default*__: true
   * **reuseCrossRegionSupportStacks** (<code>boolean</code>)  Reuse the same cross region support stack for all pipelines in the App. __*Default*__: true (Use the same support stack for all pipelines in App)
+  * **role** (<code>[aws_iam.IRole](#aws-cdk-lib-aws-iam-irole)</code>)  The IAM role to be assumed by this Pipeline. __*Default*__: A new role is created
   * **selfMutation** (<code>boolean</code>)  Whether the pipeline will update itself. __*Default*__: true
   * **selfMutationCodeBuildDefaults** (<code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code>)  Additional customizations to apply to the self mutation CodeBuild projects. __*Default*__: Only `codeBuildDefaults` are applied
   * **synthCodeBuildDefaults** (<code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code>)  Additional customizations to apply to the synthesize CodeBuild projects. __*Default*__: Only `codeBuildDefaults` are applied
+  * **useChangeSets** (<code>boolean</code>)  Deploy every stack by creating a change set and executing it. __*Default*__: true
   * **deploymentStages** (<code>Array<[DeploymentStage](#tts-cdk-build-pipelines-deploymentstage)></code>)  *No description* 
   * **crossRegionReplicationBuckets** (<code>Map<string, [aws_s3.IBucket](#aws-cdk-lib-aws-s3-ibucket)></code>)  *No description* __*Optional*__
   * **mixins** (<code>Array<[CodePipelineMixin](#tts-cdk-build-pipelines-codepipelinemixin)></code>)  *No description* __*Optional*__
+  * **restartExecutionOnUpdate** (<code>boolean</code>)  *No description* __*Optional*__
   * **stackFactory** (<code>[IStackFactory](#tts-cdk-build-pipelines-istackfactory)</code>)  *No description* __*Optional*__
 
 
@@ -407,8 +413,8 @@ create(scope: Construct, env: Environment): Stack
 
 * **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
 * **env** (<code>[Environment](#aws-cdk-lib-environment)</code>)  *No description*
-  * **account** (<code>string</code>)  The AWS account ID for this environment. __*Default*__: Aws.accountId which means that the stack will be account-agnostic.
-  * **region** (<code>string</code>)  The AWS region for this environment. __*Default*__: Aws.region which means that the stack will be region-agnostic.
+  * **account** (<code>string</code>)  The AWS account ID for this environment. __*Default*__: Aws.ACCOUNT_ID which means that the stack will be account-agnostic.
+  * **region** (<code>string</code>)  The AWS region for this environment. __*Default*__: Aws.REGION which means that the stack will be region-agnostic.
 
 __Returns__:
 * <code>[Stack](#aws-cdk-lib-stack)</code>
@@ -636,8 +642,8 @@ create(scope: Construct, env: Environment): Stack
 
 * **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
 * **env** (<code>[Environment](#aws-cdk-lib-environment)</code>)  *No description*
-  * **account** (<code>string</code>)  The AWS account ID for this environment. __*Default*__: Aws.accountId which means that the stack will be account-agnostic.
-  * **region** (<code>string</code>)  The AWS region for this environment. __*Default*__: Aws.region which means that the stack will be region-agnostic.
+  * **account** (<code>string</code>)  The AWS account ID for this environment. __*Default*__: Aws.ACCOUNT_ID which means that the stack will be account-agnostic.
+  * **region** (<code>string</code>)  The AWS region for this environment. __*Default*__: Aws.REGION which means that the stack will be region-agnostic.
 
 __Returns__:
 * <code>[Stack](#aws-cdk-lib-stack)</code>
@@ -655,23 +661,28 @@ Name | Type | Description
 -----|------|-------------
 **deploymentStages** | <code>Array<[DeploymentStage](#tts-cdk-build-pipelines-deploymentstage)></code> | <span></span>
 **synth** | <code>[pipelines.IFileSetProducer](#aws-cdk-lib-pipelines-ifilesetproducer)</code> | The build step that produces the CDK Cloud Assembly.
+**artifactBucket**? | <code>[aws_s3.IBucket](#aws-cdk-lib-aws-s3-ibucket)</code> | An existing S3 Bucket to use for storing the pipeline's artifact.<br/>__*Default*__: A new S3 bucket will be created.
 **assetPublishingCodeBuildDefaults**? | <code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code> | Additional customizations to apply to the asset publishing CodeBuild projects.<br/>__*Default*__: Only `codeBuildDefaults` are applied
 **cliVersion**? | <code>string</code> | CDK CLI version to use in self-mutation and asset publishing steps.<br/>__*Default*__: Latest version
-**codeBuildDefaults**? | <code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code> | Customize the CodeBuild projects created for this pipeline.<br/>__*Default*__: All projects run non-privileged build, SMALL instance, LinuxBuildImage.STANDARD_5_0
+**codeBuildDefaults**? | <code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code> | Customize the CodeBuild projects created for this pipeline.<br/>__*Default*__: All projects run non-privileged build, SMALL instance, LinuxBuildImage.STANDARD_7_0
 **codePipeline**? | <code>[aws_codepipeline.Pipeline](#aws-cdk-lib-aws-codepipeline-pipeline)</code> | An existing Pipeline to be reused and built upon.<br/>__*Default*__: a new underlying pipeline is created.
 **crossAccountKeys**? | <code>boolean</code> | Create KMS keys for the artifact buckets, allowing cross-account deployments.<br/>__*Default*__: false
 **crossRegionReplicationBuckets**? | <code>Map<string, [aws_s3.IBucket](#aws-cdk-lib-aws-s3-ibucket)></code> | __*Optional*__
 **dockerCredentials**? | <code>Array<[pipelines.DockerCredential](#aws-cdk-lib-pipelines-dockercredential)></code> | A list of credentials used to authenticate to Docker registries.<br/>__*Default*__: []
 **dockerEnabledForSelfMutation**? | <code>boolean</code> | Enable Docker for the self-mutate step.<br/>__*Default*__: false
 **dockerEnabledForSynth**? | <code>boolean</code> | Enable Docker for the 'synth' step.<br/>__*Default*__: false
+**enableKeyRotation**? | <code>boolean</code> | Enable KMS key rotation for the generated KMS keys.<br/>__*Default*__: false (key rotation is disabled)
 **mixins**? | <code>Array<[CodePipelineMixin](#tts-cdk-build-pipelines-codepipelinemixin)></code> | __*Optional*__
 **pipelineName**? | <code>string</code> | The name of the CodePipeline pipeline.<br/>__*Default*__: Automatically generated
 **publishAssetsInParallel**? | <code>boolean</code> | Publish assets in multiple CodeBuild projects.<br/>__*Default*__: true
+**restartExecutionOnUpdate**? | <code>boolean</code> | __*Optional*__
 **reuseCrossRegionSupportStacks**? | <code>boolean</code> | Reuse the same cross region support stack for all pipelines in the App.<br/>__*Default*__: true (Use the same support stack for all pipelines in App)
+**role**? | <code>[aws_iam.IRole](#aws-cdk-lib-aws-iam-irole)</code> | The IAM role to be assumed by this Pipeline.<br/>__*Default*__: A new role is created
 **selfMutation**? | <code>boolean</code> | Whether the pipeline will update itself.<br/>__*Default*__: true
 **selfMutationCodeBuildDefaults**? | <code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code> | Additional customizations to apply to the self mutation CodeBuild projects.<br/>__*Default*__: Only `codeBuildDefaults` are applied
 **stackFactory**? | <code>[IStackFactory](#tts-cdk-build-pipelines-istackfactory)</code> | __*Optional*__
 **synthCodeBuildDefaults**? | <code>[pipelines.CodeBuildOptions](#aws-cdk-lib-pipelines-codebuildoptions)</code> | Additional customizations to apply to the synthesize CodeBuild projects.<br/>__*Default*__: Only `codeBuildDefaults` are applied
+**useChangeSets**? | <code>boolean</code> | Deploy every stack by creating a change set and executing it.<br/>__*Default*__: true
 
 
 

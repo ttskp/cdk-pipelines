@@ -145,7 +145,7 @@ export class BuildSpecPipeline extends Construct {
   }
 
   private readBuildSpecFromFile(file: string) {
-    const buildSpecYaml = fs.readFileSync(file).toString('UTF8');
+    const buildSpecYaml = fs.readFileSync(file).toString('utf8');
     return YAML.parse(buildSpecYaml);
   }
 
