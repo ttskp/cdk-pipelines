@@ -14,8 +14,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
 
   gitignore: ['.idea/', 'cdk.out/', 'cdk.context.json'],
 
-  cdkVersion: '2.31.1',
-  cdkVersionPinning: true,
+  cdkVersion: '2.96.0',
 
   bundledDeps: ['yaml'],
   devDeps: [

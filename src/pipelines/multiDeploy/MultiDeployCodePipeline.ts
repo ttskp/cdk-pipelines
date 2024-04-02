@@ -10,7 +10,8 @@ export interface MultiDeployCodePipelineProps extends CodePipelineProps {
   readonly deploymentStages: DeploymentStage[];
   readonly stackFactory?: IStackFactory;
   readonly mixins?: CodePipelineMixin[];
-  readonly crossRegionReplicationBuckets?: { [region: string]: IBucket };
+  crossRegionReplicationBuckets?: { [region: string]: IBucket };
+  readonly restartExecutionOnUpdate?: boolean;
 }
 
 export class StackFactoryApplicationStage extends Stage {
@@ -35,7 +36,10 @@ export class MultiDeployCodePipeline extends CodePipeline {
       crossRegionReplicationBuckets: props.crossRegionReplicationBuckets,
       crossAccountKeys: true,
       reuseCrossRegionSupportStacks: true,
+      ...( props.restartExecutionOnUpdate ? { restartExecutionOnUpdate: props.restartExecutionOnUpdate } : {}),
     });
+
+    delete props.crossRegionReplicationBuckets;
 
     const mdcProps = { codePipeline: pipeline, ...props };
 
