@@ -4,8 +4,8 @@ import { RetentionDays } from 'aws-cdk-lib/aws-logs';
 import { Provider } from 'aws-cdk-lib/custom-resources';
 import { CodePipeline } from 'aws-cdk-lib/pipelines';
 import { MultiDeployCodePipeline } from '../pipelines';
-import { CodePipelineMixin } from './Mixin';
 import { CleanupStacksFunction } from './functions/CleanupStacks-function';
+import { CodePipelineMixin } from './Mixin';
 
 
 export class CleanupStacksMixin extends CodePipelineMixin {
