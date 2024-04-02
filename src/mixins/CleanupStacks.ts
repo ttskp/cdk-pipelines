@@ -11,10 +11,12 @@ import { CodePipelineMixin } from './Mixin';
 export class CleanupStacksMixin extends CodePipelineMixin {
 
   private readonly qualifier: string;
+  private readonly skipDeletion: string;
 
-  constructor(cdkQualifier: string = DefaultStackSynthesizer.DEFAULT_QUALIFIER) {
+  constructor(props?: { cdkQualifier?: string; skipDeletion?: 'true'|'false' }) {
     super();
-    this.qualifier = cdkQualifier;
+    this.qualifier = props?.cdkQualifier ?? DefaultStackSynthesizer.DEFAULT_QUALIFIER;
+    this.skipDeletion = props?.skipDeletion ?? 'false';
   }
 
   preDoBuildPipeline(_codePipeline: CodePipeline) {
@@ -33,6 +35,7 @@ export class CleanupStacksMixin extends CodePipelineMixin {
     const cleanupFunction = new CleanupStacksFunction(stack, 'CleanupStacks', {
       environment: {
         CDK_QUALIFIER: this.qualifier,
+        SKIP_DELETION: this.skipDeletion,
       },
     });
     cleanupFunction.addToRolePolicy(new PolicyStatement({

@@ -40,6 +40,10 @@ const onUpdate = async (event: any) => {
   return { PhysicalResourceId: event.PhysicalResourceId };
 };
 const onDelete = async (event: any) => {
+  if (process.env.SKIP_DELETION && process.env.SKIP_DELETION == 'true') {
+    console.log('Skipping Deletion.');
+    return { PhysicalResourceId: event.PhysicalResourceId };
+  }
   console.log('Delete');
   const { stackName, account, region } = event.ResourceProperties;
   const credentials = await getDeploymentAccountCredentials(account, region);

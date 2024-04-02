@@ -17,7 +17,7 @@ export class CleanupStacksFunction extends lambda.Function {
     super(scope, id, {
       description: 'src/mixins/functions/CleanupStacks.lambda.ts',
       ...props,
-      runtime: lambda.Runtime.NODEJS_14_X,
+      runtime: new lambda.Runtime('nodejs18.x', lambda.RuntimeFamily.NODEJS),
       handler: 'index.handler',
       code: lambda.Code.fromAsset(path.join(__dirname, '../../../assets/mixins/functions/CleanupStacks.lambda')),
     });
