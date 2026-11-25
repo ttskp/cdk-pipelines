@@ -3,8 +3,8 @@ import { Pipeline } from 'aws-cdk-lib/aws-codepipeline';
 import { IBucket } from 'aws-cdk-lib/aws-s3';
 import { CodePipeline, CodePipelineProps, ManualApprovalStep } from 'aws-cdk-lib/pipelines';
 import { Construct } from 'constructs';
-import { CodePipelineMixin } from '../../mixins';
 import { DeploymentStage, IStackFactory, NoopStackFactory } from './deploymentTargets';
+import { CodePipelineMixin } from '../../mixins';
 
 export interface MultiDeployCodePipelineProps extends CodePipelineProps {
   readonly deploymentStages: DeploymentStage[];
