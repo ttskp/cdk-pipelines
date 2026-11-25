@@ -24,7 +24,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   ],
 
   dependabot: true,
-  
+
   cdkVersion: '2.278.0',
   jsiiVersion: '~6.0.0',
   packageManager: javascript.NodePackageManager.NPM,
