@@ -2,41 +2,41 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
-### BuildSpecPipeline <a name="BuildSpecPipeline" id="@tts-cdk/build-pipelines.BuildSpecPipeline"></a>
+### BuildSpecPipeline <a name="BuildSpecPipeline" id="@ttskp/cdk-pipelines.BuildSpecPipeline"></a>
 
 - *Implements:* constructs.IConstruct, constructs.IDependable
 
-#### Initializers <a name="Initializers" id="@tts-cdk/build-pipelines.BuildSpecPipeline.Initializer"></a>
+#### Initializers <a name="Initializers" id="@ttskp/cdk-pipelines.BuildSpecPipeline.Initializer"></a>
 
 ```typescript
-import { BuildSpecPipeline } from '@tts-cdk/build-pipelines'
+import { BuildSpecPipeline } from '@ttskp/cdk-pipelines'
 
 new BuildSpecPipeline(scope: Construct, name: string, props?: BuildSpecPipelineProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipeline.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipeline.Initializer.parameter.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipeline.Initializer.parameter.props">props</a></code> | <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipelineProps">BuildSpecPipelineProps</a></code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipeline.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipeline.Initializer.parameter.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipeline.Initializer.parameter.props">props</a></code> | <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipelineProps">BuildSpecPipelineProps</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="@tts-cdk/build-pipelines.BuildSpecPipeline.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="@ttskp/cdk-pipelines.BuildSpecPipeline.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="@tts-cdk/build-pipelines.BuildSpecPipeline.Initializer.parameter.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="@ttskp/cdk-pipelines.BuildSpecPipeline.Initializer.parameter.name"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Optional</sup> <a name="props" id="@tts-cdk/build-pipelines.BuildSpecPipeline.Initializer.parameter.props"></a>
+##### `props`<sup>Optional</sup> <a name="props" id="@ttskp/cdk-pipelines.BuildSpecPipeline.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#@tts-cdk/build-pipelines.BuildSpecPipelineProps">BuildSpecPipelineProps</a>
+- *Type:* <a href="#@ttskp/cdk-pipelines.BuildSpecPipelineProps">BuildSpecPipelineProps</a>
 
 ---
 
@@ -44,12 +44,12 @@ new BuildSpecPipeline(scope: Construct, name: string, props?: BuildSpecPipelineP
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipeline.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipeline.with">with</a></code> | Applies one or more mixins to this construct. |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipeline.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipeline.with">with</a></code> | Applies one or more mixins to this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="@tts-cdk/build-pipelines.BuildSpecPipeline.toString"></a>
+##### `toString` <a name="toString" id="@ttskp/cdk-pipelines.BuildSpecPipeline.toString"></a>
 
 ```typescript
 public toString(): string
@@ -57,7 +57,7 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `with` <a name="with" id="@tts-cdk/build-pipelines.BuildSpecPipeline.with"></a>
+##### `with` <a name="with" id="@ttskp/cdk-pipelines.BuildSpecPipeline.with"></a>
 
 ```typescript
 public with(mixins: ...IMixin[]): IConstruct
@@ -70,7 +70,7 @@ start of the call, so constructs added by a mixin will not be visited.
 Use multiple `with()` calls if subsequent mixins should apply to added
 constructs.
 
-###### `mixins`<sup>Required</sup> <a name="mixins" id="@tts-cdk/build-pipelines.BuildSpecPipeline.with.parameter.mixins"></a>
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@ttskp/cdk-pipelines.BuildSpecPipeline.with.parameter.mixins"></a>
 
 - *Type:* ...constructs.IMixin[]
 
@@ -82,14 +82,14 @@ The mixins to apply.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipeline.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipeline.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### `isConstruct` <a name="isConstruct" id="@tts-cdk/build-pipelines.BuildSpecPipeline.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@ttskp/cdk-pipelines.BuildSpecPipeline.isConstruct"></a>
 
 ```typescript
-import { BuildSpecPipeline } from '@tts-cdk/build-pipelines'
+import { BuildSpecPipeline } from '@ttskp/cdk-pipelines'
 
 BuildSpecPipeline.isConstruct(x: any)
 ```
@@ -110,7 +110,7 @@ library can be accidentally installed, and `instanceof` will behave
 unpredictably. It is safest to avoid using `instanceof`, and using
 this type-testing method instead.
 
-###### `x`<sup>Required</sup> <a name="x" id="@tts-cdk/build-pipelines.BuildSpecPipeline.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="@ttskp/cdk-pipelines.BuildSpecPipeline.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -122,17 +122,17 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipeline.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipeline.property.buildSpec">buildSpec</a></code> | <code>{[ key: string ]: any}</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipeline.property.codebuildProject">codebuildProject</a></code> | <code>aws-cdk-lib.aws_codebuild.PipelineProject</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipeline.property.features">features</a></code> | <code><a href="#@tts-cdk/build-pipelines.BuildProjectFeature">BuildProjectFeature</a>[]</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipeline.property.pipeline">pipeline</a></code> | <code>aws-cdk-lib.aws_codepipeline.Pipeline</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipeline.property.props">props</a></code> | <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipelineProps">BuildSpecPipelineProps</a></code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipeline.property.repository">repository</a></code> | <code>aws-cdk-lib.aws_codecommit.Repository</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipeline.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipeline.property.buildSpec">buildSpec</a></code> | <code>{[ key: string ]: any}</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipeline.property.codebuildProject">codebuildProject</a></code> | <code>aws-cdk-lib.aws_codebuild.PipelineProject</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipeline.property.features">features</a></code> | <code><a href="#@ttskp/cdk-pipelines.BuildProjectFeature">BuildProjectFeature</a>[]</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipeline.property.pipeline">pipeline</a></code> | <code>aws-cdk-lib.aws_codepipeline.Pipeline</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipeline.property.props">props</a></code> | <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipelineProps">BuildSpecPipelineProps</a></code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipeline.property.repository">repository</a></code> | <code>aws-cdk-lib.aws_codecommit.Repository</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="@tts-cdk/build-pipelines.BuildSpecPipeline.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="@ttskp/cdk-pipelines.BuildSpecPipeline.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -144,7 +144,7 @@ The tree node.
 
 ---
 
-##### `buildSpec`<sup>Required</sup> <a name="buildSpec" id="@tts-cdk/build-pipelines.BuildSpecPipeline.property.buildSpec"></a>
+##### `buildSpec`<sup>Required</sup> <a name="buildSpec" id="@ttskp/cdk-pipelines.BuildSpecPipeline.property.buildSpec"></a>
 
 ```typescript
 public readonly buildSpec: {[ key: string ]: any};
@@ -154,7 +154,7 @@ public readonly buildSpec: {[ key: string ]: any};
 
 ---
 
-##### `codebuildProject`<sup>Required</sup> <a name="codebuildProject" id="@tts-cdk/build-pipelines.BuildSpecPipeline.property.codebuildProject"></a>
+##### `codebuildProject`<sup>Required</sup> <a name="codebuildProject" id="@ttskp/cdk-pipelines.BuildSpecPipeline.property.codebuildProject"></a>
 
 ```typescript
 public readonly codebuildProject: PipelineProject;
@@ -164,17 +164,17 @@ public readonly codebuildProject: PipelineProject;
 
 ---
 
-##### `features`<sup>Required</sup> <a name="features" id="@tts-cdk/build-pipelines.BuildSpecPipeline.property.features"></a>
+##### `features`<sup>Required</sup> <a name="features" id="@ttskp/cdk-pipelines.BuildSpecPipeline.property.features"></a>
 
 ```typescript
 public readonly features: BuildProjectFeature[];
 ```
 
-- *Type:* <a href="#@tts-cdk/build-pipelines.BuildProjectFeature">BuildProjectFeature</a>[]
+- *Type:* <a href="#@ttskp/cdk-pipelines.BuildProjectFeature">BuildProjectFeature</a>[]
 
 ---
 
-##### `pipeline`<sup>Required</sup> <a name="pipeline" id="@tts-cdk/build-pipelines.BuildSpecPipeline.property.pipeline"></a>
+##### `pipeline`<sup>Required</sup> <a name="pipeline" id="@ttskp/cdk-pipelines.BuildSpecPipeline.property.pipeline"></a>
 
 ```typescript
 public readonly pipeline: Pipeline;
@@ -184,17 +184,17 @@ public readonly pipeline: Pipeline;
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="@tts-cdk/build-pipelines.BuildSpecPipeline.property.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="@ttskp/cdk-pipelines.BuildSpecPipeline.property.props"></a>
 
 ```typescript
 public readonly props: BuildSpecPipelineProps;
 ```
 
-- *Type:* <a href="#@tts-cdk/build-pipelines.BuildSpecPipelineProps">BuildSpecPipelineProps</a>
+- *Type:* <a href="#@ttskp/cdk-pipelines.BuildSpecPipelineProps">BuildSpecPipelineProps</a>
 
 ---
 
-##### `repository`<sup>Required</sup> <a name="repository" id="@tts-cdk/build-pipelines.BuildSpecPipeline.property.repository"></a>
+##### `repository`<sup>Required</sup> <a name="repository" id="@ttskp/cdk-pipelines.BuildSpecPipeline.property.repository"></a>
 
 ```typescript
 public readonly repository: Repository;
@@ -205,41 +205,41 @@ public readonly repository: Repository;
 ---
 
 
-### MultiDeployCodePipeline <a name="MultiDeployCodePipeline" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline"></a>
+### MultiDeployCodePipeline <a name="MultiDeployCodePipeline" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline"></a>
 
 - *Implements:* constructs.IConstruct, constructs.IDependable
 
-#### Initializers <a name="Initializers" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.Initializer"></a>
+#### Initializers <a name="Initializers" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.Initializer"></a>
 
 ```typescript
-import { MultiDeployCodePipeline } from '@tts-cdk/build-pipelines'
+import { MultiDeployCodePipeline } from '@ttskp/cdk-pipelines'
 
 new MultiDeployCodePipeline(scope: Construct, id: string, props: MultiDeployCodePipelineProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.Initializer.parameter.props">props</a></code> | <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps">MultiDeployCodePipelineProps</a></code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.Initializer.parameter.props">props</a></code> | <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps">MultiDeployCodePipelineProps</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps">MultiDeployCodePipelineProps</a>
+- *Type:* <a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps">MultiDeployCodePipelineProps</a>
 
 ---
 
@@ -247,15 +247,15 @@ new MultiDeployCodePipeline(scope: Construct, id: string, props: MultiDeployCode
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.with">with</a></code> | Applies one or more mixins to this construct. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.addStage">addStage</a></code> | Deploy a single Stage by itself. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.addWave">addWave</a></code> | Add a Wave to the pipeline, for deploying multiple Stages in parallel. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.buildPipeline">buildPipeline</a></code> | Send the current pipeline definition to the engine, and construct the pipeline. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.with">with</a></code> | Applies one or more mixins to this construct. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.addStage">addStage</a></code> | Deploy a single Stage by itself. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.addWave">addWave</a></code> | Add a Wave to the pipeline, for deploying multiple Stages in parallel. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.buildPipeline">buildPipeline</a></code> | Send the current pipeline definition to the engine, and construct the pipeline. |
 
 ---
 
-##### `toString` <a name="toString" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.toString"></a>
+##### `toString` <a name="toString" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.toString"></a>
 
 ```typescript
 public toString(): string
@@ -263,7 +263,7 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `with` <a name="with" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.with"></a>
+##### `with` <a name="with" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.with"></a>
 
 ```typescript
 public with(mixins: ...IMixin[]): IConstruct
@@ -276,7 +276,7 @@ start of the call, so constructs added by a mixin will not be visited.
 Use multiple `with()` calls if subsequent mixins should apply to added
 constructs.
 
-###### `mixins`<sup>Required</sup> <a name="mixins" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.with.parameter.mixins"></a>
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.with.parameter.mixins"></a>
 
 - *Type:* ...constructs.IMixin[]
 
@@ -284,7 +284,7 @@ The mixins to apply.
 
 ---
 
-##### `addStage` <a name="addStage" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.addStage"></a>
+##### `addStage` <a name="addStage" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.addStage"></a>
 
 ```typescript
 public addStage(stage: Stage, options?: AddStageOpts): StageDeployment
@@ -296,19 +296,19 @@ Add a Stage to the pipeline, to be deployed in sequence with other
 Stages added to the pipeline. All Stacks in the stage will be deployed
 in an order automatically determined by their relative dependencies.
 
-###### `stage`<sup>Required</sup> <a name="stage" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.addStage.parameter.stage"></a>
+###### `stage`<sup>Required</sup> <a name="stage" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.addStage.parameter.stage"></a>
 
 - *Type:* aws-cdk-lib.Stage
 
 ---
 
-###### `options`<sup>Optional</sup> <a name="options" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.addStage.parameter.options"></a>
+###### `options`<sup>Optional</sup> <a name="options" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.addStage.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.pipelines.AddStageOpts
 
 ---
 
-##### `addWave` <a name="addWave" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.addWave"></a>
+##### `addWave` <a name="addWave" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.addWave"></a>
 
 ```typescript
 public addWave(id: string, options?: WaveOptions): Wave
@@ -328,19 +328,19 @@ wave.addStage(new MyApplicationStage(this, 'Stage1'));
 wave.addStage(new MyApplicationStage(this, 'Stage2'));
 ```
 
-###### `id`<sup>Required</sup> <a name="id" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.addWave.parameter.id"></a>
+###### `id`<sup>Required</sup> <a name="id" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.addWave.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-###### `options`<sup>Optional</sup> <a name="options" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.addWave.parameter.options"></a>
+###### `options`<sup>Optional</sup> <a name="options" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.addWave.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.pipelines.WaveOptions
 
 ---
 
-##### `buildPipeline` <a name="buildPipeline" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.buildPipeline"></a>
+##### `buildPipeline` <a name="buildPipeline" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.buildPipeline"></a>
 
 ```typescript
 public buildPipeline(): void
@@ -354,15 +354,15 @@ It is not possible to modify the pipeline after calling this method.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.isPipeline">isPipeline</a></code> | Return whether the given object extends `PipelineBase`. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.isPipeline">isPipeline</a></code> | Return whether the given object extends `PipelineBase`. |
 
 ---
 
-##### `isConstruct` <a name="isConstruct" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.isConstruct"></a>
 
 ```typescript
-import { MultiDeployCodePipeline } from '@tts-cdk/build-pipelines'
+import { MultiDeployCodePipeline } from '@ttskp/cdk-pipelines'
 
 MultiDeployCodePipeline.isConstruct(x: any)
 ```
@@ -383,7 +383,7 @@ library can be accidentally installed, and `instanceof` will behave
 unpredictably. It is safest to avoid using `instanceof`, and using
 this type-testing method instead.
 
-###### `x`<sup>Required</sup> <a name="x" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -391,10 +391,10 @@ Any object.
 
 ---
 
-##### `isPipeline` <a name="isPipeline" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.isPipeline"></a>
+##### `isPipeline` <a name="isPipeline" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.isPipeline"></a>
 
 ```typescript
-import { MultiDeployCodePipeline } from '@tts-cdk/build-pipelines'
+import { MultiDeployCodePipeline } from '@ttskp/cdk-pipelines'
 
 MultiDeployCodePipeline.isPipeline(x: any)
 ```
@@ -403,7 +403,7 @@ Return whether the given object extends `PipelineBase`.
 
 We do attribute detection since we can't reliably use 'instanceof'.
 
-###### `x`<sup>Required</sup> <a name="x" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.isPipeline.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.isPipeline.parameter.x"></a>
 
 - *Type:* any
 
@@ -413,20 +413,20 @@ We do attribute detection since we can't reliably use 'instanceof'.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.cloudAssemblyFileSet">cloudAssemblyFileSet</a></code> | <code>aws-cdk-lib.pipelines.FileSet</code> | The FileSet tha contains the cloud assembly. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.synth">synth</a></code> | <code>aws-cdk-lib.pipelines.IFileSetProducer</code> | The build step that produces the CDK Cloud Assembly. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.waves">waves</a></code> | <code>aws-cdk-lib.pipelines.Wave[]</code> | The waves in this pipeline. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.pipeline">pipeline</a></code> | <code>aws-cdk-lib.aws_codepipeline.Pipeline</code> | The CodePipeline pipeline that deploys the CDK app. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.selfMutationEnabled">selfMutationEnabled</a></code> | <code>boolean</code> | Whether SelfMutation is enabled for this CDK Pipeline. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.selfMutationProject">selfMutationProject</a></code> | <code>aws-cdk-lib.aws_codebuild.IProject</code> | The CodeBuild project that performs the SelfMutation. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.synthProject">synthProject</a></code> | <code>aws-cdk-lib.aws_codebuild.IProject</code> | The CodeBuild project that performs the Synth. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.usePipelineRoleForActions">usePipelineRoleForActions</a></code> | <code>boolean</code> | Allow pipeline service role used for actions if no action role configured instead of creating a new role for each action. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.stacks">stacks</a></code> | <code>aws-cdk-lib.Stack[]</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.cloudAssemblyFileSet">cloudAssemblyFileSet</a></code> | <code>aws-cdk-lib.pipelines.FileSet</code> | The FileSet tha contains the cloud assembly. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.synth">synth</a></code> | <code>aws-cdk-lib.pipelines.IFileSetProducer</code> | The build step that produces the CDK Cloud Assembly. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.waves">waves</a></code> | <code>aws-cdk-lib.pipelines.Wave[]</code> | The waves in this pipeline. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.pipeline">pipeline</a></code> | <code>aws-cdk-lib.aws_codepipeline.Pipeline</code> | The CodePipeline pipeline that deploys the CDK app. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.selfMutationEnabled">selfMutationEnabled</a></code> | <code>boolean</code> | Whether SelfMutation is enabled for this CDK Pipeline. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.selfMutationProject">selfMutationProject</a></code> | <code>aws-cdk-lib.aws_codebuild.IProject</code> | The CodeBuild project that performs the SelfMutation. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.synthProject">synthProject</a></code> | <code>aws-cdk-lib.aws_codebuild.IProject</code> | The CodeBuild project that performs the Synth. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.usePipelineRoleForActions">usePipelineRoleForActions</a></code> | <code>boolean</code> | Allow pipeline service role used for actions if no action role configured instead of creating a new role for each action. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.stacks">stacks</a></code> | <code>aws-cdk-lib.Stack[]</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -438,7 +438,7 @@ The tree node.
 
 ---
 
-##### `cloudAssemblyFileSet`<sup>Required</sup> <a name="cloudAssemblyFileSet" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.cloudAssemblyFileSet"></a>
+##### `cloudAssemblyFileSet`<sup>Required</sup> <a name="cloudAssemblyFileSet" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.cloudAssemblyFileSet"></a>
 
 ```typescript
 public readonly cloudAssemblyFileSet: FileSet;
@@ -452,7 +452,7 @@ This is the primary output of the synth step.
 
 ---
 
-##### `synth`<sup>Required</sup> <a name="synth" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.synth"></a>
+##### `synth`<sup>Required</sup> <a name="synth" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.synth"></a>
 
 ```typescript
 public readonly synth: IFileSetProducer;
@@ -464,7 +464,7 @@ The build step that produces the CDK Cloud Assembly.
 
 ---
 
-##### `waves`<sup>Required</sup> <a name="waves" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.waves"></a>
+##### `waves`<sup>Required</sup> <a name="waves" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.waves"></a>
 
 ```typescript
 public readonly waves: Wave[];
@@ -476,7 +476,7 @@ The waves in this pipeline.
 
 ---
 
-##### `pipeline`<sup>Required</sup> <a name="pipeline" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.pipeline"></a>
+##### `pipeline`<sup>Required</sup> <a name="pipeline" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.pipeline"></a>
 
 ```typescript
 public readonly pipeline: Pipeline;
@@ -490,7 +490,7 @@ Only available after the pipeline has been built.
 
 ---
 
-##### `selfMutationEnabled`<sup>Required</sup> <a name="selfMutationEnabled" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.selfMutationEnabled"></a>
+##### `selfMutationEnabled`<sup>Required</sup> <a name="selfMutationEnabled" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.selfMutationEnabled"></a>
 
 ```typescript
 public readonly selfMutationEnabled: boolean;
@@ -502,7 +502,7 @@ Whether SelfMutation is enabled for this CDK Pipeline.
 
 ---
 
-##### `selfMutationProject`<sup>Required</sup> <a name="selfMutationProject" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.selfMutationProject"></a>
+##### `selfMutationProject`<sup>Required</sup> <a name="selfMutationProject" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.selfMutationProject"></a>
 
 ```typescript
 public readonly selfMutationProject: IProject;
@@ -517,7 +517,7 @@ is called, or if selfMutation has been disabled.
 
 ---
 
-##### `synthProject`<sup>Required</sup> <a name="synthProject" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.synthProject"></a>
+##### `synthProject`<sup>Required</sup> <a name="synthProject" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.synthProject"></a>
 
 ```typescript
 public readonly synthProject: IProject;
@@ -531,7 +531,7 @@ Only available after the pipeline has been built.
 
 ---
 
-##### `usePipelineRoleForActions`<sup>Required</sup> <a name="usePipelineRoleForActions" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.usePipelineRoleForActions"></a>
+##### `usePipelineRoleForActions`<sup>Required</sup> <a name="usePipelineRoleForActions" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.usePipelineRoleForActions"></a>
 
 ```typescript
 public readonly usePipelineRoleForActions: boolean;
@@ -543,7 +543,7 @@ Allow pipeline service role used for actions if no action role configured instea
 
 ---
 
-##### `stacks`<sup>Required</sup> <a name="stacks" id="@tts-cdk/build-pipelines.MultiDeployCodePipeline.property.stacks"></a>
+##### `stacks`<sup>Required</sup> <a name="stacks" id="@ttskp/cdk-pipelines.MultiDeployCodePipeline.property.stacks"></a>
 
 ```typescript
 public readonly stacks: Stack[];
@@ -554,48 +554,48 @@ public readonly stacks: Stack[];
 ---
 
 
-### StackFactoryApplicationStage <a name="StackFactoryApplicationStage" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage"></a>
+### StackFactoryApplicationStage <a name="StackFactoryApplicationStage" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage"></a>
 
 - *Implements:* constructs.IConstruct, constructs.IDependable
 
-#### Initializers <a name="Initializers" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.Initializer"></a>
+#### Initializers <a name="Initializers" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.Initializer"></a>
 
 ```typescript
-import { StackFactoryApplicationStage } from '@tts-cdk/build-pipelines'
+import { StackFactoryApplicationStage } from '@ttskp/cdk-pipelines'
 
 new StackFactoryApplicationStage(scope: Construct, id: string, props: StageProps, stackFactory: IStackFactory)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.Initializer.parameter.props">props</a></code> | <code>aws-cdk-lib.StageProps</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.Initializer.parameter.stackFactory">stackFactory</a></code> | <code><a href="#@tts-cdk/build-pipelines.IStackFactory">IStackFactory</a></code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.Initializer.parameter.props">props</a></code> | <code>aws-cdk-lib.StageProps</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.Initializer.parameter.stackFactory">stackFactory</a></code> | <code><a href="#@ttskp/cdk-pipelines.IStackFactory">IStackFactory</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.Initializer.parameter.props"></a>
 
 - *Type:* aws-cdk-lib.StageProps
 
 ---
 
-##### `stackFactory`<sup>Required</sup> <a name="stackFactory" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.Initializer.parameter.stackFactory"></a>
+##### `stackFactory`<sup>Required</sup> <a name="stackFactory" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.Initializer.parameter.stackFactory"></a>
 
-- *Type:* <a href="#@tts-cdk/build-pipelines.IStackFactory">IStackFactory</a>
+- *Type:* <a href="#@ttskp/cdk-pipelines.IStackFactory">IStackFactory</a>
 
 ---
 
@@ -603,13 +603,13 @@ new StackFactoryApplicationStage(scope: Construct, id: string, props: StageProps
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.with">with</a></code> | Applies one or more mixins to this construct. |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.synth">synth</a></code> | Synthesize this stage into a cloud assembly. |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.with">with</a></code> | Applies one or more mixins to this construct. |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.synth">synth</a></code> | Synthesize this stage into a cloud assembly. |
 
 ---
 
-##### `toString` <a name="toString" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.toString"></a>
+##### `toString` <a name="toString" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.toString"></a>
 
 ```typescript
 public toString(): string
@@ -617,7 +617,7 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `with` <a name="with" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.with"></a>
+##### `with` <a name="with" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.with"></a>
 
 ```typescript
 public with(mixins: ...IMixin[]): IConstruct
@@ -630,7 +630,7 @@ start of the call, so constructs added by a mixin will not be visited.
 Use multiple `with()` calls if subsequent mixins should apply to added
 constructs.
 
-###### `mixins`<sup>Required</sup> <a name="mixins" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.with.parameter.mixins"></a>
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.with.parameter.mixins"></a>
 
 - *Type:* ...constructs.IMixin[]
 
@@ -638,7 +638,7 @@ The mixins to apply.
 
 ---
 
-##### `synth` <a name="synth" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.synth"></a>
+##### `synth` <a name="synth" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.synth"></a>
 
 ```typescript
 public synth(options?: StageSynthesisOptions): CloudAssembly
@@ -649,7 +649,7 @@ Synthesize this stage into a cloud assembly.
 Once an assembly has been synthesized, it cannot be modified. Subsequent
 calls will return the same assembly.
 
-###### `options`<sup>Optional</sup> <a name="options" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.synth.parameter.options"></a>
+###### `options`<sup>Optional</sup> <a name="options" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.synth.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.StageSynthesisOptions
 
@@ -659,16 +659,16 @@ calls will return the same assembly.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.isStage">isStage</a></code> | Test whether the given construct is a stage. |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.of">of</a></code> | Return the stage this construct is contained with, if available. |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.isStage">isStage</a></code> | Test whether the given construct is a stage. |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.of">of</a></code> | Return the stage this construct is contained with, if available. |
 
 ---
 
-##### `isConstruct` <a name="isConstruct" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.isConstruct"></a>
 
 ```typescript
-import { StackFactoryApplicationStage } from '@tts-cdk/build-pipelines'
+import { StackFactoryApplicationStage } from '@ttskp/cdk-pipelines'
 
 StackFactoryApplicationStage.isConstruct(x: any)
 ```
@@ -689,7 +689,7 @@ library can be accidentally installed, and `instanceof` will behave
 unpredictably. It is safest to avoid using `instanceof`, and using
 this type-testing method instead.
 
-###### `x`<sup>Required</sup> <a name="x" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -697,26 +697,26 @@ Any object.
 
 ---
 
-##### `isStage` <a name="isStage" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.isStage"></a>
+##### `isStage` <a name="isStage" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.isStage"></a>
 
 ```typescript
-import { StackFactoryApplicationStage } from '@tts-cdk/build-pipelines'
+import { StackFactoryApplicationStage } from '@ttskp/cdk-pipelines'
 
 StackFactoryApplicationStage.isStage(x: any)
 ```
 
 Test whether the given construct is a stage.
 
-###### `x`<sup>Required</sup> <a name="x" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.isStage.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.isStage.parameter.x"></a>
 
 - *Type:* any
 
 ---
 
-##### `of` <a name="of" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.of"></a>
+##### `of` <a name="of" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.of"></a>
 
 ```typescript
-import { StackFactoryApplicationStage } from '@tts-cdk/build-pipelines'
+import { StackFactoryApplicationStage } from '@ttskp/cdk-pipelines'
 
 StackFactoryApplicationStage.of(construct: IConstruct)
 ```
@@ -726,7 +726,7 @@ Return the stage this construct is contained with, if available.
 If called
 on a nested stage, returns its parent.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.of.parameter.construct"></a>
+###### `construct`<sup>Required</sup> <a name="construct" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.of.parameter.construct"></a>
 
 - *Type:* constructs.IConstruct
 
@@ -736,20 +736,20 @@ on a nested stage, returns its parent.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.artifactId">artifactId</a></code> | <code>string</code> | Artifact ID of the assembly if it is a nested stage. The root stage (app) will return an empty string. |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.assetOutdir">assetOutdir</a></code> | <code>string</code> | The cloud assembly asset output directory. |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.outdir">outdir</a></code> | <code>string</code> | The cloud assembly output directory. |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.policyValidationBeta1">policyValidationBeta1</a></code> | <code>aws-cdk-lib.IPolicyValidationPluginBeta1[]</code> | Validation plugins to run during synthesis. |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.stageName">stageName</a></code> | <code>string</code> | The name of the stage. |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.account">account</a></code> | <code>string</code> | The default account for all resources defined within this stage. |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.parentStage">parentStage</a></code> | <code>aws-cdk-lib.Stage</code> | The parent stage or `undefined` if this is the app. |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.region">region</a></code> | <code>string</code> | The default region for all resources defined within this stage. |
-| <code><a href="#@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.artifactId">artifactId</a></code> | <code>string</code> | Artifact ID of the assembly if it is a nested stage. The root stage (app) will return an empty string. |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.assetOutdir">assetOutdir</a></code> | <code>string</code> | The cloud assembly asset output directory. |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.outdir">outdir</a></code> | <code>string</code> | The cloud assembly output directory. |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.policyValidationBeta1">policyValidationBeta1</a></code> | <code>aws-cdk-lib.IPolicyValidationPluginBeta1[]</code> | Validation plugins to run during synthesis. |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.stageName">stageName</a></code> | <code>string</code> | The name of the stage. |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.account">account</a></code> | <code>string</code> | The default account for all resources defined within this stage. |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.parentStage">parentStage</a></code> | <code>aws-cdk-lib.Stage</code> | The parent stage or `undefined` if this is the app. |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.region">region</a></code> | <code>string</code> | The default region for all resources defined within this stage. |
+| <code><a href="#@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -761,7 +761,7 @@ The tree node.
 
 ---
 
-##### `artifactId`<sup>Required</sup> <a name="artifactId" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.artifactId"></a>
+##### `artifactId`<sup>Required</sup> <a name="artifactId" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.artifactId"></a>
 
 ```typescript
 public readonly artifactId: string;
@@ -775,7 +775,7 @@ Derived from the construct path.
 
 ---
 
-##### `assetOutdir`<sup>Required</sup> <a name="assetOutdir" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.assetOutdir"></a>
+##### `assetOutdir`<sup>Required</sup> <a name="assetOutdir" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.assetOutdir"></a>
 
 ```typescript
 public readonly assetOutdir: string;
@@ -787,7 +787,7 @@ The cloud assembly asset output directory.
 
 ---
 
-##### `outdir`<sup>Required</sup> <a name="outdir" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.outdir"></a>
+##### `outdir`<sup>Required</sup> <a name="outdir" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.outdir"></a>
 
 ```typescript
 public readonly outdir: string;
@@ -799,7 +799,7 @@ The cloud assembly output directory.
 
 ---
 
-##### ~~`policyValidationBeta1`~~<sup>Required</sup> <a name="policyValidationBeta1" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.policyValidationBeta1"></a>
+##### ~~`policyValidationBeta1`~~<sup>Required</sup> <a name="policyValidationBeta1" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.policyValidationBeta1"></a>
 
 - *Deprecated:* Do not use this function to look up validation plugins. Use `Validations.of(stage).plugins` instead.
 
@@ -817,7 +817,7 @@ synthesis will be interrupted and the report displayed to the user.
 
 ---
 
-##### `stageName`<sup>Required</sup> <a name="stageName" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.stageName"></a>
+##### `stageName`<sup>Required</sup> <a name="stageName" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.stageName"></a>
 
 ```typescript
 public readonly stageName: string;
@@ -832,7 +832,7 @@ hypens.
 
 ---
 
-##### `account`<sup>Optional</sup> <a name="account" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.account"></a>
+##### `account`<sup>Optional</sup> <a name="account" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.account"></a>
 
 ```typescript
 public readonly account: string;
@@ -844,7 +844,7 @@ The default account for all resources defined within this stage.
 
 ---
 
-##### `parentStage`<sup>Optional</sup> <a name="parentStage" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.parentStage"></a>
+##### `parentStage`<sup>Optional</sup> <a name="parentStage" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.parentStage"></a>
 
 ```typescript
 public readonly parentStage: Stage;
@@ -858,7 +858,7 @@ The parent stage or `undefined` if this is the app.
 
 ---
 
-##### `region`<sup>Optional</sup> <a name="region" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.region"></a>
+##### `region`<sup>Optional</sup> <a name="region" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.region"></a>
 
 ```typescript
 public readonly region: string;
@@ -870,7 +870,7 @@ The default region for all resources defined within this stage.
 
 ---
 
-##### `stack`<sup>Required</sup> <a name="stack" id="@tts-cdk/build-pipelines.StackFactoryApplicationStage.property.stack"></a>
+##### `stack`<sup>Required</sup> <a name="stack" id="@ttskp/cdk-pipelines.StackFactoryApplicationStage.property.stack"></a>
 
 ```typescript
 public readonly stack: Stack;
@@ -883,12 +883,12 @@ public readonly stack: Stack;
 
 ## Structs <a name="Structs" id="Structs"></a>
 
-### BuildSpecPipelineProps <a name="BuildSpecPipelineProps" id="@tts-cdk/build-pipelines.BuildSpecPipelineProps"></a>
+### BuildSpecPipelineProps <a name="BuildSpecPipelineProps" id="@ttskp/cdk-pipelines.BuildSpecPipelineProps"></a>
 
-#### Initializer <a name="Initializer" id="@tts-cdk/build-pipelines.BuildSpecPipelineProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="@ttskp/cdk-pipelines.BuildSpecPipelineProps.Initializer"></a>
 
 ```typescript
-import { BuildSpecPipelineProps } from '@tts-cdk/build-pipelines'
+import { BuildSpecPipelineProps } from '@ttskp/cdk-pipelines'
 
 const buildSpecPipelineProps: BuildSpecPipelineProps = { ... }
 ```
@@ -897,19 +897,19 @@ const buildSpecPipelineProps: BuildSpecPipelineProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipelineProps.property.branch">branch</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipelineProps.property.buildEnvironment">buildEnvironment</a></code> | <code>aws-cdk-lib.aws_codebuild.BuildEnvironment</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipelineProps.property.buildSpec">buildSpec</a></code> | <code>{[ key: string ]: any}</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipelineProps.property.buildSpecFile">buildSpecFile</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipelineProps.property.existingRepositoryObj">existingRepositoryObj</a></code> | <code>aws-cdk-lib.aws_codecommit.Repository</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipelineProps.property.projectDescription">projectDescription</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipelineProps.property.projectName">projectName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipelineProps.property.repositoryProps">repositoryProps</a></code> | <code>aws-cdk-lib.aws_codecommit.RepositoryProps</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipelineProps.property.retainRepository">retainRepository</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipelineProps.property.branch">branch</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipelineProps.property.buildEnvironment">buildEnvironment</a></code> | <code>aws-cdk-lib.aws_codebuild.BuildEnvironment</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipelineProps.property.buildSpec">buildSpec</a></code> | <code>{[ key: string ]: any}</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipelineProps.property.buildSpecFile">buildSpecFile</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipelineProps.property.existingRepositoryObj">existingRepositoryObj</a></code> | <code>aws-cdk-lib.aws_codecommit.Repository</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipelineProps.property.projectDescription">projectDescription</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipelineProps.property.projectName">projectName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipelineProps.property.repositoryProps">repositoryProps</a></code> | <code>aws-cdk-lib.aws_codecommit.RepositoryProps</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipelineProps.property.retainRepository">retainRepository</a></code> | <code>boolean</code> | *No description.* |
 
 ---
 
-##### `branch`<sup>Optional</sup> <a name="branch" id="@tts-cdk/build-pipelines.BuildSpecPipelineProps.property.branch"></a>
+##### `branch`<sup>Optional</sup> <a name="branch" id="@ttskp/cdk-pipelines.BuildSpecPipelineProps.property.branch"></a>
 
 ```typescript
 public readonly branch: string;
@@ -919,7 +919,7 @@ public readonly branch: string;
 
 ---
 
-##### `buildEnvironment`<sup>Optional</sup> <a name="buildEnvironment" id="@tts-cdk/build-pipelines.BuildSpecPipelineProps.property.buildEnvironment"></a>
+##### `buildEnvironment`<sup>Optional</sup> <a name="buildEnvironment" id="@ttskp/cdk-pipelines.BuildSpecPipelineProps.property.buildEnvironment"></a>
 
 ```typescript
 public readonly buildEnvironment: BuildEnvironment;
@@ -929,7 +929,7 @@ public readonly buildEnvironment: BuildEnvironment;
 
 ---
 
-##### `buildSpec`<sup>Optional</sup> <a name="buildSpec" id="@tts-cdk/build-pipelines.BuildSpecPipelineProps.property.buildSpec"></a>
+##### `buildSpec`<sup>Optional</sup> <a name="buildSpec" id="@ttskp/cdk-pipelines.BuildSpecPipelineProps.property.buildSpec"></a>
 
 ```typescript
 public readonly buildSpec: {[ key: string ]: any};
@@ -939,7 +939,7 @@ public readonly buildSpec: {[ key: string ]: any};
 
 ---
 
-##### `buildSpecFile`<sup>Optional</sup> <a name="buildSpecFile" id="@tts-cdk/build-pipelines.BuildSpecPipelineProps.property.buildSpecFile"></a>
+##### `buildSpecFile`<sup>Optional</sup> <a name="buildSpecFile" id="@ttskp/cdk-pipelines.BuildSpecPipelineProps.property.buildSpecFile"></a>
 
 ```typescript
 public readonly buildSpecFile: string;
@@ -949,7 +949,7 @@ public readonly buildSpecFile: string;
 
 ---
 
-##### `existingRepositoryObj`<sup>Optional</sup> <a name="existingRepositoryObj" id="@tts-cdk/build-pipelines.BuildSpecPipelineProps.property.existingRepositoryObj"></a>
+##### `existingRepositoryObj`<sup>Optional</sup> <a name="existingRepositoryObj" id="@ttskp/cdk-pipelines.BuildSpecPipelineProps.property.existingRepositoryObj"></a>
 
 ```typescript
 public readonly existingRepositoryObj: Repository;
@@ -959,7 +959,7 @@ public readonly existingRepositoryObj: Repository;
 
 ---
 
-##### `projectDescription`<sup>Optional</sup> <a name="projectDescription" id="@tts-cdk/build-pipelines.BuildSpecPipelineProps.property.projectDescription"></a>
+##### `projectDescription`<sup>Optional</sup> <a name="projectDescription" id="@ttskp/cdk-pipelines.BuildSpecPipelineProps.property.projectDescription"></a>
 
 ```typescript
 public readonly projectDescription: string;
@@ -969,7 +969,7 @@ public readonly projectDescription: string;
 
 ---
 
-##### `projectName`<sup>Optional</sup> <a name="projectName" id="@tts-cdk/build-pipelines.BuildSpecPipelineProps.property.projectName"></a>
+##### `projectName`<sup>Optional</sup> <a name="projectName" id="@ttskp/cdk-pipelines.BuildSpecPipelineProps.property.projectName"></a>
 
 ```typescript
 public readonly projectName: string;
@@ -979,7 +979,7 @@ public readonly projectName: string;
 
 ---
 
-##### `repositoryProps`<sup>Optional</sup> <a name="repositoryProps" id="@tts-cdk/build-pipelines.BuildSpecPipelineProps.property.repositoryProps"></a>
+##### `repositoryProps`<sup>Optional</sup> <a name="repositoryProps" id="@ttskp/cdk-pipelines.BuildSpecPipelineProps.property.repositoryProps"></a>
 
 ```typescript
 public readonly repositoryProps: RepositoryProps;
@@ -989,7 +989,7 @@ public readonly repositoryProps: RepositoryProps;
 
 ---
 
-##### `retainRepository`<sup>Optional</sup> <a name="retainRepository" id="@tts-cdk/build-pipelines.BuildSpecPipelineProps.property.retainRepository"></a>
+##### `retainRepository`<sup>Optional</sup> <a name="retainRepository" id="@ttskp/cdk-pipelines.BuildSpecPipelineProps.property.retainRepository"></a>
 
 ```typescript
 public readonly retainRepository: boolean;
@@ -999,12 +999,12 @@ public readonly retainRepository: boolean;
 
 ---
 
-### CodeArtifactFeatureProps <a name="CodeArtifactFeatureProps" id="@tts-cdk/build-pipelines.CodeArtifactFeatureProps"></a>
+### CodeArtifactFeatureProps <a name="CodeArtifactFeatureProps" id="@ttskp/cdk-pipelines.CodeArtifactFeatureProps"></a>
 
-#### Initializer <a name="Initializer" id="@tts-cdk/build-pipelines.CodeArtifactFeatureProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="@ttskp/cdk-pipelines.CodeArtifactFeatureProps.Initializer"></a>
 
 ```typescript
-import { CodeArtifactFeatureProps } from '@tts-cdk/build-pipelines'
+import { CodeArtifactFeatureProps } from '@ttskp/cdk-pipelines'
 
 const codeArtifactFeatureProps: CodeArtifactFeatureProps = { ... }
 ```
@@ -1013,12 +1013,12 @@ const codeArtifactFeatureProps: CodeArtifactFeatureProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.CodeArtifactFeatureProps.property.domain">domain</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.CodeArtifactFeatureProps.property.repos">repos</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.CodeArtifactFeatureProps.property.domain">domain</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.CodeArtifactFeatureProps.property.repos">repos</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
 
 ---
 
-##### `domain`<sup>Required</sup> <a name="domain" id="@tts-cdk/build-pipelines.CodeArtifactFeatureProps.property.domain"></a>
+##### `domain`<sup>Required</sup> <a name="domain" id="@ttskp/cdk-pipelines.CodeArtifactFeatureProps.property.domain"></a>
 
 ```typescript
 public readonly domain: string;
@@ -1028,7 +1028,7 @@ public readonly domain: string;
 
 ---
 
-##### `repos`<sup>Required</sup> <a name="repos" id="@tts-cdk/build-pipelines.CodeArtifactFeatureProps.property.repos"></a>
+##### `repos`<sup>Required</sup> <a name="repos" id="@ttskp/cdk-pipelines.CodeArtifactFeatureProps.property.repos"></a>
 
 ```typescript
 public readonly repos: {[ key: string ]: string};
@@ -1038,12 +1038,12 @@ public readonly repos: {[ key: string ]: string};
 
 ---
 
-### DeploymentStage <a name="DeploymentStage" id="@tts-cdk/build-pipelines.DeploymentStage"></a>
+### DeploymentStage <a name="DeploymentStage" id="@ttskp/cdk-pipelines.DeploymentStage"></a>
 
-#### Initializer <a name="Initializer" id="@tts-cdk/build-pipelines.DeploymentStage.Initializer"></a>
+#### Initializer <a name="Initializer" id="@ttskp/cdk-pipelines.DeploymentStage.Initializer"></a>
 
 ```typescript
-import { DeploymentStage } from '@tts-cdk/build-pipelines'
+import { DeploymentStage } from '@ttskp/cdk-pipelines'
 
 const deploymentStage: DeploymentStage = { ... }
 ```
@@ -1052,16 +1052,16 @@ const deploymentStage: DeploymentStage = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.DeploymentStage.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.DeploymentStage.property.targets">targets</a></code> | <code><a href="#@tts-cdk/build-pipelines.IDeploymentTargetsProvider">IDeploymentTargetsProvider</a></code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.DeploymentStage.property.post">post</a></code> | <code>aws-cdk-lib.pipelines.Step[]</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.DeploymentStage.property.pre">pre</a></code> | <code>aws-cdk-lib.pipelines.Step[]</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.DeploymentStage.property.requireManualApproval">requireManualApproval</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.DeploymentStage.property.stackFactory">stackFactory</a></code> | <code><a href="#@tts-cdk/build-pipelines.IStackFactory">IStackFactory</a></code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.DeploymentStage.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.DeploymentStage.property.targets">targets</a></code> | <code><a href="#@ttskp/cdk-pipelines.IDeploymentTargetsProvider">IDeploymentTargetsProvider</a></code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.DeploymentStage.property.post">post</a></code> | <code>aws-cdk-lib.pipelines.Step[]</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.DeploymentStage.property.pre">pre</a></code> | <code>aws-cdk-lib.pipelines.Step[]</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.DeploymentStage.property.requireManualApproval">requireManualApproval</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.DeploymentStage.property.stackFactory">stackFactory</a></code> | <code><a href="#@ttskp/cdk-pipelines.IStackFactory">IStackFactory</a></code> | *No description.* |
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="@tts-cdk/build-pipelines.DeploymentStage.property.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="@ttskp/cdk-pipelines.DeploymentStage.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -1071,17 +1071,17 @@ public readonly name: string;
 
 ---
 
-##### `targets`<sup>Required</sup> <a name="targets" id="@tts-cdk/build-pipelines.DeploymentStage.property.targets"></a>
+##### `targets`<sup>Required</sup> <a name="targets" id="@ttskp/cdk-pipelines.DeploymentStage.property.targets"></a>
 
 ```typescript
 public readonly targets: IDeploymentTargetsProvider;
 ```
 
-- *Type:* <a href="#@tts-cdk/build-pipelines.IDeploymentTargetsProvider">IDeploymentTargetsProvider</a>
+- *Type:* <a href="#@ttskp/cdk-pipelines.IDeploymentTargetsProvider">IDeploymentTargetsProvider</a>
 
 ---
 
-##### `post`<sup>Optional</sup> <a name="post" id="@tts-cdk/build-pipelines.DeploymentStage.property.post"></a>
+##### `post`<sup>Optional</sup> <a name="post" id="@ttskp/cdk-pipelines.DeploymentStage.property.post"></a>
 
 ```typescript
 public readonly post: Step[];
@@ -1091,7 +1091,7 @@ public readonly post: Step[];
 
 ---
 
-##### `pre`<sup>Optional</sup> <a name="pre" id="@tts-cdk/build-pipelines.DeploymentStage.property.pre"></a>
+##### `pre`<sup>Optional</sup> <a name="pre" id="@ttskp/cdk-pipelines.DeploymentStage.property.pre"></a>
 
 ```typescript
 public readonly pre: Step[];
@@ -1101,7 +1101,7 @@ public readonly pre: Step[];
 
 ---
 
-##### `requireManualApproval`<sup>Optional</sup> <a name="requireManualApproval" id="@tts-cdk/build-pipelines.DeploymentStage.property.requireManualApproval"></a>
+##### `requireManualApproval`<sup>Optional</sup> <a name="requireManualApproval" id="@ttskp/cdk-pipelines.DeploymentStage.property.requireManualApproval"></a>
 
 ```typescript
 public readonly requireManualApproval: boolean;
@@ -1111,22 +1111,22 @@ public readonly requireManualApproval: boolean;
 
 ---
 
-##### `stackFactory`<sup>Optional</sup> <a name="stackFactory" id="@tts-cdk/build-pipelines.DeploymentStage.property.stackFactory"></a>
+##### `stackFactory`<sup>Optional</sup> <a name="stackFactory" id="@ttskp/cdk-pipelines.DeploymentStage.property.stackFactory"></a>
 
 ```typescript
 public readonly stackFactory: IStackFactory;
 ```
 
-- *Type:* <a href="#@tts-cdk/build-pipelines.IStackFactory">IStackFactory</a>
+- *Type:* <a href="#@ttskp/cdk-pipelines.IStackFactory">IStackFactory</a>
 
 ---
 
-### DeploymentTarget <a name="DeploymentTarget" id="@tts-cdk/build-pipelines.DeploymentTarget"></a>
+### DeploymentTarget <a name="DeploymentTarget" id="@ttskp/cdk-pipelines.DeploymentTarget"></a>
 
-#### Initializer <a name="Initializer" id="@tts-cdk/build-pipelines.DeploymentTarget.Initializer"></a>
+#### Initializer <a name="Initializer" id="@ttskp/cdk-pipelines.DeploymentTarget.Initializer"></a>
 
 ```typescript
-import { DeploymentTarget } from '@tts-cdk/build-pipelines'
+import { DeploymentTarget } from '@ttskp/cdk-pipelines'
 
 const deploymentTarget: DeploymentTarget = { ... }
 ```
@@ -1135,13 +1135,13 @@ const deploymentTarget: DeploymentTarget = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.DeploymentTarget.property.account">account</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.DeploymentTarget.property.region">region</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.DeploymentTarget.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.DeploymentTarget.property.account">account</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.DeploymentTarget.property.region">region</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.DeploymentTarget.property.name">name</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `account`<sup>Required</sup> <a name="account" id="@tts-cdk/build-pipelines.DeploymentTarget.property.account"></a>
+##### `account`<sup>Required</sup> <a name="account" id="@ttskp/cdk-pipelines.DeploymentTarget.property.account"></a>
 
 ```typescript
 public readonly account: string;
@@ -1151,7 +1151,7 @@ public readonly account: string;
 
 ---
 
-##### `region`<sup>Required</sup> <a name="region" id="@tts-cdk/build-pipelines.DeploymentTarget.property.region"></a>
+##### `region`<sup>Required</sup> <a name="region" id="@ttskp/cdk-pipelines.DeploymentTarget.property.region"></a>
 
 ```typescript
 public readonly region: string;
@@ -1161,7 +1161,7 @@ public readonly region: string;
 
 ---
 
-##### `name`<sup>Optional</sup> <a name="name" id="@tts-cdk/build-pipelines.DeploymentTarget.property.name"></a>
+##### `name`<sup>Optional</sup> <a name="name" id="@ttskp/cdk-pipelines.DeploymentTarget.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -1171,12 +1171,12 @@ public readonly name: string;
 
 ---
 
-### MultiDeployCodePipelineProps <a name="MultiDeployCodePipelineProps" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps"></a>
+### MultiDeployCodePipelineProps <a name="MultiDeployCodePipelineProps" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps"></a>
 
-#### Initializer <a name="Initializer" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.Initializer"></a>
 
 ```typescript
-import { MultiDeployCodePipelineProps } from '@tts-cdk/build-pipelines'
+import { MultiDeployCodePipelineProps } from '@ttskp/cdk-pipelines'
 
 const multiDeployCodePipelineProps: MultiDeployCodePipelineProps = { ... }
 ```
@@ -1185,38 +1185,38 @@ const multiDeployCodePipelineProps: MultiDeployCodePipelineProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.synth">synth</a></code> | <code>aws-cdk-lib.pipelines.IFileSetProducer</code> | The build step that produces the CDK Cloud Assembly. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.artifactBucket">artifactBucket</a></code> | <code>aws-cdk-lib.aws_s3.IBucket</code> | An existing S3 Bucket to use for storing the pipeline's artifact. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.assetPublishingCodeBuildDefaults">assetPublishingCodeBuildDefaults</a></code> | <code>aws-cdk-lib.pipelines.CodeBuildOptions</code> | Additional customizations to apply to the asset publishing CodeBuild projects. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.cdkAssetsCliVersion">cdkAssetsCliVersion</a></code> | <code>string</code> | CDK CLI version to use in asset publishing steps. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.cliVersion">cliVersion</a></code> | <code>string</code> | CDK CLI version to use in self-mutation step. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.codeBuildDefaults">codeBuildDefaults</a></code> | <code>aws-cdk-lib.pipelines.CodeBuildOptions</code> | Customize the CodeBuild projects created for this pipeline. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.codePipeline">codePipeline</a></code> | <code>aws-cdk-lib.aws_codepipeline.Pipeline</code> | An existing Pipeline to be reused and built upon. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.crossAccountKeys">crossAccountKeys</a></code> | <code>boolean</code> | Create KMS keys for the artifact buckets, allowing cross-account deployments. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.crossRegionReplicationBuckets">crossRegionReplicationBuckets</a></code> | <code>{[ key: string ]: aws-cdk-lib.aws_s3.IBucket}</code> | A map of region to S3 bucket name used for cross-region CodePipeline. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.dockerCredentials">dockerCredentials</a></code> | <code>aws-cdk-lib.pipelines.DockerCredential[]</code> | A list of credentials used to authenticate to Docker registries. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.dockerEnabledForSelfMutation">dockerEnabledForSelfMutation</a></code> | <code>boolean</code> | Enable Docker for the self-mutate step. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.dockerEnabledForSynth">dockerEnabledForSynth</a></code> | <code>boolean</code> | Enable Docker for the 'synth' step. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.enableKeyRotation">enableKeyRotation</a></code> | <code>boolean</code> | Enable KMS key rotation for the generated KMS keys. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.executionMode">executionMode</a></code> | <code>aws-cdk-lib.aws_codepipeline.ExecutionMode</code> | The method that the pipeline will use to handle multiple executions. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.pipelineName">pipelineName</a></code> | <code>string</code> | The name of the CodePipeline pipeline. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.pipelineType">pipelineType</a></code> | <code>aws-cdk-lib.aws_codepipeline.PipelineType</code> | Type of the pipeline. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.publishAssetsInParallel">publishAssetsInParallel</a></code> | <code>boolean</code> | Publish assets in multiple CodeBuild projects. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.reuseCrossRegionSupportStacks">reuseCrossRegionSupportStacks</a></code> | <code>boolean</code> | Reuse the same cross region support stack for all pipelines in the App. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.role">role</a></code> | <code>aws-cdk-lib.aws_iam.IRole</code> | The IAM role to be assumed by this Pipeline. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.selfMutation">selfMutation</a></code> | <code>boolean</code> | Whether the pipeline will update itself. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.selfMutationCodeBuildDefaults">selfMutationCodeBuildDefaults</a></code> | <code>aws-cdk-lib.pipelines.CodeBuildOptions</code> | Additional customizations to apply to the self mutation CodeBuild projects. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.synthCodeBuildDefaults">synthCodeBuildDefaults</a></code> | <code>aws-cdk-lib.pipelines.CodeBuildOptions</code> | Additional customizations to apply to the synthesize CodeBuild projects. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.useChangeSets">useChangeSets</a></code> | <code>boolean</code> | Deploy every stack by creating a change set and executing it. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.usePipelineRoleForActions">usePipelineRoleForActions</a></code> | <code>boolean</code> | Use pipeline service role for actions if no action role configured. |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.deploymentStages">deploymentStages</a></code> | <code><a href="#@tts-cdk/build-pipelines.DeploymentStage">DeploymentStage</a>[]</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.mixins">mixins</a></code> | <code><a href="#@tts-cdk/build-pipelines.CodePipelineMixin">CodePipelineMixin</a>[]</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.restartExecutionOnUpdate">restartExecutionOnUpdate</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.stackFactory">stackFactory</a></code> | <code><a href="#@tts-cdk/build-pipelines.IStackFactory">IStackFactory</a></code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.synth">synth</a></code> | <code>aws-cdk-lib.pipelines.IFileSetProducer</code> | The build step that produces the CDK Cloud Assembly. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.artifactBucket">artifactBucket</a></code> | <code>aws-cdk-lib.aws_s3.IBucket</code> | An existing S3 Bucket to use for storing the pipeline's artifact. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.assetPublishingCodeBuildDefaults">assetPublishingCodeBuildDefaults</a></code> | <code>aws-cdk-lib.pipelines.CodeBuildOptions</code> | Additional customizations to apply to the asset publishing CodeBuild projects. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.cdkAssetsCliVersion">cdkAssetsCliVersion</a></code> | <code>string</code> | CDK CLI version to use in asset publishing steps. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.cliVersion">cliVersion</a></code> | <code>string</code> | CDK CLI version to use in self-mutation step. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.codeBuildDefaults">codeBuildDefaults</a></code> | <code>aws-cdk-lib.pipelines.CodeBuildOptions</code> | Customize the CodeBuild projects created for this pipeline. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.codePipeline">codePipeline</a></code> | <code>aws-cdk-lib.aws_codepipeline.Pipeline</code> | An existing Pipeline to be reused and built upon. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.crossAccountKeys">crossAccountKeys</a></code> | <code>boolean</code> | Create KMS keys for the artifact buckets, allowing cross-account deployments. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.crossRegionReplicationBuckets">crossRegionReplicationBuckets</a></code> | <code>{[ key: string ]: aws-cdk-lib.aws_s3.IBucket}</code> | A map of region to S3 bucket name used for cross-region CodePipeline. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.dockerCredentials">dockerCredentials</a></code> | <code>aws-cdk-lib.pipelines.DockerCredential[]</code> | A list of credentials used to authenticate to Docker registries. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.dockerEnabledForSelfMutation">dockerEnabledForSelfMutation</a></code> | <code>boolean</code> | Enable Docker for the self-mutate step. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.dockerEnabledForSynth">dockerEnabledForSynth</a></code> | <code>boolean</code> | Enable Docker for the 'synth' step. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.enableKeyRotation">enableKeyRotation</a></code> | <code>boolean</code> | Enable KMS key rotation for the generated KMS keys. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.executionMode">executionMode</a></code> | <code>aws-cdk-lib.aws_codepipeline.ExecutionMode</code> | The method that the pipeline will use to handle multiple executions. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.pipelineName">pipelineName</a></code> | <code>string</code> | The name of the CodePipeline pipeline. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.pipelineType">pipelineType</a></code> | <code>aws-cdk-lib.aws_codepipeline.PipelineType</code> | Type of the pipeline. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.publishAssetsInParallel">publishAssetsInParallel</a></code> | <code>boolean</code> | Publish assets in multiple CodeBuild projects. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.reuseCrossRegionSupportStacks">reuseCrossRegionSupportStacks</a></code> | <code>boolean</code> | Reuse the same cross region support stack for all pipelines in the App. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.role">role</a></code> | <code>aws-cdk-lib.aws_iam.IRole</code> | The IAM role to be assumed by this Pipeline. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.selfMutation">selfMutation</a></code> | <code>boolean</code> | Whether the pipeline will update itself. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.selfMutationCodeBuildDefaults">selfMutationCodeBuildDefaults</a></code> | <code>aws-cdk-lib.pipelines.CodeBuildOptions</code> | Additional customizations to apply to the self mutation CodeBuild projects. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.synthCodeBuildDefaults">synthCodeBuildDefaults</a></code> | <code>aws-cdk-lib.pipelines.CodeBuildOptions</code> | Additional customizations to apply to the synthesize CodeBuild projects. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.useChangeSets">useChangeSets</a></code> | <code>boolean</code> | Deploy every stack by creating a change set and executing it. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.usePipelineRoleForActions">usePipelineRoleForActions</a></code> | <code>boolean</code> | Use pipeline service role for actions if no action role configured. |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.deploymentStages">deploymentStages</a></code> | <code><a href="#@ttskp/cdk-pipelines.DeploymentStage">DeploymentStage</a>[]</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.mixins">mixins</a></code> | <code><a href="#@ttskp/cdk-pipelines.CodePipelineMixin">CodePipelineMixin</a>[]</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.restartExecutionOnUpdate">restartExecutionOnUpdate</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.stackFactory">stackFactory</a></code> | <code><a href="#@ttskp/cdk-pipelines.IStackFactory">IStackFactory</a></code> | *No description.* |
 
 ---
 
-##### `synth`<sup>Required</sup> <a name="synth" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.synth"></a>
+##### `synth`<sup>Required</sup> <a name="synth" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.synth"></a>
 
 ```typescript
 public readonly synth: IFileSetProducer;
@@ -1234,7 +1234,7 @@ the output directory will automatically be assumed to be `cdk.out`.
 
 ---
 
-##### `artifactBucket`<sup>Optional</sup> <a name="artifactBucket" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.artifactBucket"></a>
+##### `artifactBucket`<sup>Optional</sup> <a name="artifactBucket" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.artifactBucket"></a>
 
 ```typescript
 public readonly artifactBucket: IBucket;
@@ -1247,7 +1247,7 @@ An existing S3 Bucket to use for storing the pipeline's artifact.
 
 ---
 
-##### `assetPublishingCodeBuildDefaults`<sup>Optional</sup> <a name="assetPublishingCodeBuildDefaults" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.assetPublishingCodeBuildDefaults"></a>
+##### `assetPublishingCodeBuildDefaults`<sup>Optional</sup> <a name="assetPublishingCodeBuildDefaults" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.assetPublishingCodeBuildDefaults"></a>
 
 ```typescript
 public readonly assetPublishingCodeBuildDefaults: CodeBuildOptions;
@@ -1260,7 +1260,7 @@ Additional customizations to apply to the asset publishing CodeBuild projects.
 
 ---
 
-##### `cdkAssetsCliVersion`<sup>Optional</sup> <a name="cdkAssetsCliVersion" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.cdkAssetsCliVersion"></a>
+##### `cdkAssetsCliVersion`<sup>Optional</sup> <a name="cdkAssetsCliVersion" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.cdkAssetsCliVersion"></a>
 
 ```typescript
 public readonly cdkAssetsCliVersion: string;
@@ -1281,7 +1281,7 @@ uses the latest CLI version which is backwards compatible with old versions.
 
 ---
 
-##### `cliVersion`<sup>Optional</sup> <a name="cliVersion" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.cliVersion"></a>
+##### `cliVersion`<sup>Optional</sup> <a name="cliVersion" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.cliVersion"></a>
 
 ```typescript
 public readonly cliVersion: string;
@@ -1310,7 +1310,7 @@ framework version.
 
 ---
 
-##### `codeBuildDefaults`<sup>Optional</sup> <a name="codeBuildDefaults" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.codeBuildDefaults"></a>
+##### `codeBuildDefaults`<sup>Optional</sup> <a name="codeBuildDefaults" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.codeBuildDefaults"></a>
 
 ```typescript
 public readonly codeBuildDefaults: CodeBuildOptions;
@@ -1323,7 +1323,7 @@ Customize the CodeBuild projects created for this pipeline.
 
 ---
 
-##### `codePipeline`<sup>Optional</sup> <a name="codePipeline" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.codePipeline"></a>
+##### `codePipeline`<sup>Optional</sup> <a name="codePipeline" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.codePipeline"></a>
 
 ```typescript
 public readonly codePipeline: Pipeline;
@@ -1338,7 +1338,7 @@ An existing Pipeline to be reused and built upon.
 
 ---
 
-##### `crossAccountKeys`<sup>Optional</sup> <a name="crossAccountKeys" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.crossAccountKeys"></a>
+##### `crossAccountKeys`<sup>Optional</sup> <a name="crossAccountKeys" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.crossAccountKeys"></a>
 
 ```typescript
 public readonly crossAccountKeys: boolean;
@@ -1357,7 +1357,7 @@ Be aware there is a cost associated with maintaining the KMS keys.
 
 ---
 
-##### `crossRegionReplicationBuckets`<sup>Optional</sup> <a name="crossRegionReplicationBuckets" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.crossRegionReplicationBuckets"></a>
+##### `crossRegionReplicationBuckets`<sup>Optional</sup> <a name="crossRegionReplicationBuckets" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.crossRegionReplicationBuckets"></a>
 
 ```typescript
 public readonly crossRegionReplicationBuckets: {[ key: string ]: IBucket};
@@ -1374,7 +1374,7 @@ Passed directly through to the {@link cp.Pipeline}.
 
 ---
 
-##### `dockerCredentials`<sup>Optional</sup> <a name="dockerCredentials" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.dockerCredentials"></a>
+##### `dockerCredentials`<sup>Optional</sup> <a name="dockerCredentials" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.dockerCredentials"></a>
 
 ```typescript
 public readonly dockerCredentials: DockerCredential[];
@@ -1389,7 +1389,7 @@ Specify any credentials necessary within the pipeline to build, synth, update, o
 
 ---
 
-##### `dockerEnabledForSelfMutation`<sup>Optional</sup> <a name="dockerEnabledForSelfMutation" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.dockerEnabledForSelfMutation"></a>
+##### `dockerEnabledForSelfMutation`<sup>Optional</sup> <a name="dockerEnabledForSelfMutation" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.dockerEnabledForSelfMutation"></a>
 
 ```typescript
 public readonly dockerEnabledForSelfMutation: boolean;
@@ -1415,7 +1415,7 @@ self-update, and only then use the Docker asset in the pipeline.
 
 ---
 
-##### `dockerEnabledForSynth`<sup>Optional</sup> <a name="dockerEnabledForSynth" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.dockerEnabledForSynth"></a>
+##### `dockerEnabledForSynth`<sup>Optional</sup> <a name="dockerEnabledForSynth" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.dockerEnabledForSynth"></a>
 
 ```typescript
 public readonly dockerEnabledForSynth: boolean;
@@ -1443,7 +1443,7 @@ self-update, and only then use the bundled asset.
 
 ---
 
-##### `enableKeyRotation`<sup>Optional</sup> <a name="enableKeyRotation" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.enableKeyRotation"></a>
+##### `enableKeyRotation`<sup>Optional</sup> <a name="enableKeyRotation" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.enableKeyRotation"></a>
 
 ```typescript
 public readonly enableKeyRotation: boolean;
@@ -1459,7 +1459,7 @@ additional costs when enabled.
 
 ---
 
-##### `executionMode`<sup>Optional</sup> <a name="executionMode" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.executionMode"></a>
+##### `executionMode`<sup>Optional</sup> <a name="executionMode" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.executionMode"></a>
 
 ```typescript
 public readonly executionMode: ExecutionMode;
@@ -1476,7 +1476,7 @@ The method that the pipeline will use to handle multiple executions.
 
 ---
 
-##### `pipelineName`<sup>Optional</sup> <a name="pipelineName" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.pipelineName"></a>
+##### `pipelineName`<sup>Optional</sup> <a name="pipelineName" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.pipelineName"></a>
 
 ```typescript
 public readonly pipelineName: string;
@@ -1489,7 +1489,7 @@ The name of the CodePipeline pipeline.
 
 ---
 
-##### `pipelineType`<sup>Optional</sup> <a name="pipelineType" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.pipelineType"></a>
+##### `pipelineType`<sup>Optional</sup> <a name="pipelineType" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.pipelineType"></a>
 
 ```typescript
 public readonly pipelineType: PipelineType;
@@ -1504,7 +1504,7 @@ Type of the pipeline.
 
 ---
 
-##### `publishAssetsInParallel`<sup>Optional</sup> <a name="publishAssetsInParallel" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.publishAssetsInParallel"></a>
+##### `publishAssetsInParallel`<sup>Optional</sup> <a name="publishAssetsInParallel" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.publishAssetsInParallel"></a>
 
 ```typescript
 public readonly publishAssetsInParallel: boolean;
@@ -1525,7 +1525,7 @@ Experiment and see what value works best for you.
 
 ---
 
-##### `reuseCrossRegionSupportStacks`<sup>Optional</sup> <a name="reuseCrossRegionSupportStacks" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.reuseCrossRegionSupportStacks"></a>
+##### `reuseCrossRegionSupportStacks`<sup>Optional</sup> <a name="reuseCrossRegionSupportStacks" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.reuseCrossRegionSupportStacks"></a>
 
 ```typescript
 public readonly reuseCrossRegionSupportStacks: boolean;
@@ -1538,7 +1538,7 @@ Reuse the same cross region support stack for all pipelines in the App.
 
 ---
 
-##### `role`<sup>Optional</sup> <a name="role" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.role"></a>
+##### `role`<sup>Optional</sup> <a name="role" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.role"></a>
 
 ```typescript
 public readonly role: IRole;
@@ -1551,7 +1551,7 @@ The IAM role to be assumed by this Pipeline.
 
 ---
 
-##### `selfMutation`<sup>Optional</sup> <a name="selfMutation" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.selfMutation"></a>
+##### `selfMutation`<sup>Optional</sup> <a name="selfMutation" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.selfMutation"></a>
 
 ```typescript
 public readonly selfMutation: boolean;
@@ -1571,7 +1571,7 @@ on the pipeline itself and prefer to deploy changes using `cdk deploy`.
 
 ---
 
-##### `selfMutationCodeBuildDefaults`<sup>Optional</sup> <a name="selfMutationCodeBuildDefaults" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.selfMutationCodeBuildDefaults"></a>
+##### `selfMutationCodeBuildDefaults`<sup>Optional</sup> <a name="selfMutationCodeBuildDefaults" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.selfMutationCodeBuildDefaults"></a>
 
 ```typescript
 public readonly selfMutationCodeBuildDefaults: CodeBuildOptions;
@@ -1584,7 +1584,7 @@ Additional customizations to apply to the self mutation CodeBuild projects.
 
 ---
 
-##### `synthCodeBuildDefaults`<sup>Optional</sup> <a name="synthCodeBuildDefaults" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.synthCodeBuildDefaults"></a>
+##### `synthCodeBuildDefaults`<sup>Optional</sup> <a name="synthCodeBuildDefaults" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.synthCodeBuildDefaults"></a>
 
 ```typescript
 public readonly synthCodeBuildDefaults: CodeBuildOptions;
@@ -1597,7 +1597,7 @@ Additional customizations to apply to the synthesize CodeBuild projects.
 
 ---
 
-##### `useChangeSets`<sup>Optional</sup> <a name="useChangeSets" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.useChangeSets"></a>
+##### `useChangeSets`<sup>Optional</sup> <a name="useChangeSets" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.useChangeSets"></a>
 
 ```typescript
 public readonly useChangeSets: boolean;
@@ -1613,7 +1613,7 @@ to deploy the stack in one pipeline action.
 
 ---
 
-##### `usePipelineRoleForActions`<sup>Optional</sup> <a name="usePipelineRoleForActions" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.usePipelineRoleForActions"></a>
+##### `usePipelineRoleForActions`<sup>Optional</sup> <a name="usePipelineRoleForActions" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.usePipelineRoleForActions"></a>
 
 ```typescript
 public readonly usePipelineRoleForActions: boolean;
@@ -1626,27 +1626,27 @@ Use pipeline service role for actions if no action role configured.
 
 ---
 
-##### `deploymentStages`<sup>Required</sup> <a name="deploymentStages" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.deploymentStages"></a>
+##### `deploymentStages`<sup>Required</sup> <a name="deploymentStages" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.deploymentStages"></a>
 
 ```typescript
 public readonly deploymentStages: DeploymentStage[];
 ```
 
-- *Type:* <a href="#@tts-cdk/build-pipelines.DeploymentStage">DeploymentStage</a>[]
+- *Type:* <a href="#@ttskp/cdk-pipelines.DeploymentStage">DeploymentStage</a>[]
 
 ---
 
-##### `mixins`<sup>Optional</sup> <a name="mixins" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.mixins"></a>
+##### `mixins`<sup>Optional</sup> <a name="mixins" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.mixins"></a>
 
 ```typescript
 public readonly mixins: CodePipelineMixin[];
 ```
 
-- *Type:* <a href="#@tts-cdk/build-pipelines.CodePipelineMixin">CodePipelineMixin</a>[]
+- *Type:* <a href="#@ttskp/cdk-pipelines.CodePipelineMixin">CodePipelineMixin</a>[]
 
 ---
 
-##### `restartExecutionOnUpdate`<sup>Optional</sup> <a name="restartExecutionOnUpdate" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.restartExecutionOnUpdate"></a>
+##### `restartExecutionOnUpdate`<sup>Optional</sup> <a name="restartExecutionOnUpdate" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.restartExecutionOnUpdate"></a>
 
 ```typescript
 public readonly restartExecutionOnUpdate: boolean;
@@ -1656,26 +1656,26 @@ public readonly restartExecutionOnUpdate: boolean;
 
 ---
 
-##### `stackFactory`<sup>Optional</sup> <a name="stackFactory" id="@tts-cdk/build-pipelines.MultiDeployCodePipelineProps.property.stackFactory"></a>
+##### `stackFactory`<sup>Optional</sup> <a name="stackFactory" id="@ttskp/cdk-pipelines.MultiDeployCodePipelineProps.property.stackFactory"></a>
 
 ```typescript
 public readonly stackFactory: IStackFactory;
 ```
 
-- *Type:* <a href="#@tts-cdk/build-pipelines.IStackFactory">IStackFactory</a>
+- *Type:* <a href="#@ttskp/cdk-pipelines.IStackFactory">IStackFactory</a>
 
 ---
 
 ## Classes <a name="Classes" id="Classes"></a>
 
-### AdditionalTrigger <a name="AdditionalTrigger" id="@tts-cdk/build-pipelines.AdditionalTrigger"></a>
+### AdditionalTrigger <a name="AdditionalTrigger" id="@ttskp/cdk-pipelines.AdditionalTrigger"></a>
 
 Convenience class to create additional trigger {CodePipelineMixin}s for executing a CodePipeline if certain events occur other than a code change.
 
-#### Initializers <a name="Initializers" id="@tts-cdk/build-pipelines.AdditionalTrigger.Initializer"></a>
+#### Initializers <a name="Initializers" id="@ttskp/cdk-pipelines.AdditionalTrigger.Initializer"></a>
 
 ```typescript
-import { AdditionalTrigger } from '@tts-cdk/build-pipelines'
+import { AdditionalTrigger } from '@ttskp/cdk-pipelines'
 
 new AdditionalTrigger()
 ```
@@ -1690,38 +1690,38 @@ new AdditionalTrigger()
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.AdditionalTrigger.schedule">schedule</a></code> | Create an additional trigger {CodePipelineMixin} based on a schedule. |
-| <code><a href="#@tts-cdk/build-pipelines.AdditionalTrigger.ssmParameterChange">ssmParameterChange</a></code> | Create an additional trigger {CodePipelineMixin} for a SSM parameter value change. |
+| <code><a href="#@ttskp/cdk-pipelines.AdditionalTrigger.schedule">schedule</a></code> | Create an additional trigger {CodePipelineMixin} based on a schedule. |
+| <code><a href="#@ttskp/cdk-pipelines.AdditionalTrigger.ssmParameterChange">ssmParameterChange</a></code> | Create an additional trigger {CodePipelineMixin} for a SSM parameter value change. |
 
 ---
 
-##### `schedule` <a name="schedule" id="@tts-cdk/build-pipelines.AdditionalTrigger.schedule"></a>
+##### `schedule` <a name="schedule" id="@ttskp/cdk-pipelines.AdditionalTrigger.schedule"></a>
 
 ```typescript
-import { AdditionalTrigger } from '@tts-cdk/build-pipelines'
+import { AdditionalTrigger } from '@ttskp/cdk-pipelines'
 
 AdditionalTrigger.schedule(schedule: Schedule)
 ```
 
 Create an additional trigger {CodePipelineMixin} based on a schedule.
 
-###### `schedule`<sup>Required</sup> <a name="schedule" id="@tts-cdk/build-pipelines.AdditionalTrigger.schedule.parameter.schedule"></a>
+###### `schedule`<sup>Required</sup> <a name="schedule" id="@ttskp/cdk-pipelines.AdditionalTrigger.schedule.parameter.schedule"></a>
 
 - *Type:* aws-cdk-lib.aws_events.Schedule
 
 ---
 
-##### `ssmParameterChange` <a name="ssmParameterChange" id="@tts-cdk/build-pipelines.AdditionalTrigger.ssmParameterChange"></a>
+##### `ssmParameterChange` <a name="ssmParameterChange" id="@ttskp/cdk-pipelines.AdditionalTrigger.ssmParameterChange"></a>
 
 ```typescript
-import { AdditionalTrigger } from '@tts-cdk/build-pipelines'
+import { AdditionalTrigger } from '@ttskp/cdk-pipelines'
 
 AdditionalTrigger.ssmParameterChange(parameterNames: ...string[])
 ```
 
 Create an additional trigger {CodePipelineMixin} for a SSM parameter value change.
 
-###### `parameterNames`<sup>Required</sup> <a name="parameterNames" id="@tts-cdk/build-pipelines.AdditionalTrigger.ssmParameterChange.parameter.parameterNames"></a>
+###### `parameterNames`<sup>Required</sup> <a name="parameterNames" id="@ttskp/cdk-pipelines.AdditionalTrigger.ssmParameterChange.parameter.parameterNames"></a>
 
 - *Type:* ...string[]
 
@@ -1729,12 +1729,12 @@ Create an additional trigger {CodePipelineMixin} for a SSM parameter value chang
 
 
 
-### BuildProjectFeature <a name="BuildProjectFeature" id="@tts-cdk/build-pipelines.BuildProjectFeature"></a>
+### BuildProjectFeature <a name="BuildProjectFeature" id="@ttskp/cdk-pipelines.BuildProjectFeature"></a>
 
-#### Initializers <a name="Initializers" id="@tts-cdk/build-pipelines.BuildProjectFeature.Initializer"></a>
+#### Initializers <a name="Initializers" id="@ttskp/cdk-pipelines.BuildProjectFeature.Initializer"></a>
 
 ```typescript
-import { BuildProjectFeature } from '@tts-cdk/build-pipelines'
+import { BuildProjectFeature } from '@ttskp/cdk-pipelines'
 
 new BuildProjectFeature()
 ```
@@ -1750,13 +1750,13 @@ new BuildProjectFeature()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.BuildProjectFeature.property.policyStatements">policyStatements</a></code> | <code>aws-cdk-lib.aws_iam.PolicyStatement[]</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.BuildProjectFeature.property.postBuildCommands">postBuildCommands</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.BuildProjectFeature.property.preBuildCommands">preBuildCommands</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildProjectFeature.property.policyStatements">policyStatements</a></code> | <code>aws-cdk-lib.aws_iam.PolicyStatement[]</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildProjectFeature.property.postBuildCommands">postBuildCommands</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.BuildProjectFeature.property.preBuildCommands">preBuildCommands</a></code> | <code>string[]</code> | *No description.* |
 
 ---
 
-##### `policyStatements`<sup>Required</sup> <a name="policyStatements" id="@tts-cdk/build-pipelines.BuildProjectFeature.property.policyStatements"></a>
+##### `policyStatements`<sup>Required</sup> <a name="policyStatements" id="@ttskp/cdk-pipelines.BuildProjectFeature.property.policyStatements"></a>
 
 ```typescript
 public readonly policyStatements: PolicyStatement[];
@@ -1766,7 +1766,7 @@ public readonly policyStatements: PolicyStatement[];
 
 ---
 
-##### `postBuildCommands`<sup>Required</sup> <a name="postBuildCommands" id="@tts-cdk/build-pipelines.BuildProjectFeature.property.postBuildCommands"></a>
+##### `postBuildCommands`<sup>Required</sup> <a name="postBuildCommands" id="@ttskp/cdk-pipelines.BuildProjectFeature.property.postBuildCommands"></a>
 
 ```typescript
 public readonly postBuildCommands: string[];
@@ -1776,7 +1776,7 @@ public readonly postBuildCommands: string[];
 
 ---
 
-##### `preBuildCommands`<sup>Required</sup> <a name="preBuildCommands" id="@tts-cdk/build-pipelines.BuildProjectFeature.property.preBuildCommands"></a>
+##### `preBuildCommands`<sup>Required</sup> <a name="preBuildCommands" id="@ttskp/cdk-pipelines.BuildProjectFeature.property.preBuildCommands"></a>
 
 ```typescript
 public readonly preBuildCommands: string[];
@@ -1787,30 +1787,30 @@ public readonly preBuildCommands: string[];
 ---
 
 
-### CleanupStacksMixin <a name="CleanupStacksMixin" id="@tts-cdk/build-pipelines.CleanupStacksMixin"></a>
+### CleanupStacksMixin <a name="CleanupStacksMixin" id="@ttskp/cdk-pipelines.CleanupStacksMixin"></a>
 
-#### Initializers <a name="Initializers" id="@tts-cdk/build-pipelines.CleanupStacksMixin.Initializer"></a>
+#### Initializers <a name="Initializers" id="@ttskp/cdk-pipelines.CleanupStacksMixin.Initializer"></a>
 
 ```typescript
-import { CleanupStacksMixin } from '@tts-cdk/build-pipelines'
+import { CleanupStacksMixin } from '@ttskp/cdk-pipelines'
 
 new CleanupStacksMixin(skipDeletion?: boolean, qualifier?: string)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.CleanupStacksMixin.Initializer.parameter.skipDeletion">skipDeletion</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.CleanupStacksMixin.Initializer.parameter.qualifier">qualifier</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.CleanupStacksMixin.Initializer.parameter.skipDeletion">skipDeletion</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.CleanupStacksMixin.Initializer.parameter.qualifier">qualifier</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `skipDeletion`<sup>Optional</sup> <a name="skipDeletion" id="@tts-cdk/build-pipelines.CleanupStacksMixin.Initializer.parameter.skipDeletion"></a>
+##### `skipDeletion`<sup>Optional</sup> <a name="skipDeletion" id="@ttskp/cdk-pipelines.CleanupStacksMixin.Initializer.parameter.skipDeletion"></a>
 
 - *Type:* boolean
 
 ---
 
-##### `qualifier`<sup>Optional</sup> <a name="qualifier" id="@tts-cdk/build-pipelines.CleanupStacksMixin.Initializer.parameter.qualifier"></a>
+##### `qualifier`<sup>Optional</sup> <a name="qualifier" id="@ttskp/cdk-pipelines.CleanupStacksMixin.Initializer.parameter.qualifier"></a>
 
 - *Type:* string
 
@@ -1820,30 +1820,30 @@ new CleanupStacksMixin(skipDeletion?: boolean, qualifier?: string)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.CleanupStacksMixin.postDoBuildPipeline">postDoBuildPipeline</a></code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.CleanupStacksMixin.preDoBuildPipeline">preDoBuildPipeline</a></code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.CleanupStacksMixin.postDoBuildPipeline">postDoBuildPipeline</a></code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.CleanupStacksMixin.preDoBuildPipeline">preDoBuildPipeline</a></code> | *No description.* |
 
 ---
 
-##### `postDoBuildPipeline` <a name="postDoBuildPipeline" id="@tts-cdk/build-pipelines.CleanupStacksMixin.postDoBuildPipeline"></a>
+##### `postDoBuildPipeline` <a name="postDoBuildPipeline" id="@ttskp/cdk-pipelines.CleanupStacksMixin.postDoBuildPipeline"></a>
 
 ```typescript
 public postDoBuildPipeline(_codePipeline: CodePipeline): void
 ```
 
-###### `_codePipeline`<sup>Required</sup> <a name="_codePipeline" id="@tts-cdk/build-pipelines.CleanupStacksMixin.postDoBuildPipeline.parameter._codePipeline"></a>
+###### `_codePipeline`<sup>Required</sup> <a name="_codePipeline" id="@ttskp/cdk-pipelines.CleanupStacksMixin.postDoBuildPipeline.parameter._codePipeline"></a>
 
 - *Type:* aws-cdk-lib.pipelines.CodePipeline
 
 ---
 
-##### `preDoBuildPipeline` <a name="preDoBuildPipeline" id="@tts-cdk/build-pipelines.CleanupStacksMixin.preDoBuildPipeline"></a>
+##### `preDoBuildPipeline` <a name="preDoBuildPipeline" id="@ttskp/cdk-pipelines.CleanupStacksMixin.preDoBuildPipeline"></a>
 
 ```typescript
 public preDoBuildPipeline(_codePipeline: CodePipeline): void
 ```
 
-###### `_codePipeline`<sup>Required</sup> <a name="_codePipeline" id="@tts-cdk/build-pipelines.CleanupStacksMixin.preDoBuildPipeline.parameter._codePipeline"></a>
+###### `_codePipeline`<sup>Required</sup> <a name="_codePipeline" id="@ttskp/cdk-pipelines.CleanupStacksMixin.preDoBuildPipeline.parameter._codePipeline"></a>
 
 - *Type:* aws-cdk-lib.pipelines.CodePipeline
 
@@ -1852,25 +1852,25 @@ public preDoBuildPipeline(_codePipeline: CodePipeline): void
 
 
 
-### CodeArtifactFeature <a name="CodeArtifactFeature" id="@tts-cdk/build-pipelines.CodeArtifactFeature"></a>
+### CodeArtifactFeature <a name="CodeArtifactFeature" id="@ttskp/cdk-pipelines.CodeArtifactFeature"></a>
 
-#### Initializers <a name="Initializers" id="@tts-cdk/build-pipelines.CodeArtifactFeature.Initializer"></a>
+#### Initializers <a name="Initializers" id="@ttskp/cdk-pipelines.CodeArtifactFeature.Initializer"></a>
 
 ```typescript
-import { CodeArtifactFeature } from '@tts-cdk/build-pipelines'
+import { CodeArtifactFeature } from '@ttskp/cdk-pipelines'
 
 new CodeArtifactFeature(pipeline: BuildSpecPipeline)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.CodeArtifactFeature.Initializer.parameter.pipeline">pipeline</a></code> | <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipeline">BuildSpecPipeline</a></code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.CodeArtifactFeature.Initializer.parameter.pipeline">pipeline</a></code> | <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipeline">BuildSpecPipeline</a></code> | *No description.* |
 
 ---
 
-##### `pipeline`<sup>Required</sup> <a name="pipeline" id="@tts-cdk/build-pipelines.CodeArtifactFeature.Initializer.parameter.pipeline"></a>
+##### `pipeline`<sup>Required</sup> <a name="pipeline" id="@ttskp/cdk-pipelines.CodeArtifactFeature.Initializer.parameter.pipeline"></a>
 
-- *Type:* <a href="#@tts-cdk/build-pipelines.BuildSpecPipeline">BuildSpecPipeline</a>
+- *Type:* <a href="#@ttskp/cdk-pipelines.BuildSpecPipeline">BuildSpecPipeline</a>
 
 ---
 
@@ -1880,13 +1880,13 @@ new CodeArtifactFeature(pipeline: BuildSpecPipeline)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.CodeArtifactFeature.property.policyStatements">policyStatements</a></code> | <code>aws-cdk-lib.aws_iam.PolicyStatement[]</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.CodeArtifactFeature.property.postBuildCommands">postBuildCommands</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.CodeArtifactFeature.property.preBuildCommands">preBuildCommands</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.CodeArtifactFeature.property.policyStatements">policyStatements</a></code> | <code>aws-cdk-lib.aws_iam.PolicyStatement[]</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.CodeArtifactFeature.property.postBuildCommands">postBuildCommands</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.CodeArtifactFeature.property.preBuildCommands">preBuildCommands</a></code> | <code>string[]</code> | *No description.* |
 
 ---
 
-##### `policyStatements`<sup>Required</sup> <a name="policyStatements" id="@tts-cdk/build-pipelines.CodeArtifactFeature.property.policyStatements"></a>
+##### `policyStatements`<sup>Required</sup> <a name="policyStatements" id="@ttskp/cdk-pipelines.CodeArtifactFeature.property.policyStatements"></a>
 
 ```typescript
 public readonly policyStatements: PolicyStatement[];
@@ -1896,7 +1896,7 @@ public readonly policyStatements: PolicyStatement[];
 
 ---
 
-##### `postBuildCommands`<sup>Required</sup> <a name="postBuildCommands" id="@tts-cdk/build-pipelines.CodeArtifactFeature.property.postBuildCommands"></a>
+##### `postBuildCommands`<sup>Required</sup> <a name="postBuildCommands" id="@ttskp/cdk-pipelines.CodeArtifactFeature.property.postBuildCommands"></a>
 
 ```typescript
 public readonly postBuildCommands: string[];
@@ -1906,7 +1906,7 @@ public readonly postBuildCommands: string[];
 
 ---
 
-##### `preBuildCommands`<sup>Required</sup> <a name="preBuildCommands" id="@tts-cdk/build-pipelines.CodeArtifactFeature.property.preBuildCommands"></a>
+##### `preBuildCommands`<sup>Required</sup> <a name="preBuildCommands" id="@ttskp/cdk-pipelines.CodeArtifactFeature.property.preBuildCommands"></a>
 
 ```typescript
 public readonly preBuildCommands: string[];
@@ -1917,12 +1917,12 @@ public readonly preBuildCommands: string[];
 ---
 
 
-### CodePipelineMixin <a name="CodePipelineMixin" id="@tts-cdk/build-pipelines.CodePipelineMixin"></a>
+### CodePipelineMixin <a name="CodePipelineMixin" id="@ttskp/cdk-pipelines.CodePipelineMixin"></a>
 
-#### Initializers <a name="Initializers" id="@tts-cdk/build-pipelines.CodePipelineMixin.Initializer"></a>
+#### Initializers <a name="Initializers" id="@ttskp/cdk-pipelines.CodePipelineMixin.Initializer"></a>
 
 ```typescript
-import { CodePipelineMixin } from '@tts-cdk/build-pipelines'
+import { CodePipelineMixin } from '@ttskp/cdk-pipelines'
 
 new CodePipelineMixin()
 ```
@@ -1936,30 +1936,30 @@ new CodePipelineMixin()
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.CodePipelineMixin.postDoBuildPipeline">postDoBuildPipeline</a></code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.CodePipelineMixin.preDoBuildPipeline">preDoBuildPipeline</a></code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.CodePipelineMixin.postDoBuildPipeline">postDoBuildPipeline</a></code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.CodePipelineMixin.preDoBuildPipeline">preDoBuildPipeline</a></code> | *No description.* |
 
 ---
 
-##### `postDoBuildPipeline` <a name="postDoBuildPipeline" id="@tts-cdk/build-pipelines.CodePipelineMixin.postDoBuildPipeline"></a>
+##### `postDoBuildPipeline` <a name="postDoBuildPipeline" id="@ttskp/cdk-pipelines.CodePipelineMixin.postDoBuildPipeline"></a>
 
 ```typescript
 public postDoBuildPipeline(_codePipeline: CodePipeline): void
 ```
 
-###### `_codePipeline`<sup>Required</sup> <a name="_codePipeline" id="@tts-cdk/build-pipelines.CodePipelineMixin.postDoBuildPipeline.parameter._codePipeline"></a>
+###### `_codePipeline`<sup>Required</sup> <a name="_codePipeline" id="@ttskp/cdk-pipelines.CodePipelineMixin.postDoBuildPipeline.parameter._codePipeline"></a>
 
 - *Type:* aws-cdk-lib.pipelines.CodePipeline
 
 ---
 
-##### `preDoBuildPipeline` <a name="preDoBuildPipeline" id="@tts-cdk/build-pipelines.CodePipelineMixin.preDoBuildPipeline"></a>
+##### `preDoBuildPipeline` <a name="preDoBuildPipeline" id="@ttskp/cdk-pipelines.CodePipelineMixin.preDoBuildPipeline"></a>
 
 ```typescript
 public preDoBuildPipeline(_codePipeline: CodePipeline): void
 ```
 
-###### `_codePipeline`<sup>Required</sup> <a name="_codePipeline" id="@tts-cdk/build-pipelines.CodePipelineMixin.preDoBuildPipeline.parameter._codePipeline"></a>
+###### `_codePipeline`<sup>Required</sup> <a name="_codePipeline" id="@ttskp/cdk-pipelines.CodePipelineMixin.preDoBuildPipeline.parameter._codePipeline"></a>
 
 - *Type:* aws-cdk-lib.pipelines.CodePipeline
 
@@ -1968,12 +1968,12 @@ public preDoBuildPipeline(_codePipeline: CodePipeline): void
 
 
 
-### DeploymentTargetsSource <a name="DeploymentTargetsSource" id="@tts-cdk/build-pipelines.DeploymentTargetsSource"></a>
+### DeploymentTargetsSource <a name="DeploymentTargetsSource" id="@ttskp/cdk-pipelines.DeploymentTargetsSource"></a>
 
-#### Initializers <a name="Initializers" id="@tts-cdk/build-pipelines.DeploymentTargetsSource.Initializer"></a>
+#### Initializers <a name="Initializers" id="@ttskp/cdk-pipelines.DeploymentTargetsSource.Initializer"></a>
 
 ```typescript
-import { DeploymentTargetsSource } from '@tts-cdk/build-pipelines'
+import { DeploymentTargetsSource } from '@ttskp/cdk-pipelines'
 
 new DeploymentTargetsSource()
 ```
@@ -1988,49 +1988,49 @@ new DeploymentTargetsSource()
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.DeploymentTargetsSource.ssmParameter">ssmParameter</a></code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.DeploymentTargetsSource.staticValue">staticValue</a></code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.DeploymentTargetsSource.ssmParameter">ssmParameter</a></code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.DeploymentTargetsSource.staticValue">staticValue</a></code> | *No description.* |
 
 ---
 
-##### `ssmParameter` <a name="ssmParameter" id="@tts-cdk/build-pipelines.DeploymentTargetsSource.ssmParameter"></a>
+##### `ssmParameter` <a name="ssmParameter" id="@ttskp/cdk-pipelines.DeploymentTargetsSource.ssmParameter"></a>
 
 ```typescript
-import { DeploymentTargetsSource } from '@tts-cdk/build-pipelines'
+import { DeploymentTargetsSource } from '@ttskp/cdk-pipelines'
 
 DeploymentTargetsSource.ssmParameter(name: string)
 ```
 
-###### `name`<sup>Required</sup> <a name="name" id="@tts-cdk/build-pipelines.DeploymentTargetsSource.ssmParameter.parameter.name"></a>
+###### `name`<sup>Required</sup> <a name="name" id="@ttskp/cdk-pipelines.DeploymentTargetsSource.ssmParameter.parameter.name"></a>
 
 - *Type:* string
 
 ---
 
-##### `staticValue` <a name="staticValue" id="@tts-cdk/build-pipelines.DeploymentTargetsSource.staticValue"></a>
+##### `staticValue` <a name="staticValue" id="@ttskp/cdk-pipelines.DeploymentTargetsSource.staticValue"></a>
 
 ```typescript
-import { DeploymentTargetsSource } from '@tts-cdk/build-pipelines'
+import { DeploymentTargetsSource } from '@ttskp/cdk-pipelines'
 
 DeploymentTargetsSource.staticValue(targets: DeploymentTarget[])
 ```
 
-###### `targets`<sup>Required</sup> <a name="targets" id="@tts-cdk/build-pipelines.DeploymentTargetsSource.staticValue.parameter.targets"></a>
+###### `targets`<sup>Required</sup> <a name="targets" id="@ttskp/cdk-pipelines.DeploymentTargetsSource.staticValue.parameter.targets"></a>
 
-- *Type:* <a href="#@tts-cdk/build-pipelines.DeploymentTarget">DeploymentTarget</a>[]
+- *Type:* <a href="#@ttskp/cdk-pipelines.DeploymentTarget">DeploymentTarget</a>[]
 
 ---
 
 
 
-### NoopStackFactory <a name="NoopStackFactory" id="@tts-cdk/build-pipelines.NoopStackFactory"></a>
+### NoopStackFactory <a name="NoopStackFactory" id="@ttskp/cdk-pipelines.NoopStackFactory"></a>
 
-- *Implements:* <a href="#@tts-cdk/build-pipelines.IStackFactory">IStackFactory</a>
+- *Implements:* <a href="#@ttskp/cdk-pipelines.IStackFactory">IStackFactory</a>
 
-#### Initializers <a name="Initializers" id="@tts-cdk/build-pipelines.NoopStackFactory.Initializer"></a>
+#### Initializers <a name="Initializers" id="@ttskp/cdk-pipelines.NoopStackFactory.Initializer"></a>
 
 ```typescript
-import { NoopStackFactory } from '@tts-cdk/build-pipelines'
+import { NoopStackFactory } from '@ttskp/cdk-pipelines'
 
 new NoopStackFactory()
 ```
@@ -2044,23 +2044,23 @@ new NoopStackFactory()
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.NoopStackFactory.create">create</a></code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.NoopStackFactory.create">create</a></code> | *No description.* |
 
 ---
 
-##### `create` <a name="create" id="@tts-cdk/build-pipelines.NoopStackFactory.create"></a>
+##### `create` <a name="create" id="@ttskp/cdk-pipelines.NoopStackFactory.create"></a>
 
 ```typescript
 public create(scope: Construct, env: Environment): Stack
 ```
 
-###### `scope`<sup>Required</sup> <a name="scope" id="@tts-cdk/build-pipelines.NoopStackFactory.create.parameter.scope"></a>
+###### `scope`<sup>Required</sup> <a name="scope" id="@ttskp/cdk-pipelines.NoopStackFactory.create.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-###### `env`<sup>Required</sup> <a name="env" id="@tts-cdk/build-pipelines.NoopStackFactory.create.parameter.env"></a>
+###### `env`<sup>Required</sup> <a name="env" id="@ttskp/cdk-pipelines.NoopStackFactory.create.parameter.env"></a>
 
 - *Type:* aws-cdk-lib.Environment
 
@@ -2069,25 +2069,25 @@ public create(scope: Construct, env: Environment): Stack
 
 
 
-### SSMParametersFeature <a name="SSMParametersFeature" id="@tts-cdk/build-pipelines.SSMParametersFeature"></a>
+### SSMParametersFeature <a name="SSMParametersFeature" id="@ttskp/cdk-pipelines.SSMParametersFeature"></a>
 
-#### Initializers <a name="Initializers" id="@tts-cdk/build-pipelines.SSMParametersFeature.Initializer"></a>
+#### Initializers <a name="Initializers" id="@ttskp/cdk-pipelines.SSMParametersFeature.Initializer"></a>
 
 ```typescript
-import { SSMParametersFeature } from '@tts-cdk/build-pipelines'
+import { SSMParametersFeature } from '@ttskp/cdk-pipelines'
 
 new SSMParametersFeature(pipeline: BuildSpecPipeline)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.SSMParametersFeature.Initializer.parameter.pipeline">pipeline</a></code> | <code><a href="#@tts-cdk/build-pipelines.BuildSpecPipeline">BuildSpecPipeline</a></code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.SSMParametersFeature.Initializer.parameter.pipeline">pipeline</a></code> | <code><a href="#@ttskp/cdk-pipelines.BuildSpecPipeline">BuildSpecPipeline</a></code> | *No description.* |
 
 ---
 
-##### `pipeline`<sup>Required</sup> <a name="pipeline" id="@tts-cdk/build-pipelines.SSMParametersFeature.Initializer.parameter.pipeline"></a>
+##### `pipeline`<sup>Required</sup> <a name="pipeline" id="@ttskp/cdk-pipelines.SSMParametersFeature.Initializer.parameter.pipeline"></a>
 
-- *Type:* <a href="#@tts-cdk/build-pipelines.BuildSpecPipeline">BuildSpecPipeline</a>
+- *Type:* <a href="#@ttskp/cdk-pipelines.BuildSpecPipeline">BuildSpecPipeline</a>
 
 ---
 
@@ -2097,13 +2097,13 @@ new SSMParametersFeature(pipeline: BuildSpecPipeline)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.SSMParametersFeature.property.policyStatements">policyStatements</a></code> | <code>aws-cdk-lib.aws_iam.PolicyStatement[]</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.SSMParametersFeature.property.postBuildCommands">postBuildCommands</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@tts-cdk/build-pipelines.SSMParametersFeature.property.preBuildCommands">preBuildCommands</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.SSMParametersFeature.property.policyStatements">policyStatements</a></code> | <code>aws-cdk-lib.aws_iam.PolicyStatement[]</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.SSMParametersFeature.property.postBuildCommands">postBuildCommands</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.SSMParametersFeature.property.preBuildCommands">preBuildCommands</a></code> | <code>string[]</code> | *No description.* |
 
 ---
 
-##### `policyStatements`<sup>Required</sup> <a name="policyStatements" id="@tts-cdk/build-pipelines.SSMParametersFeature.property.policyStatements"></a>
+##### `policyStatements`<sup>Required</sup> <a name="policyStatements" id="@ttskp/cdk-pipelines.SSMParametersFeature.property.policyStatements"></a>
 
 ```typescript
 public readonly policyStatements: PolicyStatement[];
@@ -2113,7 +2113,7 @@ public readonly policyStatements: PolicyStatement[];
 
 ---
 
-##### `postBuildCommands`<sup>Required</sup> <a name="postBuildCommands" id="@tts-cdk/build-pipelines.SSMParametersFeature.property.postBuildCommands"></a>
+##### `postBuildCommands`<sup>Required</sup> <a name="postBuildCommands" id="@ttskp/cdk-pipelines.SSMParametersFeature.property.postBuildCommands"></a>
 
 ```typescript
 public readonly postBuildCommands: string[];
@@ -2123,7 +2123,7 @@ public readonly postBuildCommands: string[];
 
 ---
 
-##### `preBuildCommands`<sup>Required</sup> <a name="preBuildCommands" id="@tts-cdk/build-pipelines.SSMParametersFeature.property.preBuildCommands"></a>
+##### `preBuildCommands`<sup>Required</sup> <a name="preBuildCommands" id="@ttskp/cdk-pipelines.SSMParametersFeature.property.preBuildCommands"></a>
 
 ```typescript
 public readonly preBuildCommands: string[];
@@ -2134,12 +2134,12 @@ public readonly preBuildCommands: string[];
 ---
 
 
-### SynthCommands <a name="SynthCommands" id="@tts-cdk/build-pipelines.SynthCommands"></a>
+### SynthCommands <a name="SynthCommands" id="@ttskp/cdk-pipelines.SynthCommands"></a>
 
-#### Initializers <a name="Initializers" id="@tts-cdk/build-pipelines.SynthCommands.Initializer"></a>
+#### Initializers <a name="Initializers" id="@ttskp/cdk-pipelines.SynthCommands.Initializer"></a>
 
 ```typescript
-import { SynthCommands } from '@tts-cdk/build-pipelines'
+import { SynthCommands } from '@ttskp/cdk-pipelines'
 
 new SynthCommands()
 ```
@@ -2156,11 +2156,11 @@ new SynthCommands()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.SynthCommands.property.projenCdkApp">projenCdkApp</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.SynthCommands.property.projenCdkApp">projenCdkApp</a></code> | <code>string[]</code> | *No description.* |
 
 ---
 
-##### `projenCdkApp`<sup>Required</sup> <a name="projenCdkApp" id="@tts-cdk/build-pipelines.SynthCommands.property.projenCdkApp"></a>
+##### `projenCdkApp`<sup>Required</sup> <a name="projenCdkApp" id="@ttskp/cdk-pipelines.SynthCommands.property.projenCdkApp"></a>
 
 ```typescript
 public readonly projenCdkApp: string[];
@@ -2170,12 +2170,12 @@ public readonly projenCdkApp: string[];
 
 ---
 
-### SynthProfiles <a name="SynthProfiles" id="@tts-cdk/build-pipelines.SynthProfiles"></a>
+### SynthProfiles <a name="SynthProfiles" id="@ttskp/cdk-pipelines.SynthProfiles"></a>
 
-#### Initializers <a name="Initializers" id="@tts-cdk/build-pipelines.SynthProfiles.Initializer"></a>
+#### Initializers <a name="Initializers" id="@ttskp/cdk-pipelines.SynthProfiles.Initializer"></a>
 
 ```typescript
-import { SynthProfiles } from '@tts-cdk/build-pipelines'
+import { SynthProfiles } from '@ttskp/cdk-pipelines'
 
 new SynthProfiles()
 ```
@@ -2190,19 +2190,19 @@ new SynthProfiles()
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.SynthProfiles.projenCdkApp">projenCdkApp</a></code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.SynthProfiles.projenCdkApp">projenCdkApp</a></code> | *No description.* |
 
 ---
 
-##### `projenCdkApp` <a name="projenCdkApp" id="@tts-cdk/build-pipelines.SynthProfiles.projenCdkApp"></a>
+##### `projenCdkApp` <a name="projenCdkApp" id="@ttskp/cdk-pipelines.SynthProfiles.projenCdkApp"></a>
 
 ```typescript
-import { SynthProfiles } from '@tts-cdk/build-pipelines'
+import { SynthProfiles } from '@ttskp/cdk-pipelines'
 
 SynthProfiles.projenCdkApp(input?: IFileSetProducer)
 ```
 
-###### `input`<sup>Optional</sup> <a name="input" id="@tts-cdk/build-pipelines.SynthProfiles.projenCdkApp.parameter.input"></a>
+###### `input`<sup>Optional</sup> <a name="input" id="@ttskp/cdk-pipelines.SynthProfiles.projenCdkApp.parameter.input"></a>
 
 - *Type:* aws-cdk-lib.pipelines.IFileSetProducer
 
@@ -2212,56 +2212,56 @@ SynthProfiles.projenCdkApp(input?: IFileSetProducer)
 
 ## Protocols <a name="Protocols" id="Protocols"></a>
 
-### IDeploymentTargetsProvider <a name="IDeploymentTargetsProvider" id="@tts-cdk/build-pipelines.IDeploymentTargetsProvider"></a>
+### IDeploymentTargetsProvider <a name="IDeploymentTargetsProvider" id="@ttskp/cdk-pipelines.IDeploymentTargetsProvider"></a>
 
-- *Implemented By:* <a href="#@tts-cdk/build-pipelines.IDeploymentTargetsProvider">IDeploymentTargetsProvider</a>
+- *Implemented By:* <a href="#@ttskp/cdk-pipelines.IDeploymentTargetsProvider">IDeploymentTargetsProvider</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.IDeploymentTargetsProvider.provide">provide</a></code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.IDeploymentTargetsProvider.provide">provide</a></code> | *No description.* |
 
 ---
 
-##### `provide` <a name="provide" id="@tts-cdk/build-pipelines.IDeploymentTargetsProvider.provide"></a>
+##### `provide` <a name="provide" id="@ttskp/cdk-pipelines.IDeploymentTargetsProvider.provide"></a>
 
 ```typescript
 public provide(scope: Construct): DeploymentTarget[]
 ```
 
-###### `scope`<sup>Required</sup> <a name="scope" id="@tts-cdk/build-pipelines.IDeploymentTargetsProvider.provide.parameter.scope"></a>
+###### `scope`<sup>Required</sup> <a name="scope" id="@ttskp/cdk-pipelines.IDeploymentTargetsProvider.provide.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
 
-### IStackFactory <a name="IStackFactory" id="@tts-cdk/build-pipelines.IStackFactory"></a>
+### IStackFactory <a name="IStackFactory" id="@ttskp/cdk-pipelines.IStackFactory"></a>
 
-- *Implemented By:* <a href="#@tts-cdk/build-pipelines.NoopStackFactory">NoopStackFactory</a>, <a href="#@tts-cdk/build-pipelines.IStackFactory">IStackFactory</a>
+- *Implemented By:* <a href="#@ttskp/cdk-pipelines.NoopStackFactory">NoopStackFactory</a>, <a href="#@ttskp/cdk-pipelines.IStackFactory">IStackFactory</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@tts-cdk/build-pipelines.IStackFactory.create">create</a></code> | *No description.* |
+| <code><a href="#@ttskp/cdk-pipelines.IStackFactory.create">create</a></code> | *No description.* |
 
 ---
 
-##### `create` <a name="create" id="@tts-cdk/build-pipelines.IStackFactory.create"></a>
+##### `create` <a name="create" id="@ttskp/cdk-pipelines.IStackFactory.create"></a>
 
 ```typescript
 public create(scope: Construct, env: Environment): Stack
 ```
 
-###### `scope`<sup>Required</sup> <a name="scope" id="@tts-cdk/build-pipelines.IStackFactory.create.parameter.scope"></a>
+###### `scope`<sup>Required</sup> <a name="scope" id="@ttskp/cdk-pipelines.IStackFactory.create.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-###### `env`<sup>Required</sup> <a name="env" id="@tts-cdk/build-pipelines.IStackFactory.create.parameter.env"></a>
+###### `env`<sup>Required</sup> <a name="env" id="@ttskp/cdk-pipelines.IStackFactory.create.parameter.env"></a>
 
 - *Type:* aws-cdk-lib.Environment
 
