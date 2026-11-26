@@ -164,7 +164,7 @@
         {
           "execArgs": [
             "jsii-diff",
-            "npm:@tts-cdk/build-pipelines",
+            "npm:@ttskp/cdk-pipelines",
             "-k",
             "--ignore-file",
             ".compatignore"

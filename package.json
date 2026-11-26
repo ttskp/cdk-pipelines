@@ -1,5 +1,5 @@
 {
-  "name": "@tts-cdk/build-pipelines",
+  "name": "@ttskp/cdk-pipelines",
   "repository": {
     "type": "git",
     "url": "https://github.com/ttskp/cdk-pipelines.git"

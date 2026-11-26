@@ -1,8 +1,9 @@
 import { awscdk, javascript } from 'projen';
 const project = new awscdk.AwsCdkConstructLibrary({
 
-  name: 'build-pipelines',
-  packageName: '@tts-cdk/build-pipelines',
+  name: 'cdk-pipelines',
+  packageName: '@ttskp/cdk-pipelines',
+  npmTrustedPublishing: true,
 
   author: 'tts Knowledge Products GmbH',
   authorAddress: 'info@tt-s.com',
