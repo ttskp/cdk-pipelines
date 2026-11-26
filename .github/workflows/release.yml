@@ -161,4 +161,4 @@ jobs:
           NPM_REGISTRY: registry.npmjs.org
           NPM_TRUSTED_PUBLISHER: "true"
           PUBLIB_DRYRUN: ${{ inputs.dry_run }}
-        run: npx '-p' 'publib@latest' 'publib-npm'
+        run: '[ "$PUBLIB_DRYRUN" = "true" ] && echo "dry run" || npm stage publish --tag "$NPM_DIST_TAG" --access public dist/js/*.tgz'

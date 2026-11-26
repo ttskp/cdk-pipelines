@@ -31,4 +31,10 @@ const project = new awscdk.AwsCdkConstructLibrary({
   packageManager: javascript.NodePackageManager.NPM,
   projenrcTs: true,
 });
+
+// publib hardcodes `npm publish`; use `npm stage publish` to match OIDC trust and postpone 2FA
+project.github?.tryFindWorkflow('release')?.file?.addOverride(
+  'jobs.release_npm.steps.9.run',
+  '[ "$PUBLIB_DRYRUN" = "true" ] && echo "dry run" || npm stage publish --tag "$NPM_DIST_TAG" --access public dist/js/*.tgz',
+);
 project.synth();
